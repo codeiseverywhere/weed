@@ -1,0 +1,309 @@
+{% comment %}
+
+  The {{ content_for_header }} in theme.liquid will output the following stylesheet just for this page:
+    - <link rel="stylesheet" href="/global/search.css" type="text/css">
+
+  It has a few helpers in there, but this theme writes its own styles so there
+  are no dependencies or conflicts. You can ignore that file.
+
+  Return only products or pages in results:
+    - http://docs.shopify.com/manual/configuration/store-customization/return-only-product-in-storefront-search-results
+    - Or manually add type=product or type=page to the search URL as a parameter
+
+{% endcomment %}
+
+{% comment %}
+  If you're only showing products with the method above, why not show them off in a grid instead?
+  Set grid_results to true and see your updated results page for the new layout.
+{% endcomment %}
+{% assign grid_results = true %}
+
+{% comment %}
+  Check to enforce respond.js
+{% endcomment %}
+{% assign respond_js_secret_key = shop.domain | md5 %}
+{% unless search.terms == respond_js_secret_key %}
+
+{% assign search_terms_split = search.terms | split: " " %}
+{% assign search_terms_text = "" %}
+{% assign search_terms_tag = "" %}
+
+{% for term in search_terms_split %}
+    {% if term contains "tag:" %}
+        {% if search_terms_tag != "" %}
+            {% capture search_terms_tag %}{{search_terms_tag}} {{term | remove: "tag:"}}{% endcapture %}
+        {% else %}
+            {% assign search_terms_tag = term | remove: "tag:" %}
+        {% endif %}
+    {% else %}
+        {% if search_terms_text != "" %}
+            {% capture search_terms_text %}{{search_terms_text}} {{term}}{% endcapture %}
+        {% else %}
+            {% assign search_terms_text = term %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+<div class="Page Page--search SearchResults" id="Swiftype-SearchContainer">
+    {% if search.performed %}
+        {% comment %}
+          Avoid accessing search.results before the opening paginate tag.
+          If you do, the pagination of results will be broken.
+        {% endcomment %}
+        {% paginate search.results by 12 %}
+            <div id="search-results-paginate"
+                 data-paginate="paginate"
+                 data-paginate-page="{{ paginate.current_page }}">
+                {% comment %}
+                  We don't have any results to show. Feel free to show off featured products
+                  or suggested searches here.
+                {% endcomment %}
+                {% comment %} <!-- No-results behavior. -->
+                    <div class="SearchResults-form">{% include 'Search-form' %}</div>
+                    <h1 class="SearchResults-resulttxt SearchResults-resulttxt--empty Page-title">Your search for "{{ search_terms_text }}" did not yield any results.</h1>
+                {% endcomment %}
+                <h1 class="SearchResults-resulttxt SearchResults-resulttxt--hasresults Page-title">Your search for "{{ search_terms_text }}" revealed the following:</h1>
+                <div class="SearchResults-form">{% include 'Search-form' %}</div>
+
+                <div id="Swiftype-SearchResultsContainer">
+                    {% comment %}
+                      Each result template, based on the grid_layout variable above
+                    {% endcomment %}
+                    {% if grid_results == false %}
+                        <div class="SearchResults-resultslist SearchResults-resultslist--list"
+                            data-paginate="region"
+                            data-paginate-region="catalog-items">
+                            {% for item in search.results %}
+                                {% include 'search-result' %}
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <div class="SearchResults-resultslist SearchResults-resultslist--grid"
+                            data-paginate="region"
+                            data-paginate-region="catalog-items">
+                            {% for item in search.results %}
+                                {% include 'search-result-grid' %}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+
+                {% if paginate.pages > 1 %}
+                    <div class="SearchResults-pager">
+                        {% include 'pagination-custom' %}
+                    </div>
+                {% endif %}
+            </div>
+        {% endpaginate %}
+    {% else %}
+        {% comment %}
+          If search.performed is false, someone either accessed the page without
+          the q parameter, or it was blank.
+          Be sure to show a search form here, along with anything else you want to showcase.
+        {% endcomment %}
+        <h1 class="SearchResults-searchprompt Page-title">Search for products on our site</h1>
+        {% include 'Search-form' %}
+    {% endif %}
+</div>
+
+<script>
+    define("swiftype-integration-search", ["jquery", "swiftype_templates", "jquery.swiftype.search"], function ($, SwiftypeTemplates) {
+        var searchState = {}, $facets = $("#Swiftype-Facets"), isInfiniteScroll = false, initialHash = window.location.hash;
+
+        searchState.facets = {};
+
+        $("#Swiftype-SearchResultsContainer").children().remove();
+
+        $("#Swiftype-SearchResultsField").swiftypeSearch({
+            engineKey: 'smJwAzmgYt8txTPTAxry',
+            perPage: 12,
+            facets: { page: ["shape", "style", "size", "vendor", "priceTier"] },
+            sortField: { page: ["weight", "_score"] },
+            sortDirection: { page: ["ASC", "DESC"] },
+            resultContainingElement: '#Swiftype-SearchResultsContainer',
+            loadingFunction: function(query, $resultContainer) {
+            },
+            renderResultsFunction: function(ctx, data) {
+                var $resultContainer = ctx.resultContainer,
+                    config = ctx.config;
+
+                if (!isInfiniteScroll) {
+                    $resultContainer.html('');
+                    isInfiniteScroll = false;
+                }
+
+                $.each(data.records, function (documentType, items) {
+                    $.each(items, function (idx, item) {
+                        $(config.renderFunction(documentType, item)).appendTo($resultContainer);
+                    });
+                });
+
+                var maxPagesType, maxPages = -1,
+                    config = ctx.config;
+                $.each(data.info, function(documentType, typeInfo) {
+                  if (typeInfo.num_pages > maxPages) {
+                    maxPagesType = documentType;
+                    maxPages = typeInfo.num_pages;
+                  }
+                });
+                var currentPage = data.info[maxPagesType].current_page,
+                  totalPages = data.info[maxPagesType].num_pages;
+
+                $(config.renderPaginationForType(maxPagesType, currentPage, totalPages)).appendTo(ctx.resultContainer);
+            },
+            renderFunction: function(doctype, item) {
+                item.document_type = doctype;
+                if (item.price === 0) {
+                    delete item.price;
+                }
+
+                return SwiftypeTemplates.swiftypeResultItem(item);
+            },
+            renderPaginationForType: function(type, currentPage, totalPages) {
+                var data = {
+                    type: type,
+                    currentPage: currentPage,
+                    totalPages: totalPages,
+                };
+
+                if (currentPage != 1) {
+                    data.previousPage = currentPage - 1;
+                }
+
+                if (currentPage < totalPages) {
+                    data.nextPage = currentPage + 1;
+                }
+
+                return SwiftypeTemplates.swiftypePagination(data);
+            },
+            postRenderFunction: function(info) {
+                var pageFacets = info.info.page.facets, i, j, facet, option, theHTML = "";
+
+                console.log(info);
+                $facets.children().remove();
+
+                for (i in pageFacets) {
+                    if (pageFacets.hasOwnProperty(i)) {
+                        facet = {
+                            title: i,
+                            field: i,
+                            options: []
+                        };
+
+                        if (i === "priceTier") {
+                            facet.title = "Price";
+                        }
+
+                        for (j in pageFacets[i]) {
+                            if (pageFacets[i].hasOwnProperty(j)) {
+                                var option = {
+                                    label: j,
+                                    count: pageFacets[i][j],
+                                    id: encodeURIComponent(j).toLowerCase(),
+                                    checked: searchState.facets[i] && searchState.facets[i].indexOf(j) > -1,
+                                };
+
+                                if (i === "priceTier") {
+                                    //Skip Small-Tier pricing
+                                    if (j === "Under $100" || j === "$100 To $250" || j === "$250 To $500" || j === "$1000 And Above") {
+                                        continue;
+                                    }
+                                }
+
+                                facet.options.push(option);
+                            }
+                        }
+
+                        theHTML = theHTML + SwiftypeTemplates.swiftypeFacet(facet);
+                    }
+                }
+
+                $facets.html(theHTML);
+            },
+            filters: function () {
+                var result = {};
+
+                for (facetName in searchState.facets) {
+                    if (searchState.facets.hasOwnProperty(facetName)) {
+                        result[facetName] = searchState.facets[facetName];
+                    }
+                }
+
+                console.log(result);
+
+                return {page: result};
+            },
+        });
+
+        if (initialHash.length > 0) {
+            window.setTimeout(function() {
+                window.location.hash = initialHash;
+
+                $(window).hashchange();
+            }, 100);
+        }
+
+        $("#Swiftype-SearchResultsField").parents().filter("form").submit();
+        
+        $("#Swiftype-SearchResultsField").parents().filter("form").unbind("submit");
+
+        $facets.on("click", "input", function (e) {
+            searchState.facets = {};
+
+            $facets.find("input[type='checkbox']").each(function(i, box) {
+                var $box = $(box),
+                    facet = $box.attr("name");
+
+                if (!searchState.facets[facet]) {
+                    searchState.facets[facet] = [];
+                }
+
+                if ($box.is(":checked")) {
+                    searchState.facets[facet].push($box.attr("value"));
+                }
+            });
+
+            $(window).hashchange();
+        });
+
+        $(window).on("scroll", function(e) {
+            var $target = $("#Swiftype-SearchResultsContainer"),
+                scrollTop = $(window).scrollTop(),
+                scrollBottom = scrollTop + $(document).height(),
+                targetTop = $target.offset().top,
+                targetBottom = targetTop + $target.height();
+
+            console.log(scrollTop);
+            console.log(targetBottom);
+
+            if (scrollBottom >= (targetBottom - 50)) {
+                isInfiniteScroll = true;
+                $(".st-next").click();
+                $(".Pager").remove();
+            }
+        });
+    });
+</script>
+
+<div class="modal fade" data-quickview-modal tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <button type="button" class="close Product--quickview-close" data-dismiss="modal"><span class="sr-only">Close</span></button>
+            <div data-quickview-content class="Product--quickview-content"></div>
+        </div>
+    </div>
+</div>
+
+{% else %}
+    {% include 'respond' %}
+    {% layout none %}
+{% endunless %}
+
+{% schema %}
+  {
+    "name": "Search Page",
+    "settings": [
+      
+    ]
+  }
+{% endschema %}

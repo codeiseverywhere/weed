@@ -1,0 +1,26 @@
+/* Sticky Add To Cart */
+.Product__sticky-ATC {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -100%;
+  z-index: 99;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  transition: bottom 0.4s ease-in-out;
+  padding: 20px;
+  -webkit-box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
+}
+.Product__sticky-ATC--open {
+  bottom: 0;
+}
+
+.satc__Product-details-form-row-top {
+  margin-bottom: 15px;
+}
+.satc__Product-details__subscripton-wrap {
+  margin-bottom: 0px;
+}

@@ -1,0 +1,34 @@
+$SiteHeader--extra_row--height: #{"{{ settings.siteHeader-bottom-row-height }}"};
+
+$SiteHeader--extra_row--border_top_width: $SiteHeader--border_width;
+$SiteHeader--extra_row--border_top_color: $SiteHeader--border_color;
+
+.SiteHeader-navigation--third_menu {
+    clear: left;
+    float: left;
+
+    width: 100%;
+    height: $SiteHeader--extra_row--height;
+
+    background-color: $Color--SiteHeader__Bottom-Background;
+    color: $Color--SiteHeader__Bottom;
+
+    &:before {
+        content: "";
+        border-top: 1px solid $SiteHeader--extra_row--border_top_color;
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+}
+
+.SiteHeader-navigation--third_menu div ul li {
+    cursor: pointer;
+}
+.SiteHeader-navigation--third_menu div ul li a {
+    color: $Color--SiteHeader__Bottom;
+    font-size: 12px;
+}
+.SiteHeader-navigation--third_menu div ul li a span {
+    padding: 10px 25px;
+}

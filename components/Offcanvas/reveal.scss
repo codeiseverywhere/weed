@@ -1,0 +1,13 @@
+@mixin make-Offcanvas--reveal() {
+    max-height: 0;
+    overflow: hidden;
+
+    &.is-Offcanvas--open {
+        max-height: 400px;
+        max-height: 80vh;
+    }
+}
+
+.Offcanvas--reveal {
+    @include make-Offcanvas--reveal();
+}

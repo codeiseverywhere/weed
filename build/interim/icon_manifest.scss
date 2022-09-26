@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'icon';
+    src: url('icon.eot');
+    src: url('icon.eot?#iefix') format('eot'),
+         url('icon.woff') format('woff'),
+         url('icon.ttf') format('truetype'),
+         url('icon.svg?#icon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+$Icon-arrow-down:    "\EA01";
+$Icon-arrow-left:    "\EA02";
+$Icon-arrow-right:    "\EA03";
+$Icon-compatibility:    "\EA04";
+$Icon-cross:    "\EA05";
+$Icon-download:    "\EA06";
+$Icon-facebook:    "\EA07";
+$Icon-newspaper:    "\EA08";
+$Icon-phone:    "\EA09";
+$Icon-pinterest:    "\EA0A";
+$Icon-search:    "\EA0B";
+$Icon-shopping_cart:    "\EA0C";
+$Icon-time:    "\EA0D";
+$Icon-tools:    "\EA0E";
+$Icon-twitter:    "\EA0F";
+$Icon-user:    "\EA10";
+$Icon-gear:    "\EA11";
+$Icon-play:    "\EA12";
+$Icon-pause:    "\EA13";
+$Icon-volume-high:    "\EA14";
+$Icon-volume-mute:    "\EA15";
+$Icon-linkedin:    "\EA16";
+$Icon-loading:    "\EA17";
+
+@include make-Icon--class($Icon-arrow-down, $class: ".arrow-down");
+@include make-Icon--class($Icon-arrow-left, $class: ".arrow-left");
+@include make-Icon--class($Icon-arrow-right, $class: ".arrow-right");
+@include make-Icon--class($Icon-compatibility, $class: ".compatibility");
+@include make-Icon--class($Icon-cross, $class: ".cross");
+@include make-Icon--class($Icon-download, $class: ".download");
+@include make-Icon--class($Icon-facebook, $class: ".facebook");
+@include make-Icon--class($Icon-newspaper, $class: ".newspaper");
+@include make-Icon--class($Icon-phone, $class: ".phone");
+@include make-Icon--class($Icon-pinterest, $class: ".pinterest");
+@include make-Icon--class($Icon-search, $class: ".search");
+@include make-Icon--class($Icon-shopping_cart, $class: ".shopping_cart");
+@include make-Icon--class($Icon-time, $class: ".time");
+@include make-Icon--class($Icon-tools, $class: ".tools");
+@include make-Icon--class($Icon-twitter, $class: ".twitter");
+@include make-Icon--class($Icon-user, $class: ".user");
+@include make-Icon--class($Icon-gear, $class: ".gear");
+@include make-Icon--class($Icon-play, $class: ".play");
+@include make-Icon--class($Icon-pause, $class: ".pause");
+@include make-Icon--class($Icon-volume-high, $class: ".volume-high");
+@include make-Icon--class($Icon-volume-mute, $class: ".volume-mute");
+@include make-Icon--class($Icon-linkedin, $class: ".linkedin");
+@include make-Icon--class($Icon-loading, $class: ".loading");

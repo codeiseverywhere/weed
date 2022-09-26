@@ -1,0 +1,10 @@
+.FormItem-fieldset {
+    @include make-FormItem--fieldset();
+
+    legend {
+        @include make-Padding($FormItem--spacing);
+        @include make-FormItem--label();
+
+        margin-bottom: $FormItem--label--spacing;
+    }
+}

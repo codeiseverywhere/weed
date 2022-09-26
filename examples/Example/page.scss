@@ -1,0 +1,6 @@
+$Example-page--c64_colors--background_color: #3E32A2;
+$Example-page--c64_colors--color: #7C71DA;
+
+.Example-page--c64_colors {
+    @include make-Page--color($Example-page--c64_colors--color, $Example-page--c64_colors--background_color, $Example-page--c64_colors--color);
+}

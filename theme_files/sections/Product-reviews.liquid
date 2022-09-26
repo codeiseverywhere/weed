@@ -1,0 +1,31 @@
+
+<div id="product-reviews" class="product-reviews">
+  <div class="pr__inner">
+
+    <div class="pr__header">
+      <h4 class="pr__header-title">
+        {{ section.settings.title }}
+      </h4>
+    </div>
+
+    <div class="pr__widget-wrap">
+      {% comment %} Third Party App Widget {% endcomment %}
+    </div>
+
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Reviews",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Section Title",
+        "default": "Nothing is one size fits all, read reviews from people just like you"
+      }
+    ]
+  }
+{% endschema %}

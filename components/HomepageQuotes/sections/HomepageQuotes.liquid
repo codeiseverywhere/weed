@@ -1,0 +1,236 @@
+
+<style>
+.hpq__card-text-span {
+  display: inline;
+  width: 100%;
+  height: auto;
+  padding: 2% 1% 0%;
+  background-color: {{ section.settings.hi-light-color }};
+}
+  .hpq__card-text {
+  font-size: 28px;
+  font-weight: 600;
+  display: inline;
+  color: #000;
+  margin: 0;
+  line-height: 1.7;
+}
+@media screen and (max-width: 1000px){
+  .hpq__card-text {
+    font-size: 24px;
+    font-weight: 600;
+    display: inline;
+    color: #000;
+    background-color: {{ section.settings.hi-light-color }};
+    margin: 0;
+  }
+}
+
+.hpq__slide-quote {
+  font-size: 28px;
+  font-weight: 600;
+  display: inline;
+  margin: 0;
+  line-height: 1.5;
+  color: #000;
+}
+</style>
+
+
+<div id="homepage-quotes" class="homepage-quotes">
+  <div class="hpq-inner">
+
+    <div class="hpq__desktop">
+      <div class="hpq__d-content">
+        {% for block in section.blocks %}
+          <div class="hpq__card">
+            <a href="{{ block.settings.link }}" class="hpq__card-inner">
+
+              <img src="{{ block.settings.image | img_url: 'master' }}" class="hpq__card-image">
+
+              <div class="hpq__card-text-wrap">
+                
+                <span class="hpq__card-text-span">
+                  <h3 class="hpq__card-text">
+                     “{{ block.settings.quote }}”
+                  </h3>
+                </span>
+
+                <div class="hpq__card-bottom-row">
+
+                  <h4 class="hpq__card-name">
+                    {{ block.settings.name }}
+                  </h4>
+
+                  <div class="hpq__card-stars-wrap">
+                    {% if block.settings.stars == 1 %}
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                    {% elsif block.settings.stars == 2 %}
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                    {% elsif block.settings.stars == 3 %}
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                    {% elsif block.settings.stars == 4 %}
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                    {% elsif block.settings.stars == 5 %}
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                    {% endif %}
+                  </div>
+
+                </div>
+              </div>
+
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="hpq__mobile">
+      <div class="hpq__m-slider">
+        {% for block in section.blocks %}
+          <div class="hpq__slide">
+            <div class="hpq__slide-inner">
+
+              <img src="{{ block.settings.image | img_url: 'master' }}" class="hpq__slide-image">
+
+              <div class="hpq__slide-text-wrap">
+
+              <span class="hpq__card-text-span">
+                <h3 class="hpq__slide-quote">
+                  “{{ block.settings.quote }}”
+                </h3>
+              </span>
+                
+                <div class="hpq__slide-bottom-row">
+                  <h4 class="hpq__slide-name">
+                    {{ block.settings.name }}
+                  </h4>
+                  <div class="hpq__slide-star-wrap">
+                    {% if block.settings.stars == 1 %}
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                    {% elsif block.settings.stars == 2 %}
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                    {% elsif block.settings.stars == 3 %}
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                    {% elsif block.settings.stars == 4 %}
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                    {% elsif block.settings.stars == 5 %}
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                      <img src="{{ section.settings.star | img_url: 'master' }}" class="hpq__card-star">
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="hpq__slide-cta">
+                  <a href="{{ block.settings.link }}" class="hpq__slide-cta-link site-btn">
+                    {{ block.settings.link-text }}
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="hpq__m-nav-slider-wrap">
+        <div class="hpq__m-nav-slider">
+          {% for block in section.blocks %}
+            <div class="hpq__m-nav-slide"></div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "HP Quotes",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "star",
+        "label": "Choose a Star Image"
+      },
+      {
+        "type": "color",
+        "id": "hi-light-color",
+        "label": "Hi Light Color",
+        "default": "#fff"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "Block",
+        "name": "Block",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Slide Image"
+          },
+          {
+            "type": "text",
+            "id": "quote",
+            "label": "Review Text",
+            "default": "“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.”"
+          },
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Reviewer Name",
+            "default": "Jane D."
+          },
+          {
+            "type": "range",
+            "id": "stars",
+            "min": 1,
+            "max": 5,
+            "step": 1,
+            "label": "Numbe of Stars",
+            "default": 5
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Slide Link for CTA"
+          },
+          {
+            "type": "text",
+            "id": "link-text",
+            "label": "Text for CTA",
+            "default": "View Product"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "category": "Misc",
+        "name": "HP Quotes"
+      }
+    ]
+  }
+{% endschema %}

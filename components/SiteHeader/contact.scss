@@ -1,0 +1,52 @@
+$SiteHeader-contact--breakpoint: $Viewport-xs;
+
+.SiteHeader-contact_toast {
+    @include make-Offcanvas--toast();
+
+    z-index: $ZIndex-modal;
+
+    text-align: center;
+}
+
+.SiteHeader-contact_content {
+    display: table;
+    width: 100%;
+}
+
+.SiteHeader-contact_information {
+    @include make-Padding();
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+
+    @media (min-width: $SiteHeader-contact--breakpoint) {
+        display: table-cell;
+        width: 50%;
+    }
+}
+
+.SiteHeader-contact_form_wrapper {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+
+    @media (min-width: $SiteHeader-contact--breakpoint) {
+        display: table-cell;
+        width: 50%;
+    }
+}
+
+.SiteHeader-contact_title {
+    margin-top: 0;
+}
+
+.SiteHeader-contact_form_title {
+    @include make-Padding();
+    margin-top: 0;
+}

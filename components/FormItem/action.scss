@@ -1,0 +1,25 @@
+$FormItem--action--spacing: 15px;
+$FormItem--action--spacing_anomaly: ($FormItem--spacing - $FormItem--action--spacing);
+$FormItem--action--border_width: $Button--border_width;
+
+.FormItem--actions {
+    @include make-Column--gutter(12, $Grid--gutter_width: $FormItem--action--spacing_anomaly);
+
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.FormItem-action {
+    @include make-Gutter($FormItem--action--spacing);
+    float: left;
+}
+
+.FormItem-action--primary {
+    order: 1;
+}
+
+.FormItem-action--secondary {
+    order: 2;
+}

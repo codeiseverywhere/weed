@@ -1,0 +1,66 @@
+@@include('./assets/frag/html.frag.html')
+
+<title>Page component - Phylactery 1.0.0 by HUEMOR</title>
+
+<body data-offcanvas-hover-min="960">
+
+<main>
+    @@include('./components/SiteHeader/phylactery_siteheader.frag.html')
+    <header class="HeroHeader HeroHeader--thin HeroHeader--dark_bg" style="background-image: url(../../components/HeroHeader/test_background.svg);">
+        <div class="HeroHeader-valign">
+            <div class="HeroHeader-container">
+                <h1 class="HeroHeader-title">Page component</h1>
+            </div>
+        </div>
+    </header>
+
+    <article class="Example-content">
+        <div class="Container Example-section">
+            <h2>Light-colored page with border</h2>
+        </div>
+        
+        <div class="Example-specimen">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="Page--light-specimen">View Source</button>
+            <div class="Example-large_specimen_content is-Example-specimen--visible" id="Page--light-specimen" data-specimen>
+                <div class="Page Page--light Page--with_border">
+                    <div class="Page-border" style="background-color: #cccccc"></div>
+                    <h2>Lorem ipsum dolor sit amet</h2>
+                    <p>In hendrerit ut libero vitae blandit. Morbi eu ligula congue, euismod odio non, interdum lorem. Morbi vitae pellentesque purus. Quisque et sagittis libero. Etiam pellentesque ornare nisi pellentesque porttitor. Integer id felis rhoncus, consequat lacus ut, dapibus metus. Suspendisse pharetra purus ante, dictum rutrum dui suscipit in. Sed lobortis vel ipsum ac hendrerit. Mauris fermentum, arcu et accumsan pharetra, nisl lacus facilisis elit, eu iaculis nibh mi at diam.</p>
+                </div>
+            </div>
+            <pre data-specimen-source="Page--light-specimen" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+        
+        <div class="Container Example-section">
+            <h2>Dark-colored page with border</h2>
+        </div>
+        
+        <div class="Example-specimen">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="Page--dark-specimen">View Source</button>
+            <div class="Example-large_specimen_content is-Example-specimen--visible" id="Page--dark-specimen" data-specimen>
+                <div class="Page Page--dark Page--with_border">
+                    <div class="Page-border" style="background-color: #cccccc"></div>
+                    <h2>Lorem ipsum dolor sit amet</h2>
+                    <p>In hendrerit ut libero vitae blandit. Morbi eu ligula congue, euismod odio non, interdum lorem. Morbi vitae pellentesque purus. Quisque et sagittis libero. Etiam pellentesque ornare nisi pellentesque porttitor. Integer id felis rhoncus, consequat lacus ut, dapibus metus. Suspendisse pharetra purus ante, dictum rutrum dui suscipit in. Sed lobortis vel ipsum ac hendrerit. Mauris fermentum, arcu et accumsan pharetra, nisl lacus facilisis elit, eu iaculis nibh mi at diam.</p>
+                </div>
+            </div>
+            <pre data-specimen-source="Page--dark-specimen" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+        
+        <div class="Container Example-section">
+            <h2>Custom color example</h2>
+        </div>
+        
+        <div class="Example-specimen">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="Page--c64-specimen">View Source</button>
+            <div class="Example-large_specimen_content is-Example-specimen--visible" id="Page--c64-specimen" data-specimen>
+                <div class="Page Page--dark Page--with_border Example-page--c64_colors">
+                    <div class="Page-border"></div>
+                    <h2>Lorem ipsum dolor sit amet</h2>
+                    <p>In hendrerit ut libero vitae blandit. Morbi eu ligula congue, euismod odio non, interdum lorem. Morbi vitae pellentesque purus. Quisque et sagittis libero. Etiam pellentesque ornare nisi pellentesque porttitor. Integer id felis rhoncus, consequat lacus ut, dapibus metus. Suspendisse pharetra purus ante, dictum rutrum dui suscipit in. Sed lobortis vel ipsum ac hendrerit. Mauris fermentum, arcu et accumsan pharetra, nisl lacus facilisis elit, eu iaculis nibh mi at diam.</p>
+                </div>
+            </div>
+            <pre data-specimen-source="Page--c64-specimen" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+    </article>
+</main>

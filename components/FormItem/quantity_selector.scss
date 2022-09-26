@@ -1,0 +1,35 @@
+$FormItem-quantity_selector_button--background_color: $Color--gray;
+$FormItem-quantity_selector_button--arrow_size: 10px;
+$FormItem-quantity_selector_button--arrow_color: $Color--gray_darker;
+
+.FormItem-quantity_selector {
+    position: relative;
+
+    input {
+        background-color: $FormItem-quantity_selector_button--background_color;
+        max-width: 100%;
+    }
+}
+
+.FormItem-quantity_selector_button {
+    @include make-Button--revert(button);
+
+    position: absolute;
+    right: 15px;
+}
+
+.FormItem-quantity_selector_button--plus {
+    top: 5px;
+
+    font-size: 0;
+    border: ($FormItem-quantity_selector_button--arrow_size / 2) solid transparent;
+    border-bottom-color: $FormItem-quantity_selector_button--arrow_color;
+}
+
+.FormItem-quantity_selector_button--minus {
+    bottom: 5px;
+
+    font-size: 0;
+    border: ($FormItem-quantity_selector_button--arrow_size / 2) solid transparent;
+    border-top-color: $FormItem-quantity_selector_button--arrow_color;
+}

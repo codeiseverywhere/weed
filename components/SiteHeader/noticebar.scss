@@ -1,0 +1,66 @@
+
+
+$SiteHeader-notice_bar--height: #{"{{ settings.announcement-bar-height }}"};
+
+
+$SiteHeader-notice_bar--bg_color: $Color--Announcement-Bar-background;
+$SiteHeader-notice_bar--color: $Color--Announcement-Bar-text;
+
+$SiteHeader-notice_bar--font_size: 11px;
+$SiteHeader-notice_bar--font_weight: $Font-weight--bold;
+$SiteHeader-notice_bar--line_height: 1.25;
+
+$SiteHeader-notice_bar--line_height_calculated: ($SiteHeader-notice_bar--font_size * $SiteHeader-notice_bar--line_height);
+$SiteHeader-notice_bar--margin_vertical: (($SiteHeader-notice_bar--height_bp - $SiteHeader-notice_bar--line_height_calculated) / 2);
+
+.SiteHeader-notice_bar {
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+
+    width: 100%;
+    height: $SiteHeader-notice_bar--height;
+
+    font-family: $Font-family;
+    font-size: $SiteHeader-notice_bar--font_size;
+    font-weight: $SiteHeader-notice_bar--font_weight;
+    line-height: $SiteHeader-notice_bar--line_height;
+
+    background-color: $SiteHeader-notice_bar--bg_color;
+    color: $SiteHeader-notice_bar--color
+}
+
+.SiteHeader-notice {
+    // @include make-Container($SiteHeader--breakpoint_sm, $Container-sm);
+    // @include make-Container($SiteHeader--breakpoint_md, $Container-md);
+    // @include make-Container($SiteHeader--breakpoint_lg, $Container-lg);
+    text-align: center;
+    margin: 0px 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: $SiteHeader-notice_bar--color;
+
+    @extend .clearfix;
+}
+
+@media (max-width: $SiteHeader--breakpoint_max) {
+    .SiteHeader-notice {
+        display: none;
+    }
+}
+
+@media (min-width: $SiteHeader--breakpoint) {
+    .SiteHeader-notice_bar {
+        height: $SiteHeader-notice_bar--height_bp;
+    }
+}
+
+.SiteHeader-notice-text {
+    margin: 0px auto;
+    font-size: 12px
+}

@@ -1,0 +1,134 @@
+{% include 'Breadcrumb' %}
+
+<div class="Page Page--customer Page--customer-account Account">
+    <h1 class="Page-title AccountDashboard-title">{{ 'customer.account.title' | t }}</h1>
+
+    <div class="AccountDashboard-ordersblock">
+        <h4 class="AccountDashboard-orderstitle">{{ 'customer.orders.title' | t }}</h4>
+
+        {% comment %}
+          If we have past orders, loop through each one
+        {% endcomment %}
+        {% if customer.orders.size != 0 %}
+
+            <table class="AccountDashboard-orderslist DataTable DataTable--inlinelabels DataTable--lineitems">
+                <thead>
+                    <tr>
+                        <th>Order</th>
+                        <th>Date</th>
+                        <th>Payment Status</th>
+                        <th>Fulfillment Status</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody class="DataTable-break">
+                    {% for order in customer.orders %}
+                        <tr class="Order AccountDashboard-order">
+                            <td data-label="Order" class="Order-id">{{ order.name | link_to: order.customer_url }}</td>
+                            <td data-label="Date" class="Order-date">{{ order.created_at | date: "%b %d, %Y" }}</td>
+                            <td data-label="Payment" class="Order-financialstatus">{{ order.financial_status }}</td>
+                            <td data-label="Fulfillment" class="Order-fulfillmentstatus">{{ order.fulfillment_status }}</td>
+                            <td data-label="Total" class="Order-grandtotal">{{ order.total_price | money }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        {% else %}
+            <p class="AccountDashboard-ordersempty">You haven't placed any orders yet.</p>
+        {% endif %}
+    </div>
+
+    <div class="AccountDashboard-detailsblock">
+        <h4 class="AccountDashboard-detailstitle">Account Details</h4>
+
+        {% if customer.default_address != nil %}
+            <div class="AccountDashboard-address Address Address--default">
+                <h5 class="Address-name Address-title">{{ customer.name }}</h5>
+
+                <span class="Address-street Address-street--line1">{{ customer.default_address.address1 }}</span><br>
+
+                {% if customer.default_address.address2 != "" %}
+                    <span class="Address-street Address-street--line2">{{ customer.default_address.address2 }}</span><br>
+                {% endif %}
+
+                {% if customer.default_address.city != "" %}
+                    <span class="Address-city">{{ customer.default_address.city }}</span>,
+                {% endif %}
+
+                {% if customer.default_address.province_code != "" %}
+                    <span class="Address-province">{{ customer.default_address.province_code | upcase }}</span>,
+                {% endif %}
+
+                {% if customer.default_address.zip != "" %}
+                    <span class="Address-postalcode">{{ customer.default_address.zip | upcase }}</span><br>
+                {% endif %}
+
+                {% if customer.default_address.country != "" %}
+                    <span class="Address-country">{{ customer.default_address.country }}</span><br>
+                {% endif %}
+
+                {% if customer.default_address.phone != "" %}
+                    <span class="Address-phone">{{ customer.default_address.phone }}</span>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        <p><a href="/account/addresses" class="AccountDashboard-morelink">View Addresses ({{ customer.addresses_count }})</a></p>
+    </div>
+
+</div>
+
+<h1>{{ 'customer.account.title' | t }}</h1>
+
+<h2>{{ 'customer.orders.title' | t }}</h2>
+
+{% paginate customer.orders by 20 %}
+  {% if customer.orders.size != 0 %}
+    <table class="responsive-table">
+      <thead>
+        <tr>
+          <th>{{ 'customer.orders.order_number' | t }}</th>
+          <th>{{ 'customer.orders.date' | t }}</th>
+          <th>{{ 'customer.orders.payment_status' | t }}</th>
+          <th>{{ 'customer.orders.fulfillment_status' | t }}</th>
+          <th>{{ 'customer.orders.total' | t }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for order in customer.orders %}
+          <tr class="responsive-table-row">
+            <td data-label="{{ 'customer.orders.order_number' | t }}">{{ order.name | link_to: order.customer_url }}</td>
+            <td data-label="{{ 'customer.orders.date' | t }}">{{ order.created_at | date: format: 'month_day_year' }}</td>
+            <td data-label="{{ 'customer.orders.payment_status' | t }}">{{ order.financial_status_label }}</td>
+            <td data-label="{{ 'customer.orders.fulfillment_status' | t }}">{{ order.fulfillment_status_label }}</td>
+            <td data-label="{{ 'customer.orders.total' | t }}">{{ order.total_price | money }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>{{ 'customer.orders.none' | t }}</p>
+  {% endif %}
+
+  {% if paginate.pages > 1 %}
+    {% include 'pagination' %}
+  {% endif %}
+
+{% endpaginate %}
+
+<h2>{{ 'customer.account.details' | t }}</h2>
+
+{{ customer.default_address | format_address }}
+
+<a href="/account/addresses">{{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})</a>
+
+
+{% schema %}
+  {
+    "name": "Account Page",
+    "settings": [
+      
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,33 @@
+//Basic styling properties for buttons.
+//Every button style should pull these in as default parameters.
+$Button--bg_color: $Color--purple_light;
+$Button--color: $Font-color--black; //contrast($Button--bg_color, $Font-color--black, $Font-color--white);
+$Button--hover_bg_color: #{"{{settings.color_primary | color_darken: 10}}"}; //darken($Color--primary, 10%);
+$Button--hover_bg_opacity: 0.1;
+$Button--hover_bg_color_pseudo: $Color--purple;
+$Button--hover_color: $Font-color--black; //contrast($Button--hover_bg_color, $Font-color--black, $Font-color--white);
+$Button--bg_color_pseudo: $Color--purple_light;
+$Button--bg_color_pseudo_2: $Color--black;
+$Button--hover_text_color: $Color--white;
+$Button--border_color: $Button--bg_color;
+$Button--border_color_pseudo: $Color--purple_light;
+$Button--hover_border_color: $Color--purple;
+$Button--border_radius_pseudo: $Border-radius--pseudo;
+$Button--border_width: $Border-width--normal;
+$Button--border_width_pseudo: $Border-width--normal;
+$Button--border_radius: $Border-radius;
+$Button--border_radius_normal: $Border-radius--normal;
+$Button--border_radius_round: $Border-radius--round;
+$Button--border_style: $Border-style;
+$Button--padding: 15px 20px;
+$Button--padding_large: 15px 40px;
+$Button--padding_offset: 15px 25px 15px 45px;
+$Button--font_family: $Font-family;
+$Button--font_weight: $Font-weight--bold;
+$Button--transition_time: 0.3s;
+$Button--transition_easing: cubic-bezier(0.75, 0, 0.125, 1);
+
+@import "link.scss";
+@import "menu_toggle.scss";
+@import "basic.scss";
+@import "element_defaults.scss";

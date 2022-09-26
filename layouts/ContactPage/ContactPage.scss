@@ -1,0 +1,59 @@
+$ContactPage-contacts--background_color: $Color--gray_light;
+$ContactPage-contacts--color: $Font-color--black;
+
+.ContactPage {
+
+}
+
+.ContactPage-content_row {
+    @include make-Container();
+}
+
+.ContactPage-content {
+    @include make-Column--gutter(6, min, $Viewport-md);
+    @include make-Column--gutter-offset(1, min, $Viewport-md);
+    @include make-Column--gutter-after(1, min, $Viewport-md);
+
+    @include make-ContentSection--spacing();
+}
+
+.ContactPage-form {
+    @include make-Row($FormItem--spacing);
+}
+
+.ContactPage-form_item {
+    @include make-Column(6, min, $Viewport-xs);
+}
+
+.ContactPage-form_item--message {
+    @include make-Column(12, min, $Viewport-xs);
+}
+
+.ContactPage-contacts {
+    @include make-Column(10, min, $Viewport-sm);
+    @include make-Column-offset(1, min, $Viewport-sm);
+    @include make-Column-after(1, min, $Viewport-sm);
+    @include make-Column(4, min, $Viewport-md);
+    @include make-Column-offset(0, min, $Viewport-md);
+    @include make-Column-after(0, min, $Viewport-md);
+    @include make-ContentSection--spacing();
+    @include make-Type--color($ContactPage-contacts--color);
+
+    background-color: $ContactPage-contacts--background_color;
+}
+
+.ContactPage-contacts_title {
+    @include make-Column--gutter(8, min, $Viewport-sm);
+    @include make-Column--gutter-offset(2, min, $Viewport-sm);
+    @include make-Column--gutter-after(2, min, $Viewport-sm);
+}
+
+.ContactPage-contact_option {
+    @include make-Column--gutter(4, min, ($Viewport-xs + 80px));
+    @include make-Column--gutter(8, min, $Viewport-sm);
+    @include make-Column--gutter-offset(2, min, $Viewport-sm);
+    @include make-Column--gutter-after(2, min, $Viewport-sm);
+
+    font-family: $Font-family;
+    font-weight: $Font-weight;
+}

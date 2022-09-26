@@ -1,0 +1,160 @@
+
+
+<div id="homepage-before-after" class="hompage-before-after">
+  <div class="hba__inner">
+
+    <div class="hba__header-wrap">
+      <h4 class="hba__header-title">
+        {{ section.settings.section-title }}
+      </h4>
+      <p class="hba__header-text">
+        {{ section.settings.section-text }}
+      </p>
+    </div>
+
+    <div class="hba__content">
+
+      <div class="hba__desktop">
+        <div class="hba__d-blocks">
+          {% for block in section.blocks %}
+            <div class="hba__d-block">
+              <div class="hba__d-image-wrap">
+                <img src="{{ block.settings.image | img_url: 'master' }}" class="hba__d-image">
+              </div>
+              <div class="hba__d-text-wrap">
+                <p class="p-small hba__d-text">
+                  {{ block.settings.review }}
+                </p>
+                <h6 class="hba__d-sub-text">
+                  {{ block.settings.text }}
+                </h6>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="hba__mobile">
+
+        <div class="hba__slider">
+          {% for block in section.blocks %}
+            <div class="hba__slide">
+              <div class="hba__slide-image-wrap">
+                <img src="{{ block.settings.image | img_url: 'master' }}" class="hba__slide-image">
+              </div>
+              <div class="hba__slide-text-wrap">
+                <p class="p-small hba__slide-text">
+                  {{ block.settings.review }}
+                </p>
+                <h6 class="hba__slide-sub-text">
+                  {{ block.settings.text }}
+                </h6>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="hba__slider-nav">
+          {% for block in section.blocks %}
+            <div class="hba__slide-nav"></div>
+          {% endfor %}
+        </div>
+
+      </div>
+
+      <div class="hba__d-cta-wrap">
+        <a href="{{ section.settings.link }}" class="hba__d-cta site-btn">
+          {{ section.settings.button-text }}
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+{% schema %}
+  {
+    "name": "HP Before and After",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "text",
+        "id": "section-title",
+        "label": "Section Title",
+        "default": "Lorem ipsum dolor sit amet"
+      },
+      {
+        "type": "text",
+        "id": "section-text",
+        "label": "Section Text",
+        "default": "Lorem ipsum dolor sit amet"
+      },
+      {
+        "type": "header",
+        "content": "Button"
+      },
+      {
+        "type": "text",
+        "id": "button-text",
+        "label": "Button Text",
+        "default": "Visit Page"
+      },
+      {
+        "type": "url",
+        "id": "link",
+        "label": "Button Link"
+      },
+      {
+        "type": "color",
+        "id": "button-bg-color",
+        "label": "Button Background Color",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "button-color",
+        "label": "Button Text Color",
+        "default": "#fff"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "Block",
+        "name": "Block",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Slide Image"
+          },
+          {
+            "type": "text",
+            "id": "review",
+            "label": "Review Text",
+            "default": "“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.”"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Reviewer Name",
+            "default": "Jane doe"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "category": "Misc",
+        "name": "HP Before & After"
+      }
+    ]
+  }
+{% endschema %}

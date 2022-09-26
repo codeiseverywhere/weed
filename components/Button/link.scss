@@ -1,0 +1,8 @@
+@mixin make-Button--link() {
+  color: $Color-body-black;
+  font-family: $Font-family;
+
+  &:hover,
+  &:focus {
+  }
+}

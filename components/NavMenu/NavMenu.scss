@@ -1,0 +1,14 @@
+//Forward variable declarations
+$SiteHeader--height: 100px;
+$SiteHeader--height_bp: 100px;
+
+$SiteHeader--breakpoint: $Viewport-md;
+$SiteHeader--breakpoint_max: ($SiteHeader--breakpoint - 1px);
+
+$SiteHeader--breakpoint_sm: (max($SiteHeader--breakpoint, $Viewport-sm));
+$SiteHeader--breakpoint_md: (max($SiteHeader--breakpoint, $Viewport-md));
+$SiteHeader--breakpoint_lg: (max($SiteHeader--breakpoint, $Viewport-lg));
+
+@import "main_menu.scss";
+@import "dropdown.scss";
+@import "tabs.scss";

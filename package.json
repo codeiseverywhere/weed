@@ -1,0 +1,41 @@
+{
+  "name": "skeleton-peddler",
+  "version": "1.0.0",
+  "description": "Skeleton theme for Shopify",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "theme"
+  ],
+  "author": "David Wendt <david.w@huemordesigns.com>, Mark Pesantes <mark@huemordesigns.com>",
+  "license": "Proprietary",
+  "dependencies": {
+    "asset-builder": "~1.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "~2.3.1",
+    "gulp-concat": "~2.5.2",
+    "gulp-consolidate": "~0.1.2",
+    "gulp-cssimport": "^7.0.0",
+    "gulp-declare": "~0.3.0",
+    "gulp-file-include": "^1.0.0",
+    "gulp-handlebars": "~4.0.0",
+    "gulp-iconfont": "~2.0.0",
+    "gulp-merge": "~0.1.1",
+    "gulp-notify": "~2.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "~1.2.2",
+    "gulp-sass": "^4.1.0",
+    "gulp-shopify-upload": "^2.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-stream-limiter": "^1.0.0",
+    "gulp-uglify": "~1.2.0",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "~4.2.4",
+    "gulp-wrap": "^0.15.0",
+    "handlebars": "^4.7.7",
+    "map-stream": "0.0.7",
+    "sass": "^1.42.1"
+  }
+}

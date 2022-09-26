@@ -1,0 +1,19 @@
+$ProductView--breakpoint: $Viewport-md;
+
+.ProductView {
+    @include make-Container();
+}
+
+.ProductView-options {
+    @include make-Column--gutter(4, min, $ProductView--breakpoint);
+}
+
+.ProductView-products {
+    @include make-Column--gutter(8, min, $ProductView--breakpoint);
+}
+
+.ProductView-product {
+    @include make-Padding;
+}
+
+@import "grid.scss";

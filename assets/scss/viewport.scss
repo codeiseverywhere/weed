@@ -1,0 +1,13 @@
+$Viewport-hh: 320px;
+$Viewport-xs: 480px;
+$Viewport-sm: 768px;
+$Viewport-md: 992px;
+$Viewport-lg: 1200px;
+$Viewport-xl: 1600px;
+
+$Viewport-hh-max: ($Viewport-xs - 1px);
+$Viewport-xs-max: ($Viewport-sm - 1px);
+$Viewport-sm-max: ($Viewport-md - 1px);
+$Viewport-md-max: ($Viewport-lg - 1px);
+$Viewport-lg-max: ($Viewport-xl - 1px);
+

@@ -1,0 +1,95 @@
+<div class="AjaxCart">
+    <hgroup class="AjaxCart-cart_header">
+        <button class="AjaxCart-dismiss" type="button" data-dismiss="offcanvas">Dismiss</button>
+        <h2 class="AjaxCart-cart_title">Your Cart</h2>
+    </hgroup>
+    {{#if items}}
+        {{#each items as |item delta|}}
+            <div class="AjaxCart-item">
+                <div class="AjaxCart-item_image">
+                    {{#if item.featured_image}}
+                        <img src="{{AjaxCart_img-url item.featured_image.url "200x"}}" alt="{{item.featured_image.alt}}">
+                    {{/if}}
+                </div>
+                <div class="AjaxCart-item_details">
+                    <h3 class="AjaxCart-item_title"><a href="{{item.url}}">{{item.product_title}}</a></h3>
+                    {{#if item.options_with_values}}
+                        <div class="AjaxCart-item_options">
+                            {{#each item.options_with_values as |option delta|}}
+                                {{#AjaxCart_not-default-option option}}
+                                    <div class="AjaxCart-item_option">
+                                        <span class="AjaxCart-item_option_title">{{option.name}}</span>:
+                                        <span class="AjaxCart-item_option_value">{{option.value}}</span>
+                                    </div>
+                                {{/AjaxCart_not-default-option}}
+                            {{/each}}
+                        </div>
+                    {{/if}}
+                    <div class="AjaxCart-item_quantity_selector" data-ajaxcart-quantity data-ajaxcart-quantity-lineitem="{{item.id}}">
+                        <input class="AjaxCart-item_quantity" type="number" value="{{item.quantity}}">
+                        <button type="button" class="AjaxCart-item_quantity_toggle AjaxCart-item_quantity_toggle--increase" data-ajaxcart-quantitytoggle="1">+</button>
+                        <button type="button" class="AjaxCart-item_quantity_toggle AjaxCart-item_quantity_toggle--decrease" data-ajaxcart-quantitytoggle="-1">-</button>
+                    </div>
+                    <button type="button" class="AjaxCart-item_remove" data-ajaxcart-remove data-ajaxcart-remove-lineitem="{{item.id}}">Remove</button>
+                    {{#each item.line_level_discount_applications as |discount delta| }}
+                        <div class="AjaxCart-item_discount">
+                            {{discount.discount_application.title}}: <span class="AjaxCart-item_price AjaxCart-item_price--discount">{{AjaxCart_money discount.amount money_format}}</span>
+                            {{#if discount.discount_application.description}}
+                                <div class="AjaxCart-item_discount_description">{{discount.discount_application.description}}</div>
+                            {{/if}}
+                        </div>
+                    {{/each}}
+                    <span class="AjaxCart-item_price AjaxCart-item_price--total">{{AjaxCart_money item.final_line_price money_format}}</span>
+                </div>
+            </div>
+        {{/each}}
+        <hr class="AjaxCart-divider">
+        <table class="AjaxCart-totals">
+            <tr class="AjaxCart-total AjaxCart-total--subtotal">
+                <th>Subtotal</th>
+                <td>{{AjaxCart_money items_subtotal_price money_format}}</td>
+            </tr>
+            {{#each cart_level_discount_applications as |discount delta| }}
+                <tr class="AjaxCart-total AjaxCart-total--discount">
+                    <th>Promotion <span class="AjaxCart-total_note">({{discount.title}})</span></th>
+                    <td>{{AjaxCart_money discount.total_allocated_amount money_format}}</td>
+                </tr>
+            {{/each}}
+            <tr class="AjaxCart-total AjaxCart-total--tax">
+                <th>Tax <span class="AjaxCart-total_note">(calculated in checkout)</span></th>
+                <td>&mdash;</td>
+            </tr>
+            <tr class="AjaxCart-total AjaxCart-total--shipping" data-ajaxcart-shipping>
+                <th>Shipping
+                    <span class="AjaxCart-total_note" data-ajaxcart-shipping-destination></span>
+                    <button type="button" class="AjaxCart-shipping_address_edit_button" data-ajaxcart-shipping-editbutton>(edit)</button>
+                    <form class="AjaxCart-shipping_address_form" data-ajaxcart-shipping-form>
+                        <div class="AjaxCart-shipping_address_input FormItem FormItem--stacked">
+                            <select type="text" name="shipping_address[country]" data-ajaxcart-shipping-countryinput>
+                                <option>Country</option>
+                            </select>
+                        </div>
+                        <div class="AjaxCart-shipping_address_input FormItem FormItem--stacked">
+                            <select type="text" name="shipping_address[province]" data-ajaxcart-shipping-provinceinput>
+                                <option>Province</option>
+                            </select>
+                        </div>
+                        <div class="AjaxCart-shipping_address_input FormItem FormItem--stacked">
+                            <input type="text" name="shipping_address[zip]" placeholder="Postal Code">
+                        </div>
+                        <div class="AjaxCart-shipping_address_action FormItem FormItem--actions">
+                            <button type="submit" class="FormItem-action FormItem-action--primary">Edit</button>
+                        </div>
+                    </form>
+                </th>
+                <td data-ajaxcart-shipping-price>&mdash;</td>
+            </tr>
+            <tr class="AjaxCart-total AjaxCart-total--grandtotal">
+                <th>Estimated Total</th>
+                <td>{{AjaxCart_money total_price money_format}}</td>
+            </tr>
+        </table>
+    {{else}}
+        <div class="AjaxCart-empty_state">Nothing here!</div>
+    {{/if}}
+</div>

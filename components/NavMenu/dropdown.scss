@@ -1,0 +1,85 @@
+$NavMenu--dropdown--height: 35px;
+
+$NavMenu--dropdown--font_family: $Font-family;
+$NavMenu--dropdown--font_size: 14px;
+$NavMenu--dropdown--font_weight: $Font-weight--bold;
+$NavMenu--dropdown--line_height: 1;
+$NavMenu--dropdown--line_height_computed: ($NavMenu--dropdown--line_height * $NavMenu--dropdown--font_size);
+
+$NavMenu--dropdown--padding_vertical: 15px;
+$NavMenu--dropdown--padding_horizontal: ($Grid--gutter_width / 2);
+
+$NavMenu--dropdown--padding_vertical_lg: 7px;
+$NavMenu--dropdown--padding_horizontal_lg: ($Grid--gutter_width / 2);
+
+$NavMenu--dropdown-link--color: $Font-color--black;
+
+$NavMenu--dropdown--border_color: $Color--primary;
+$NavMenu--dropdown--border_width: $Border-width--normal;
+
+$NavMenu--dropdown-link--heading--font_size: 18px;
+
+.NavMenu--dropdown {
+    padding: 5px 0;
+    margin: 0;
+    list-style: none inside none;
+    
+    font-family: $NavMenu--dropdown--font_family;
+    font-weight: $NavMenu--dropdown--font_weight;
+    font-size: 0;
+    
+    text-align: left;
+    
+    @media (min-width: $SiteHeader--breakpoint) {
+        border-left: $NavMenu--dropdown--border_width solid $NavMenu--dropdown--border_color;
+    }
+}
+
+.NavMenu--dropdown-link {
+    font-size: $NavMenu--dropdown--font_size;
+    line-height: $NavMenu--dropdown--line_height;
+
+    position: relative;
+
+    &.expanded > a {
+        //.make-icon(before; $icon-arrow-right; 16px; $Color--white);
+
+        &:before {
+            position: absolute;
+            right: 8px;
+            top: 10px;
+        }
+    }
+
+    a, a:hover, a:focus {
+        color: $NavMenu--dropdown-link--color;
+        text-decoration: none;
+        text-transform: none;
+
+        display: inline-block;
+        
+        width: 100%;
+
+        span {
+            display: inline-block;
+            padding: $NavMenu--dropdown--padding_vertical $NavMenu--dropdown--padding_horizontal;
+
+            @media (min-width: $SiteHeader--breakpoint) {
+                padding: $NavMenu--dropdown--padding_vertical_lg $NavMenu--dropdown--padding_horizontal_lg;
+                white-space: nowrap;
+            }
+        }
+    }
+}
+
+.NavMenu--dropdown-link--heading {
+    font-size: $NavMenu--dropdown-link--heading--font_size;
+}
+
+.NavMenu--dropdown-heading {
+    padding: $NavMenu--dropdown--padding_vertical $NavMenu--dropdown--padding_horizontal;
+
+    @media (min-width: $SiteHeader--breakpoint) {
+        padding: $NavMenu--dropdown--padding_vertical_lg $NavMenu--dropdown--padding_horizontal_lg;
+    }
+}

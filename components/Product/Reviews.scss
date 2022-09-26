@@ -1,0 +1,53 @@
+.product-reviews {
+  width: 100%;
+  height: auto;
+  scroll-margin-top: 120px;
+}
+.pr__inner {
+  width: 100%;
+  max-width: 1140px;
+  height: 100%;
+  margin: 0px auto;
+}
+
+.pr__header {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.pr__header-title {
+  max-width: 600px;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 42px;
+  color: #212222;
+  margin: 0;
+}
+
+.pr__widget-wrap {
+  width: 100%;
+  height: auto;
+  border: 1px solid #eaeaea;
+  height: 800px;
+}
+
+@media screen and (max-width: 900px) {
+  .pr__inner {
+    width: 100%;
+    max-width: 1140px;
+    height: 100%;
+    margin: 0px auto;
+    padding: 0px 20px;
+  }
+  .pr__header {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 35px;
+  }
+}

@@ -1,0 +1,40 @@
+.SiteHeader-dropdown {
+    @media (max-width: $SiteHeader--breakpoint_max) {
+        @include make-Offcanvas--revert();
+
+        &, &.Offcanvas {
+            &.is-Offcanvas--closed {
+                display: none;
+            }
+
+            &.is-Offcanvas--open {
+                display: block;
+            }
+        }
+    }
+
+    @media (min-width: $SiteHeader--breakpoint) {
+        @include make-Offcanvas--revert();
+
+        &, &.Offcanvas {
+            position: absolute;
+            top: 100%;
+            left: 0;
+
+            background-color: $SiteHeader--background;
+            transition: opacity 0.15s;
+            transform-origin: top;
+
+            &.is-Offcanvas--closed {
+                transform: scaleY(0);
+                opacity: 0;
+                transition: opacity 0.15s, transform 0s 0.15s;
+            }
+
+            &.is-Offcanvas--open {
+                transform: scaleY(1);
+                opacity: 1;
+            }
+        }
+    }
+}

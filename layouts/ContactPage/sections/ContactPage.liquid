@@ -1,0 +1,51 @@
+
+<style>
+.contact-form {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  text-align: center;
+}
+</style>
+
+  {% assign formId = 'ContactForm' %}
+  {% form 'contact', id: ContactForm %}
+
+    <div class="FormItem">
+      <label for="FormItem-name">Name</label>
+      <input id="{{ formId }}-name" name="name" type="text" value="" placeholder="Name" />
+    </div>
+    
+
+    <div class="FormItem">
+      <label for="FormItem-email">Email</label>
+      <input id="{{ formId }}-email" name="email" type="email" value="" placeholder="Email" />
+    </div>
+    
+
+    <div class="FormItem">
+      <label for="FormItem-phone">Phone Number</label>
+      <input id="{{ formId }}-phone" name="phoneNumber" type="tel" value="" placeholder="Phone Number" />
+    </div>
+    
+
+    <div class="FormItem">
+    <label for="FormItem-reason">Reason for inquiry</label>
+      <select id="{{ formId }}-reason" name="reasons" form="">
+        <option disable default >Reason for inquiry</option>
+        <option value="idk">IDK DUDE!</option>
+        <option value="wholeSale">Whole Sale</option>
+        <option value="customerSupport">Customer Support</option>
+      </select>
+    </div>
+    
+
+    <div class="FormItem">
+    <label for="FormItem-phone">Message</label>
+      <textarea id="{{ formId }}-message" rows="4" cols="50" name="message" form="" placeholder="Message"></textarea>
+    </div>
+    
+
+    <button type="submit" style="color: #fff">Send My Message</button>
+    
+  {% endform %}

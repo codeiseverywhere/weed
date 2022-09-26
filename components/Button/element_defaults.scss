@@ -1,0 +1,28 @@
+/* Strip browser default styling from button and anchor elements. */
+@mixin make-Button--revert($tagname) {
+    @if $tagname == "button" {
+        background: transparent;
+        border-width: 0px;
+
+        appearance: none;
+        padding: 0;
+    } @else if $tagname == "a" {
+        color: inherit;
+        font-family: inherit;
+
+        &, &:hover, &:focus {
+            text-decoration: none;
+        }
+    } @else {
+        @error "No revert styling configured for <#{$tagname}> tags.";
+    }
+}
+
+button {
+    @include make-Button--basic();
+}
+
+a {
+    //Note: Browser/normalize.less anchor styling also applies.
+    @include make-Button--link();
+}

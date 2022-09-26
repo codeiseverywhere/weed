@@ -1,0 +1,86 @@
+//BreakPoints can be found in main.scss or assets/scss/viewport.scss
+
+$AsSeenIn-breakpoint--before-max-width: 1140px;
+$AsSeenIn-breakpoint--before-max-width_max: (
+  $AsSeenIn-breakpoint--before-max-width - 1px
+);
+
+.as-seen-in {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.asi-inner {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0px auto;
+}
+
+/* Mobile Header */
+.asi__header-wrap {
+  display: none;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 25px;
+}
+.asi__header {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.asi__content-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.asi__inline-header-wrap {
+  display: inline-block;
+}
+.asi__inline-header {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.asi__Icons-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.asi__Icon-wrap {
+  padding: 0px 5px;
+}
+.asi__Icon {
+  max-width: 109px;
+  object-fit: contain;
+}
+
+@media screen and (max-width: $AsSeenIn-breakpoint--before-max-width_max) {
+  .asi__content-wrapper {
+    padding: 0px 20px;
+  }
+}
+
+@media screen and (max-width: $Viewport-sm-max) {
+  .as-seen-in {
+    margin-top: 0px;
+  }
+  .asi__header-wrap {
+    display: block;
+  }
+  .asi__inline-header-wrap {
+    display: none;
+  }
+  .asi__Icon {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}

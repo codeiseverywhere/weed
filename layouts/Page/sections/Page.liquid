@@ -1,0 +1,19 @@
+<div class="Page Page--static StaticPage StaticPage--normal">
+    <h2 class="Page-title">{{ page.title }}</h2>
+
+    {% comment %}
+      Regular page content goes here.
+    {% endcomment %}
+    <div class="rte StaticPage-body">
+      {{ page.content }}
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Page Page",
+    "settings": [
+      
+    ]
+  }
+{% endschema %}

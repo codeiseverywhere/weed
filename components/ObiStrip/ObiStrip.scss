@@ -1,0 +1,50 @@
+$ObiStrip--background_color: $Color--primary;
+$ObiStrip--color: #{"{{settings.color_black | color_contrast: settings.color_body_text_black, settings.color_body_text_white}}"}; //contrast($ObiStrip--background_color, $Font-color--black, $Font-color--white);
+
+$ObiStrip--font_family: $Font-family;
+$ObiStrip--font_weight: $Font-weight;
+$ObiStrip--font_size: $Headings-h4--font_size_sm;
+
+.ObiStrip {
+    @extend .ContentSection;
+    @include make-Type--color($ObiStrip--color);
+
+    font-family: $ObiStrip--font_family;
+    font-weight: $ObiStrip--font_weight;
+    font-size: $ObiStrip--font_size;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ObiStrip-background {
+    @extend .ContentSection-background;
+
+    background-color: $Color--primary;
+}
+
+.ObiStrip-content {
+    @include make-Container();
+    @include make-Padding();
+
+    text-align: center;
+
+    p {
+        display: inline-block;
+
+        font-family: $ObiStrip--font_family;
+        font-weight: $ObiStrip--font_weight;
+        font-size: $ObiStrip--font_size;
+    }
+
+    a {
+        display: inline-block;
+
+        font-family: $ObiStrip--font_family;
+        font-weight: $ObiStrip--font_weight;
+        font-size: $ObiStrip--font_size;
+
+        color: $ObiStrip--color;
+    }
+}

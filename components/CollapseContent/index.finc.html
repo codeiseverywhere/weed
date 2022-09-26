@@ -1,0 +1,48 @@
+@@include('./assets/frag/html.frag.html')
+
+<title>CollapseContent component - Phylactery 1.0.0 by HUEMOR</title>
+
+<body data-offcanvas-hover-min="960">
+
+<main>
+    @@include('./components/SiteHeader/phylactery_siteheader.frag.html')
+    <header class="HeroHeader HeroHeader--thin HeroHeader--dark_bg" style="background-image: url(../../components/HeroHeader/test_background.svg);">
+        <div class="HeroHeader-valign">
+            <div class="HeroHeader-container">
+                <h1 class="HeroHeader-title">CollapseContent component</h1>
+            </div>
+        </div>
+    </header>
+
+    <article class="Example-content">
+        <div class="Container Example-section">
+            <h2>Example collapsible content</h2>
+            <p>CollapseContent allows you to display content that expans to
+            include more content.</p>
+        </div>
+        
+        <div class="Example-specimen Container">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="CollapseContent-specimen">View Source</button>
+            <div class="Example-large_specimen_content is-Example-specimen--visible" id="CollapseContent-specimen" data-specimen>
+                <section class="CollapseContent CollapseContent--collapse" data-collapsecontent-region>
+                    <button type="button" data-collapsecontent-trigger class="trigger">
+                        <h2>Lorep ipsum dolor sit amet</h2>
+                    </button>
+                    <div class="CollapseContent-body CollapseContent--collapse-body" data-collapsecontent-body>
+                        <div class="Example-unstyled_specimen_content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                            do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                            irure dolor in reprehenderit in voluptate velit esse cillum
+                            dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt
+                            mollit anim id est laborum.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <pre data-specimen-source="CollapseContent-specimen" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+    </article>
+</main>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width">
+
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,600" rel="stylesheet">
+<link rel="stylesheet" href="/build/main.css">
+
+<script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+<script src="/build/script.js" type="application/javascript"></script>
+
+
+<meta name="viewport" content="width=device-width">
+
+<script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+<script src="../../build/script.js" type="application/javascript"></script>
+
+<title>Grid - Phylactery 1.0.0 by HUEMOR</title>
+
+<body data-offcanvas-hover-min="960">
+    <main>
+        <header class="SiteHeader">
+    <div class="SiteHeader-container">
+        <div class="SiteHeader-banner">
+            <a class="SiteHeader-brand" href="/">
+                <img class="SiteHeader-logo" src="/components/SiteHeader/logo.svg" alt="Phylactery">
+            </a>
+
+            <button type="button" class="SiteHeader-toggle Button Button--menu_toggle" data-toggle="offcanvas" data-target="#SiteHeader-navigation_id0">
+                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--first"></span>
+                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--second"></span>
+                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--third"></span>
+                <span class="sr-only">Open/close menu</span>
+            </button>
+        </div>
+        <div class="SiteHeader-content is-Offcanvas--closed" id="SiteHeader-navigation_id0">
+            <div class="Offcanvas-scroller">
+                <nav class="SiteHeader-navigation SiteHeader-navigation--first_menu">
+                    <ul class="NavMenu NavMenu--main_menu">
+                        <li class="NavMenu-link NavMenu--main_menu-link">
+                            <a data-toggle="offcanvas" data-target="#Phylactery-core_dropdown" href="#"><span>UI &amp; UX</span> <span class="NavMenu-link--arrow"></span></a>
+                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="Phylactery-core_dropdown">
+                                <div class="Offcanvas-scroller">
+                                    <ul class="NavMenu NavMenu--dropdown">
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/examples/Typography/"><span>Typography</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Button"><span>Buttons</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/FormItem"><span>FormItem</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Page"><span>Page</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Breadcrumb"><span>Breadcrumb</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/SiteHeader"><span>SiteHeader</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/SiteFooter"><span>SiteFooter</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/VideoPlayer"><span>VideoPlayer</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Modal"><span>Modal</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/TabbedContent"><span>TabbedContent</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/CollapseContent"><span>CollapseContent</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="NavMenu-link NavMenu--main_menu-link">
+                            <a data-toggle="offcanvas" data-target="#Phylactery-effects_dropdown" href="#"><span>Interactive Effects</span> <span class="NavMenu-link--arrow"></span></a>
+                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="Phylactery-effects_dropdown">
+                                <div class="Offcanvas-scroller">
+                                    <ul class="NavMenu NavMenu--dropdown">
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/AffixColumn"><span>AffixColumn</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/ScrollEffects"><span>ScrollEffects</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Depaginate"><span>Depaginate</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/PageTransition"><span>PageTransition</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/GoogleMap/"><span>Google Maps</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-heading"><h3>Historical</h3></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Animations"><span>WOW.js</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="NavMenu-link NavMenu--main_menu-link">
+                            <a data-toggle="offcanvas" data-target="#Phylactery-patterns_dropdown" href="#"><span>Layout Patterns</span> <span class="NavMenu-link--arrow"></span></a>
+                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="Phylactery-patterns_dropdown">
+                                <div class="Offcanvas-scroller">
+                                    <ul class="NavMenu NavMenu--dropdown">
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/examples/Grid"><span>Grid Styling</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/HeroHeader"><span>HeroHeader</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/ContentSection"><span>ContentSection</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Triptych"><span>Triptych</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/StaffGrid"><span>StaffGrid</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/ObiStrip"><span>ObiStrip</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="NavMenu-link NavMenu--main_menu-link">
+                            <a data-toggle="offcanvas" data-target="#Phylactery-examples_dropdown" href="#"><span>Examples</span> <span class="NavMenu-link--arrow"></span></a>
+                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="Phylactery-examples_dropdown">
+                                <div class="Offcanvas-scroller">
+                                    <ul class="NavMenu NavMenu--dropdown">
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/examples/MarketingPage/"><span>Marketing Page</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/examples/About/"><span>About Page</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/layouts/Article/"><span>Blog Article</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/layouts/ContactPage/"><span>Contact Page</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <header class="HeroHeader HeroHeader--thin HeroHeader--dark_bg" style="background-image: url(../../components/HeroHeader/test_background.svg);">
+            <div class="HeroHeader-valign">
+                <div class="HeroHeader-container">
+                    <h1 class="HeroHeader-title">Grid</h1>
+                </div>
+            </div>
+        </header>
+
+        <article class="Example-content AffixColumn-root" data-affixcolumn='root'>
+            <div class="Example--affix_column-sidebar">
+                <section class="Grid-example--affix_column-sidebar_content AffixColumn is-AffixColumn--top" data-affixcolumn="column">
+                    <ul class="Sidebar-list">
+                        <li><a href="#nogutter">Example columns with no gutter</a></li>
+                        <li><a href="#gutter">Example columns with gutter</a></li>
+                        <li><a href="#padding">Example columns with padding</a></li>
+                        <li><a href="#viewport">Example columns with viewport</a></li>
+                        <li><a href="#adjustedgutter">Example columns with adjusted gutter width</a></li>
+                        <li><a href="#offset">Example columns with -offset</a></li>
+                        <li><a href="#after">Example columns with -after</a></li>
+                        <li><a href="#push">Example columns with -push</a></li>
+                        <li><a href="#pull">Example columns with -pull</a></li>
+                        <li><a href="#swap">Swapping element positions based on screen size</a></li>
+                    </ul>
+                </section>
+            </div>
+            <div class="Example--affix_column-content">
+                <section class="Grid-example--affix_column-content_content AffixColumn is-AffixColumn--top is-AffixColumn--tallest" data-affixcolumn="column">
+                    <div class="Container Example-section"> <!-- example columns with no gutter -->
+                        <a name="nogutter"><h2>Example columns no gutter</h2></a>
+                        <p>Three equal columns</p>
+                        <div class="Example-row">
+                            <div class="Example-column Example-column_four">
+                                .make-Column(4)
+                            </div>
+                            <div class="Example-column Example-column_four">
+                                .make-Column(4)
+                            </div>
+                            <div class="Example-column Example-column_four">
+                                .make-Column(4)
+                            </div>
+                        </div>
+                        <p>Three unequal columns</p>
+                        <div class="Example-row">
+                            <div class="Example-column Example-column_three">
+                                .make-Column(3)
+                            </div>
+                            <div class="Example-column Example-column_six">
+                                .make-Column(6)
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                .make-Column(3)
+                            </div>
+                        </div>
+                        <p>Two columns</p>
+                        <div class="Example-row">
+                            <div class="Example-column Example-column_eight">
+                                .make-Column(8)
+                            </div>
+                            <div class="Example-column Example-column_four">
+                                .make-Column(4)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Container Example-section"> <!-- example columns with gutter -->
+                        <a name="gutter"><h2>Example columns with gutter</h2></a>
+                        <p>Three equal columns</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_four--gutter">
+                                .make-Column--gutter(4)
+                            </div>
+                            <div class="Example-column Example-column_four--gutter">
+                                .make-Column--gutter(4)
+                            </div>
+                            <div class="Example-column Example-column_four--gutter">
+                                .make-Column--gutter(4)
+                            </div>
+                        </div>
+                        <p>Three unequal columns</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_three--gutter">
+                                .make-Column--gutter(3)
+                            </div>
+                            <div class="Example-column Example-column_six--gutter">
+                                .make-Column--gutter(6)
+                            </div>
+                            <div class="Example-column Example-column_three--gutter">
+                                .make-Column--gutter(3)
+                            </div>
+                        </div>
+                        <p>Two columns</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_eight--gutter">
+                                .make-Column--gutter(8)
+                            </div>
+                            <div class="Example-column Example-column_four--gutter">
+                                .make-Column--gutter(4)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Container Example-section"> <!-- example columns with padding -->
+                        <a name="padding"><h2>Example columns with padding</h2></a>
+                        <p>Three equal columns</p>
+                        <div class="Example-row">
+                            <div class="Example-column Example-column--padded Example-column_four--padded">
+                                <div>.make-Column--padded(4)</div>
+                            </div>
+                            <div class="Example-column Example-column--padded Example-column_four--padded">
+                                <div>.make-Column--padded(4)</div>
+                            </div>
+                            <div class="Example-column Example-column--padded Example-column_four--padded">
+                                <div>.make-Column--padded(4)</div>
+                            </div>
+                        </div>
+                        <p>Three unequal columns</p>
+                        <div class="Example-row">
+                            <div class="Example-column Example-column--padded Example-column_three--padded">
+                                <div>.make-Column--padded(3)</div>
+                            </div>
+                            <div class="Example-column Example-column--padded Example-column_six--padded">
+                                <div>.make-Column--padded(6)</div>
+                            </div>
+                            <div class="Example-column Example-column--padded Example-column_three--padded">
+                                <div>.make-Column--padded(3)</div>
+                            </div>
+                        </div>
+                        <p>Two columns</p>
+                        <div class="Example-row">
+                            <div class="Example-column Example-column--padded Example-column_eight--padded">
+                                <div>.make-Column--padded(8)</div>
+                            </div>
+                            <div class="Example-column Example-column--padded Example-column_four--padded">
+                                <div>.make-Column--padded(4)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Container Example-section"> <!-- example columns with viewport -->
+                        <div>
+                            <div class="Container Example-section">
+                                <a name="viewport"><h2>Example columns with viewport</h2></a>
+                                <p>Three equal columns</p>
+                                <div class="Example-row">
+                                    <div class="Example-column Example-column_four--viewport-sm">
+                                        <div>.make-Column(4) (@Viewport-sm)</div>
+                                    </div>
+                                    <div class="Example-column Example-column_four--viewport-sm">
+                                        <div>.make-Column(4) (@Viewport-sm)</div>
+                                    </div>
+                                    <div class="Example-column Example-column_four--viewport-sm">
+                                        <div>.make-Column(4) (@Viewport-sm)</div>
+                                    </div>
+                                </div>
+                                <p>Three unequal columns</p>
+                                <div class="Example-row">
+                                    <div class="Example-column Example-column_three--viewport-xs">
+                                        <div>.make-Column(3) (@Viewport-xs)</div>
+                                    </div>
+                                    <div class="Example-column Example-column_six--viewport-xs">
+                                        <div>.make-Column(6) (@Viewport-xs) </div>
+                                    </div>
+                                    <div class="Example-column Example-column_three--viewport-xs">
+                                        <div>.make-Column(3) (@Viewport-xs) </div>
+                                    </div>
+                                </div>
+                                <p>Two columns</p>
+                                <div class="Example-row">
+                                    <div class="Example-column Example-column_eight--viewport-md">
+                                        <div>.make-Column(8) (@Viewport-md)</div>
+                                    </div>
+                                    <div class="Example-column Example-column_four--viewport-md">
+                                        <div>.make-Column(4) (@Viewport-md)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Container Example-section"> <!-- example columns with adjusted gutter width -->
+                        <div class="Container Example-section">
+                            <a name="adjustedgutter"><h2>Example columns with adjusted gutter width</h2></a>
+                            <p>Three equal columns</p>
+                            <div class="Example-row Example-row--gutter">
+                                <div class="Example-column Example-column_four--adjusted_gutter">
+                                    <div>.make-Column(4) (5px)</div>
+                                </div>
+                                <div class="Example-column Example-column_four--adjusted_gutter">
+                                    <div>.make-Column(4) (5px)</div>
+                                </div>
+                                <div class="Example-column Example-column_four--adjusted_gutter">
+                                    <div>.make-Column(4) (5px)</div>
+                                </div>
+                            </div>
+                            <p>Three unequal columns</p>
+                            <div class="Example-row Example-row--gutter">
+                                <div class="Example-column Example-column_three--adjusted_gutter">
+                                    <div>.make-Column(3) (25px)</div>
+                                </div>
+                                <div class="Example-column Example-column_six--adjusted_gutter">
+                                    <div>.make-Column(6) (25px)</div>
+                                </div>
+                                <div class="Example-column Example-column_three--adjusted_gutter">
+                                    <div>.make-Column(3) (25px)</div>
+                                </div>
+                            </div>
+                            <p>Two columns</p>
+                            <div class="Example-row Example-row--gutter">
+                                <div class="Example-column Example-column_eight--adjusted_gutter">
+                                    <div>.make-Column(8) (100px)</div>
+                                </div>
+                                <div class="Example-column Example-column_four--adjusted_gutter_big">
+                                    <div>.make-Column(4) (100px)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Container Example-section"> <!-- example columns with offset -->
+                        <a name="offset"><h2>Example columns with -offset</h2></a>
+                        <h3>-offset adds spacing on the left-hand side of the element.</h3>
+                        <p>Three equal offset columns</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_three Example-column_three--offset">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                        <p>Three unequal offset columns</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_three Example-column_two--offset">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_four">
+                                <div>.make-Column(4)</div>
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                        <p>Two offset columns</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_three Example-column_six--offset">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Container Example-section"> <!-- example columns with after -->
+                        <a name="#after"><h2>Example columns with -after</h2></a>
+                        <h3>-after adds spacing on the right-hand side of the element.</h3>
+                        <p>Three equal columns with -after</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_three Example-column_three--after">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                        <p>Three unequal columns with -after</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_four">
+                                <div>.make-Column(4)</div>
+                            </div>
+                            <div class="Example-column Example-column_three Example-column_two--after">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                        <p>Two columns with -after</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_three Example-column_six--after">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Container Example-section"> <!-- example columns with push -->
+                        <a name="push"><h2>Example columns with -push</h2></a>
+                        <h3>-push moves the element to the right some number of columns without affecting other columns.</h3>
+                        <p>Three equal columns with -push</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_three Example-column_nine--push">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                        <p>Three unequal columns with -push</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_two Example-column_ten--push">
+                                <div>.make-Column(2)</div>
+                            </div>
+                            <div class="Example-column Example-column_four">
+                                <div>.make-Column(4)</div>
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                        <p>Two columns with -push</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_three Example-column_six--push">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Container Example-section"> <!-- example columns with pull -->
+                        <a name="pull"><h2>Example columns with pull</h2></a>
+                        <h3>-pull moves the element to the left some number of columns without affecting other columns.</h3>
+                        <p>Three equal columns with pull</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_three Example-column_one--pull">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                        <p>Three unequal columns with pull</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_four Example-column_two--pull">
+                                <div>.make-Column(4)</div>
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                        <p>Two columns with pull</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_six">
+                                <div>.make-Column(6)</div>
+                            </div>
+                            <div class="Example-column Example-column_three Example-column_three--pull">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Container Example-section">
+                        <a name="swap"><h2>Swapping element positions based on screen size</h2></a>
+                        <div class="Example-row">
+                            <div class="Example-column Example-column_four Example-column_four--pull-sm">
+                                <div>A</div>
+                            </div>
+                            <div class="Example-column Example-column_eight">
+                                <div>B</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </article>
+</main>

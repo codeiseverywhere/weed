@@ -1,0 +1,100 @@
+$SiteHeader-cart_button--icon_size: 24px;
+
+$SiteHeader-cart-item-count--bg_color: $Color--red;
+$SiteHeader-cart-item-count--color: $Font-color--white;
+$SiteHeader-cart_item_count--size: 20px;
+$SiteHeader-cart_item_count--font_size: 13px;
+$SiteHeader-cart_item_count--line_height: 1.0;
+
+$SiteHeader-cart_item_count--padding: (($SiteHeader-cart_item_count--size - $SiteHeader-cart_item_count--font_size * $SiteHeader-cart_item_count--line_height) / 2);
+$SiteHeader-cart_item_count--border_radius: ($SiteHeader-cart_item_count--size / 2);
+
+$SiteHeader-cart_button-padding_vertical_bp: (($SiteHeader--content_row_height_bp - $SiteHeader-cart_button--icon_size) / 2);
+$SiteHeader-cart_button-padding_horizontal_bp: 8px;
+
+.SiteHeader-cart {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.SiteHeader-cart_notification {
+    width: 14px;
+    height: 14px;
+    border-radius: 10px;
+
+    position: absolute;
+    right: -5px;
+    top: 42%;
+    transform: translateY(-58%);
+
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SiteHeader-cart_button {
+    @include make-Button--revert(a);
+    display: block;
+
+    &:after {
+        display: block;
+    }
+}
+
+.SiteHeader-cart_icon {
+    height: 100%;
+}
+
+.SiteHeader-cart_menu {
+    font-family: $Font-family;
+}
+
+.SiteHeader-cart_item_count {
+    background-color: $SiteHeader-cart-item-count--bg_color;
+    color: $SiteHeader-cart-item-count--color;
+
+    min-width: $SiteHeader-cart_item_count--size;
+    height: $SiteHeader-cart_item_count--size;
+
+    font-size: $SiteHeader-cart_item_count--font_size;
+    line-height: $SiteHeader-cart_item_count--line_height;
+    padding: $SiteHeader-cart_item_count--padding;
+
+    border-radius: 100%;
+
+    text-align: center;
+    float: left;
+}
+
+@media (min-width: $SiteHeader--breakpoint) {
+    .SiteHeader-cart {
+        float: left;
+    }
+
+    .SiteHeader-cart_button {
+        padding: $SiteHeader-cart_button-padding_vertical_bp $SiteHeader-cart_button-padding_horizontal_bp;
+        height: $SiteHeader--content_row_height_bp;
+
+        &:after {
+            float: left;
+        }
+    }
+
+    .SiteHeader-cart_menu {
+        position: absolute;
+        top: 100%;
+
+        box-shadow: $SiteHeader--box_shadow;
+    }
+
+    .SiteHeader-cart_menu--placed_on_left {
+        left: 0;
+    }
+
+    .SiteHeader-cart_menu--placed_on_right {
+        right: 0;
+    }
+}

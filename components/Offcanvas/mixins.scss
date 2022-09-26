@@ -1,0 +1,49 @@
+@mixin make-Offcanvas--width() {
+    width: $Offcanvas--width;
+
+    @media (min-width: $Viewport-xs) {
+        width: $Offcanvas--width_xs;
+    }
+
+    @media (min-width: $Viewport-sm) {
+        width: $Offcanvas--width_sm;
+    }
+}
+
+@mixin make-Offcanvas--transform($factor: 1.0) {
+    transform: translateX(($Offcanvas--width * $factor));
+
+    @media (min-width: $Viewport-xs) {
+        transform: translateX(($Offcanvas--width_xs * $factor));
+    }
+
+    @media (min-width: $Viewport-sm) {
+        transform: translateX(($Offcanvas--width_sm * $factor));
+    }
+}
+
+@mixin make-Offcanvas--revert() {
+    &.Offcanvas {
+        position: static;
+        height: auto;
+        width: auto;
+        border-right-width: 0;
+        transition: none;
+        transform: none;
+
+        z-index: auto;
+    }
+
+    html.no-csstransforms &.Offcanvas {
+        transition: none;
+        left: auto;
+    }
+
+    > .Offcanvas-scroller {
+        background: transparent;
+        height: auto;
+
+        overflow-y: visible;
+        overflow-x: visible;
+    }
+}

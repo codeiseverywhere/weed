@@ -1,0 +1,19 @@
+$Border-width--thick:  3px;
+$Border-width--normal: 2px;
+$Border-width--thin:   1px;
+$Border-radius:			0px;
+$Border-radius--normal: 6px;
+$Border-radius--round:	40px;
+$Border-radius--pseudo:	0;
+
+$Border-width: $Border-width--normal;
+
+$Border-color--primary: $Color--black;
+
+$Border-color: $Border-color--primary;
+
+$Border-style: solid;
+
+@mixin make-Border($declaration: border, $width: $Border-width--normal, $color: $Border-color--primary, $style: $Border-style) {
+    #{$declaration}: $width $style $color;
+}

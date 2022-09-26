@@ -1,0 +1,141 @@
+<style>
+@media screen and (max-width: 1023px){
+   .Hero__nav {
+    width: 100%;
+    height: 64vw;
+  }
+  {% if section.blocks.count > 3 %}
+    .Hero__nav-item {
+      width: 25px;
+      height: 3px;
+      margin: 0px 10px 25px;
+    }
+  {% endif %}
+}
+
+.Hero-cta-hover:hover {
+  color: {{ section.settings.cta-hover-color }};
+  background-color: {{ section.settings.cta-hover-bg-color }};
+}
+</style>
+<div id="x-hero" class="Hero" data-autoplay="{{ section.settings.autoplay }}">
+  <div class="Hero__inner">
+    <div class="Hero__slides">
+
+        <div class="Hero__nav">
+          <div class="Hero__nav-inner">
+            <div class="Hero__nav-items">
+              {% for block in section.blocks %}
+                  <div id="x-hero-nav-item-{{ forloop.index }}" class="Hero__nav-item {% if forloop.first %}Hero_nav-item-selected{% endif %}"></div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        {% for block in section.blocks %}
+          <div id="x-hero-slide-{{ forloop.index }}" class="Hero__slide {% if forloop.first %}Hero-selected-slide{% endif %}">
+            <div class="Hero-slide-inner">
+            
+              <div class="Hero-slide__image-container">
+                <img src="{{ block.settings.image | img_url: 'master' }}" class="Hero-slide__image Hero-slide-large-image">
+                <img src="{{ block.settings.mobile-image | img_url: 'master' }}" class="Hero-slide__image Hero-slide-mobile-image">
+              </div>
+
+              <div class="Hero-slide__text-container">
+                <div class="Hero-slide__text-box">
+                    <div class="Hero-text-box__title-box">
+                      <h1 class="Hero-text-box__title">{{ block.settings.title }}</h1>
+                    </div>
+                    <div class="Hero-text-box__text-box">
+                      <p class="Hero-text-box__text">{{ block.settings.text }}</p>
+                    </div>
+                    <div class="Hero-text-box__cta-box">
+                      <a href="{{ block.settings.cta-link }}" class="Hero-text-box__cta site-btn">{{ block.settings.cta-text }}</a>
+                    </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "X Hero",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "autoplay",
+        "label": "Enable Autoplay",
+        "default": true
+      },
+      {
+        "type": "color",
+        "id": "cta-hover-color",
+        "label": "Slide CTA Text Color",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "cta-hover-bg-color",
+        "label": "Slide CTA Background Color",
+        "default": "#FFF003"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "Side",
+        "name": "Slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Slide Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "mobile-image",
+            "label": "Slide Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Slide Title",
+            "default": "Achieve an instant bare-faced glow!",
+            "info": "** for optimal results on mobile ** ensure the title is 2 rows in length. "
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Slide Text",
+            "default": "A transformative blend of natural ingredients to even skin tone & fade dark spots."
+          },
+          {
+            "type": "text",
+            "id": "cta-text",
+            "label": "Slide CTA Text",
+            "default": "Shop Mask"
+          },
+          {
+            "type": "url",
+            "id": "cta-link",
+            "label": "Slide CTA Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "category": "Hero",
+        "name": "Hero"
+      }
+    ]
+  }
+{% endschema %}
+

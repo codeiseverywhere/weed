@@ -1,0 +1,123 @@
+//Covers styling necessary for example pages.
+//Remove after cloning this project into a template theme.
+
+@import "affix_column.scss";
+@import "grid.scss";
+@import "page.scss";
+
+$Example--background_color: $Color--white;
+
+$Example-specimen--background_color: $Color--gray_lighter;
+$Example-specimen--border_color: $Color--gray_darker;
+$Example-specimen--border_radius: 5px;
+
+.Example-content {
+    @extend .clearfix;
+
+    background-color: $Example--background_color;
+    padding-bottom: 50px;
+}
+
+.Example-section {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.Example-specimen {
+    @extend .clearfix;
+
+    position: relative;
+
+    background-color: $Example-specimen--background_color;
+    border: 1px solid $Example-specimen--border_color;
+    border-radius: $Example-specimen--border_radius;
+
+    padding: 25px;
+    text-align: center;
+}
+
+.Example-specimen_toggle {
+    @include make-Button--revert(button);
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    background-color: white;
+    border-right: 1px solid $Example-specimen--border_color;
+    border-bottom: 1px solid $Example-specimen--border_color;
+    border-top-left-radius: $Example-specimen--border_radius;
+    color: $Font-color--black;
+
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.is-Example-specimen--hidden {
+    display: none;
+}
+
+.is-Example-specimen_source--hidden {
+    display: none;
+}
+
+.Example-specimen_source {
+    background: $Color--gray_light;
+    margin: -25px;
+    padding: 25px ($Grid--gutter_width / 2) 15px;
+    text-align: left;
+
+    white-space: pre-wrap;
+}
+
+.Example-specimen_scroller {
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.Example-large_specimen_content {
+    @extend .clearfix;
+
+    transform: scale(0.8);
+}
+
+.Example-unstyled_specimen_content {
+    border: 3px solid $Color--black;
+    border-radius: 5px;
+
+    padding: 10px;
+    margin: 20px;
+}
+
+.Example-one_up {
+    @include make-Column--gutter(12);
+}
+
+.Example-three_up {
+    @include make-Column--gutter(4, min, $Viewport-sm);
+}
+
+.Example-one_up--no_gutter {
+    @include make-Column(12);
+}
+
+.Example-three_up--no_gutter {
+    @include make-Column(4, min, $Viewport-sm);
+}
+
+.Example-warning {
+    background-color: #ffa5a5;
+    box-shadow: inset 0px 5px #ff5e5e;
+
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px 0;
+
+    p {
+        font-size: 14px;
+    }
+}
+
+.Example-wysiwyg {
+    @include make-Wysiwyg();
+}

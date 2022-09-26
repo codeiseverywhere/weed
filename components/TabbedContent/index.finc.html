@@ -1,0 +1,99 @@
+@@include('./assets/frag/html.frag.html')
+
+<title>TabbedContent component - Phylactery 1.0.0 by HUEMOR</title>
+
+<body data-offcanvas-hover-min="960">
+
+<main>
+    @@include('./components/SiteHeader/phylactery_siteheader.frag.html')
+    <header class="HeroHeader HeroHeader--thin HeroHeader--dark_bg" style="background-image: url(../../components/HeroHeader/test_background.svg);">
+        <div class="HeroHeader-valign">
+            <div class="HeroHeader-container">
+                <h1 class="HeroHeader-title">TabbedContent component</h1>
+            </div>
+        </div>
+    </header>
+
+    <article class="Example-content">
+        <div class="Container Example-section">
+            <h2>Example tabbed content</h2>
+            <p>TabbedContent is useful for allowing the user to select multiple
+            content bits. It should not be used to hide important information
+            that most users would be interested in just for the sake of fitting
+            things above the scroll fold.</p>
+            <p>This particular specimen has a selector list with the
+            <code>--centered</code> qualifier, which spreads the tabs around the
+            width of the list.</p>
+        </div>
+        
+        <div class="Example-specimen Container" style="text-align: left">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="TabbedContent-specimen">View Source</button>
+            <div class="Example-large_specimen_content is-Example-specimen--visible" id="TabbedContent-specimen" data-specimen>
+                <section class="TabbedContent">
+                    <nav class="TabbedContent-navigation">
+                        <!-- You thought it was example content, but it is I, DIO! -->
+                        <ul class="TabbedContent-selector_list TabbedContent-selector_list--centered" id="jojos_bizarre_adventure" data-tabbedcontent-set>
+                            <li><a href="#phantom_blood">Phantom Blood</a></li>
+                            <li><a href="#battle_tendency">Battle Tendency</a></li>
+                            <li><a href="#stardust_crusaders">Stardust Crusaders</a></li>
+                            <li><a href="#diamond_is_unbreakable">Diamond is Unbreakable</a></li>
+                        </ul>
+                    </nav>
+                    <div class="TabbedContent-sections">
+                        <section id="phantom_blood" class="TabbedContent-section" data-tabbedcontent-region>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </section>
+                        <section id="battle_tendency" class="TabbedContent-section" data-tabbedcontent-region data-tabbedcontent-region-active>
+                            Mauris venenatis eu diam malesuada fringilla. Praesent odio velit, dignissim vitae leo at, sagittis viverra mi. Proin facilisis volutpat tellus, a sagittis erat. Fusce id sem urna. Quisque ac eleifend nulla, at gravida tellus. Sed laoreet ex felis, et vehicula sem consequat quis. Sed ut sodales ligula, vel gravida erat. Maecenas vehicula, nibh nec pellentesque convallis, velit ipsum sagittis libero, scelerisque vehicula arcu ipsum eget tortor. Quisque eros turpis, porttitor eu nulla at, pharetra tincidunt nibh. Integer dictum purus a ultrices mollis. In hac habitasse platea dictumst.
+                        </section>
+                        <section id="stardust_crusaders" class="TabbedContent-section" data-tabbedcontent-region>
+                            Donec a sapien nunc. Duis velit turpis, sagittis in aliquam et, tempus ut tellus. Integer laoreet, lacus nec suscipit vestibulum, libero turpis mollis neque, nec vestibulum purus leo sed leo. Duis at volutpat orci. Vestibulum ultrices sapien vitae erat maximus, vel egestas metus placerat. Vestibulum vulputate in nisl a ultricies. Morbi non ex nec turpis tristique sollicitudin. Sed laoreet quam ac nisi feugiat tempor. Donec eu eros sed magna maximus molestie quis at diam. Nulla lacus libero, aliquam fermentum maximus in, feugiat blandit metus. Donec at diam porta, molestie mi vel, congue ipsum. Aenean eleifend congue purus ac consectetur. Nunc porttitor dignissim elit quis condimentum.
+                        </section>
+                        <section id="diamond_is_unbreakable" class="TabbedContent-section" data-tabbedcontent-region>
+                            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus blandit vestibulum velit, sed aliquam nibh iaculis et. Mauris porta arcu dui, et luctus erat fringilla id. Vestibulum in purus enim. Quisque dignissim vehicula mi, eget vestibulum est hendrerit vitae. Phasellus a sollicitudin ante, eu aliquet purus. Nunc a felis eget mauris ullamcorper porta in eget lacus. Nunc tempus porta felis id vestibulum. Proin pulvinar rutrum enim eget tincidunt. Sed in tristique sapien.
+                        </section>
+                    </div>
+                </section>
+            </div>
+            
+            <pre data-specimen-source="TabbedContent-specimen" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+        
+        <div class="Container Example-section">
+            <h2>TabbedContent with icons in tabs</h2>
+        </div>
+        
+        <div class="Example-specimen Container" style="text-align: left">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="TabbedContent-specimen--2">View Source</button>
+            <div class="Example-large_specimen_content is-Example-specimen--visible" id="TabbedContent-specimen--2" data-specimen>
+                <section class="TabbedContent">
+                    <nav class="TabbedContent-navigation">
+                        <!-- You thought it was example content, but it is I, DIO! -->
+                        <ul class="TabbedContent-selector_list TabbedContent-selector_list--centered" id="jojos_bizarre_adventure" data-tabbedcontent-set>
+                            <li><a href="#phantom_blood"><img src="../../assets/icons/uEA0F-twitter.svg" class="TabbedContent-selector_icon">Phantom Blood</a></li>
+                            <li><a href="#battle_tendency"><img src="../../assets/icons/uEA0F-twitter.svg" class="TabbedContent-selector_icon">Battle Tendency</a></li>
+                            <li><a href="#stardust_crusaders"><img src="../../assets/icons/uEA0F-twitter.svg" class="TabbedContent-selector_icon">Stardust Crusaders</a></li>
+                            <li><a href="#diamond_is_unbreakable"><img src="../../assets/icons/uEA0F-twitter.svg" class="TabbedContent-selector_icon">Diamond is Unbreakable</a></li>
+                        </ul>
+                    </nav>
+                    <div class="TabbedContent-sections">
+                        <section id="phantom_blood" class="TabbedContent-section" data-tabbedcontent-region>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </section>
+                        <section id="battle_tendency" class="TabbedContent-section" data-tabbedcontent-region data-tabbedcontent-region-active>
+                            Mauris venenatis eu diam malesuada fringilla. Praesent odio velit, dignissim vitae leo at, sagittis viverra mi. Proin facilisis volutpat tellus, a sagittis erat. Fusce id sem urna. Quisque ac eleifend nulla, at gravida tellus. Sed laoreet ex felis, et vehicula sem consequat quis. Sed ut sodales ligula, vel gravida erat. Maecenas vehicula, nibh nec pellentesque convallis, velit ipsum sagittis libero, scelerisque vehicula arcu ipsum eget tortor. Quisque eros turpis, porttitor eu nulla at, pharetra tincidunt nibh. Integer dictum purus a ultrices mollis. In hac habitasse platea dictumst.
+                        </section>
+                        <section id="stardust_crusaders" class="TabbedContent-section" data-tabbedcontent-region>
+                            Donec a sapien nunc. Duis velit turpis, sagittis in aliquam et, tempus ut tellus. Integer laoreet, lacus nec suscipit vestibulum, libero turpis mollis neque, nec vestibulum purus leo sed leo. Duis at volutpat orci. Vestibulum ultrices sapien vitae erat maximus, vel egestas metus placerat. Vestibulum vulputate in nisl a ultricies. Morbi non ex nec turpis tristique sollicitudin. Sed laoreet quam ac nisi feugiat tempor. Donec eu eros sed magna maximus molestie quis at diam. Nulla lacus libero, aliquam fermentum maximus in, feugiat blandit metus. Donec at diam porta, molestie mi vel, congue ipsum. Aenean eleifend congue purus ac consectetur. Nunc porttitor dignissim elit quis condimentum.
+                        </section>
+                        <section id="diamond_is_unbreakable" class="TabbedContent-section" data-tabbedcontent-region>
+                            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus blandit vestibulum velit, sed aliquam nibh iaculis et. Mauris porta arcu dui, et luctus erat fringilla id. Vestibulum in purus enim. Quisque dignissim vehicula mi, eget vestibulum est hendrerit vitae. Phasellus a sollicitudin ante, eu aliquet purus. Nunc a felis eget mauris ullamcorper porta in eget lacus. Nunc tempus porta felis id vestibulum. Proin pulvinar rutrum enim eget tincidunt. Sed in tristique sapien.
+                        </section>
+                    </div>
+                </section>
+            </div>
+            
+            <pre data-specimen-source="TabbedContent-specimen--2" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+    </article>
+</main>

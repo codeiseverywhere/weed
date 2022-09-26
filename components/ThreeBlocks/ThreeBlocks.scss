@@ -1,0 +1,89 @@
+//BreakPoints can be found in main.scss or assets/scss/viewport.scss
+
+$ThreeBlocks-breakpoint: 851px;
+$ThreeBlocks-breakpoint_max: ($ThreeBlocks-breakpoint - 1px);
+
+.three-blocks {
+  width: 100%;
+  height: auto;
+}
+.tb__inner {
+  width: 100%;
+  max-width: 1140px;
+  height: 100%;
+  margin: 0px auto;
+}
+
+.tb__section-title-wrap {
+  width: 100%;
+  text-align: center;
+  margin: 0px;
+  margin-bottom: 50px;
+  padding: 0px 20px;
+}
+.tb__section-title {
+  margin: 0;
+  font-weight: 600;
+}
+
+.tb__content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tb__block {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 0px 20px;
+  text-align: center;
+}
+.tb__block-inner {
+  width: 100%;
+  height: 100%;
+}
+.tb__block-image-wrap {
+  position: relative;
+  width: 65px;
+  height: 65px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.tb__block-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.tb__block-title {
+  margin: 0;
+  margin-bottom: 10px;
+}
+.tb__block-text {
+  font-size: 14px;
+  margin: 0;
+  opacity: 0.8;
+  line-height: 24px;
+}
+
+@media screen and (max-width: $ThreeBlocks-breakpoint_max) {
+  .tb__content {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .tb__block {
+    margin: 0px 20px;
+    margin-bottom: 80px;
+  }
+  .tb__block:last-child {
+    margin-bottom: 0px;
+  }
+  .tb__block-text {
+    font-size: 14px;
+    margin: 0;
+    opacity: 0.8;
+    line-height: 24px;
+  }
+}

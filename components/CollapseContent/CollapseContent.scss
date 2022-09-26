@@ -1,0 +1,12 @@
+.CollapseContent--collapse-body {
+    overflow: hidden;
+    transition: max-height 0.5s;
+
+    &.is-CollapseContent--visible {
+        max-height: 100vh;
+    }
+
+    &.is-CollapseContent--hidden {
+        max-height: 0vh;
+    }
+}

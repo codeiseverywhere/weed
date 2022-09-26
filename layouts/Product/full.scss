@@ -1,0 +1,39 @@
+$Product--breakpoint: $Viewport-xs;
+
+.Product--full {
+    @include make-Container();
+}
+
+.Product--full-header {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.Product--full-image_header {
+    @include make-Column--gutter(6, min, $Product--breakpoint, $float: none);
+    
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.Product--full-purchase {
+    @include make-Column--gutter(6, min, $Product--breakpoint, $float: none);
+    
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.Product--full-actions {
+    float: right;
+    width: auto;
+}
+
+.Product--full-quantity {
+    float: right;
+    width: 105px;
+}
+
+.Product--full-add_to_cart {
+    @include make-Row();
+}

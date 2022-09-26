@@ -1,0 +1,84 @@
+$AjaxCart--background_color: $Color--white;
+
+$AjaxCart--width: 320px;
+
+$AjaxCart--gutter_width: $Grid--gutter_width;
+
+$AjaxCart-cart_header--spacing: 5px;
+
+$AjaxCart-cart_title--font_size: 20px;
+$AjaxCart-cart_title--line_height: 1.2;
+
+$AjaxCart-dismiss--size: 14px;
+$AjaxCart-dismiss--misalignment: (
+    ($AjaxCart-cart_title--font_size * $AjaxCart-cart_title--line_height) -
+        $AjaxCart-dismiss--size
+    ) / 2;
+$AjaxCart-dismiss--color: $Font-color--black;
+
+.AjaxCart {
+    @extend .clearfix;
+
+    background-color: $AjaxCart--background_color;
+
+    width: 100%;
+
+    @media (min-width: $SiteHeader--breakpoint) {
+        width: $AjaxCart--width;
+    }
+}
+
+.AjaxCart-cart_header {
+    @extend .clearfix;
+
+    margin-bottom: $AjaxCart-cart_header--spacing;
+    padding: 10px ($AjaxCart--gutter_width / 2) 0;
+}
+
+.AjaxCart-dismiss {
+    @include make-Button--revert(button);
+    @include make-Icon--before($Icon-cross, $AjaxCart-dismiss--size);
+
+    float: right;
+    font-size: 0;
+    margin-top: $AjaxCart-dismiss--misalignment;
+    color: $AjaxCart-dismiss--color;
+}
+
+.AjaxCart-cart_title {
+    font-size: $AjaxCart-cart_title--font_size;
+    line-height: $AjaxCart-cart_title--line_height;
+    margin: 0;
+}
+
+.AjaxCart-divider {
+    @include make-Column--gutter(12, min, $Viewport-xs, $AjaxCart--gutter_width);
+    margin: 50px ($AjaxCart--gutter_width / 2);
+    border-color: #A3A5AD;
+}
+
+.AjaxCart-empty_state {
+    @include make-Column--gutter(12, min, $Viewport-xs, $AjaxCart--gutter_width);
+
+    position: relative;
+    padding: 50px 0;
+    text-align: center;
+
+    &:before {
+        content: "";
+
+        display: block;
+
+        width: 75px;
+        height: 75px;
+        margin: 15px auto;
+
+        background: #d8d8d8;
+        border-radius: 100%;
+    }
+}
+
+@import "item.scss";
+@import "totals.scss";
+@import "shipping.scss";
+@import "load_animation.scss";

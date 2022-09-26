@@ -1,0 +1,50 @@
+@mixin make-Offcanvas--primary() {
+    position: fixed;
+    height: 100%;
+
+    border-right: $Offcanvas--border_width solid $Offcanvas--border_color;
+
+    @include make-Offcanvas--width();
+
+    transition: transform 0.5s;
+
+    &.is-Offcanvas--open {
+        @include make-Offcanvas--transform(0.0);
+    }
+
+    &.is-Offcanvas--closed {
+        @include make-Offcanvas--transform(-2.2);
+    }
+}
+
+@mixin make-Offcanvas--primary_lv1() {
+    z-index: $Offcanvas--lv1--z_index;
+
+    &.is-Offcanvas--open {
+        @include make-Offcanvas--transform(0.0);
+    }
+
+    &.is-Offcanvas--depth_1 {
+        @include make-Offcanvas--transform(0.2);
+    }
+
+    &.is-Offcanvas--depth_2 {
+        @include make-Offcanvas--transform(0.4);
+    }
+
+    &.is-Offcanvas--depth_3 {
+        @include make-Offcanvas--transform(0.6);
+    }
+}
+
+@mixin make-Offcanvas--primary_lv2() {
+    z-index: $Offcanvas--lv2--z_index;
+}
+
+@mixin make-Offcanvas--primary_lv3() {
+    z-index: $Offcanvas--lv3--z_index;
+}
+
+@mixin make-Offcanvas--primary_lv4() {
+    z-index: $Offcanvas--lv4--z_index;
+}

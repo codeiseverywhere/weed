@@ -1,0 +1,24 @@
+{
+  "name": "skeleton-peddler",
+  "version": "1.0.0",
+  "authors": [
+    "David Wendt <david.w@huemordesigns.com>",
+    "Mark Pesantes <mark@huemordesigns.com>"
+  ],
+  "description": "Shopify base theme using Space Station components",
+  "keywords": [
+    "theme"
+  ],
+  "license": "Proprietary",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "handlebars": "~4.0.5",
+    "promise-polyfill": "~3.1.0"
+  }
+}

@@ -1,0 +1,21 @@
+$ContentSection--body--column_width_md: 10;
+$ContentSection--body--column_offset_md: (($Grid--columns - $ContentSection--body--column_width_md) / 2);
+$ContentSection--body--column_width_lg: 8;
+$ContentSection--body--column_offset_lg: (($Grid--columns - $ContentSection--body--column_width_lg) / 2);
+
+.ContentSection--body-text {
+    @include make-Column--padded($ContentSection--body--column_width_md, min, $Viewport-md);
+    @include make-Column-offset($ContentSection--body--column_offset_md, min, $Viewport-md);
+    @include make-Column-after($ContentSection--body--column_offset_md, min, $Viewport-md);
+    @include make-Column--padded($ContentSection--body--column_width_lg, min, $Viewport-lg);
+    @include make-Column-offset($ContentSection--body--column_offset_lg, min, $Viewport-lg);
+    @include make-Column-after($ContentSection--body--column_offset_lg, min, $Viewport-lg);
+
+    :first-child {
+        margin-top: 0;
+    }
+
+    :last-child {
+        margin-bottom: 0;
+    }
+}

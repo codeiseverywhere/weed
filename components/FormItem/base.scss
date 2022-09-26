@@ -1,0 +1,105 @@
+$FormItem--height: 40px;
+
+$FormItem--label--font_family: $Font-family;
+$FormItem--label--font_size: 12px;
+$FormItem--label--font_weight: $Font-weight--bold;
+
+$FormItem--input--border_width: $Border-width--thin;
+$FormItem--input--border_color: $Color--primary;
+$FormItem--input--font_family: $Font-family;
+$FormItem--input--font_size: 12px;
+$FormItem--input--font_weight: $Font-weight--normal;
+
+$FormItem--input--background_color: $Color--white;
+$FormItem--input--color: $Font-color--black; //contrast($FormItem--input--background_color, $Font-color--black, $Font-color--white);
+$FormItem--input--placeholder_color: #{"{{ settings.color_body_text_black | color_lighten: 20 }}"}; //contrast($FormItem--input--background_color, lighten($Font-color--black, 20%), darken($Font-color--white, 20%));
+
+$FormItem--spacing: $Grid--gutter_width;
+$FormItem--label--spacing: 15px;
+
+$FormItem--checkbox_height: 20px;
+
+//Present because autoprefixer can't make sense of these yet
+//Also the spec is still kinda in flux so I'm including the ones known to work
+@mixin make-FormItem--placeholder_color($color) {
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+
+    &:moz-placeholder {
+        color: $color;
+    }
+
+    &::moz-placeholder {
+        color: $color;
+    }
+
+    &:-ms-input-placeholder {
+        color: $color;
+    }
+
+    &:placeholder-shown {
+        color: $color;
+    }
+}
+
+@mixin make-FormItem--label() {
+    font-size: $FormItem--label--font_size;
+    font-family: $FormItem--label--font_family;
+    font-weight: $FormItem--label--font_weight;
+    text-transform: uppercase;
+
+    margin-right: $FormItem--label--spacing;
+}
+
+@mixin make-FormItem--input() {
+    height: $FormItem--height;
+    font-size: $FormItem--input--font_size;
+    font-family: $FormItem--input--font_family;
+    font-weight: $FormItem--input--font_weight;
+    padding: 0 15px;
+
+    border: $FormItem--input--border_width solid $FormItem--input--border_color;
+
+    background-color: $FormItem--input--background_color;
+    color: $FormItem--input--color;
+    @include make-FormItem--placeholder_color($FormItem--input--placeholder_color);
+}
+
+@mixin make-FormItem--select() {
+    height: $FormItem--height;
+    font-size: $FormItem--input--font_size;
+    font-family: $FormItem--input--font_family;
+    font-weight: $FormItem--input--font_weight;
+    padding: 0 15px;
+
+    border: $FormItem--input--border_width solid $FormItem--input--border_color;
+
+    background-color: $FormItem--input--background_color;
+    color: $FormItem--input--color;
+    @include make-FormItem--placeholder_color($FormItem--input--placeholder_color);
+}
+
+@mixin make-FormItem--textarea() {
+    height: $FormItem--height;
+    font-size: $FormItem--input--font_size;
+    font-family: $FormItem--input--font_family;
+    font-weight: $FormItem--input--font_weight;
+    padding: 10px 15px;
+
+    border: $FormItem--input--border_width solid $FormItem--input--border_color;
+
+    background-color: $FormItem--input--background_color;
+    color: $FormItem--input--color;
+    @include make-FormItem--placeholder_color($FormItem--input--placeholder_color);
+}
+
+@mixin make-FormItem--type_checkbox() {
+    height: $FormItem--checkbox_height;
+}
+
+@mixin make-FormItem--fieldset() {
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+}

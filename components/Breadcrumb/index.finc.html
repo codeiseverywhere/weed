@@ -1,0 +1,33 @@
+@@include('./assets/frag/html.frag.html')
+
+<main class="Example-content">
+    @@include('./components/SiteHeader/phylactery_siteheader.frag.html')
+    <header class="HeroHeader HeroHeader--thin HeroHeader--dark_bg" style="background-image: url(../../components/HeroHeader/test_background.svg);">
+        <div class="HeroHeader-valign">
+            <div class="HeroHeader-container">
+                <h1 class="HeroHeader-title">Breadcrumb component</h1>
+            </div>
+        </div>
+    </header>
+    
+    <section class="Container Example-section">
+        <h2>Standard Breadcrumb</h2>
+        <p>A breadcrumb allows navigating to parent pages in the navigation hierarchy.</p>
+        <div class="Example-specimen">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="Breadcrumb--specimen">View Source</button>
+            <div class="is-Example-specimen--visible" id="Breadcrumb--specimen" data-specimen>
+                <nav role="navigation" aria-labelledby="system-breadcrumb">
+                    <ol class="Breadcrumb">
+                        <li class="Breadcrumb-item">
+                            <a class="Breadcrumb-link" href="/">Home</a>
+                        </li>
+                        <li class="Breadcrumb-item">
+                            <span class="Breadcrumb-text">Breadcrumb component</span>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+            <pre data-specimen-source="Breadcrumb--specimen" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,28 @@
+{
+    "dependencies": {
+        "script.js": {
+            "files": [
+                "./node_modules/handlebars/dist/handlebars.runtime.min.js",
+                "./build/interim/handlebars.js",
+                "./assets/js/*.js",
+                "./assets/vendor/swiper/package/js/swiper.min.js",
+                "./assets/vendor/slick/slick/slick.min.js",
+                "./components/Animations/*.js",
+                "./components/Offcanvas/*.js",
+                "./components/**/*.js",
+                "./layouts/**/*.js"
+                
+            ],
+            "main": true,
+            "bower": []
+        }
+    },
+    "paths": {
+        "source": ""
+    },
+    "config": {
+        "no_concat": [],
+        "no_include": [],
+        "theme_name": "SpaceStation"
+    }
+}

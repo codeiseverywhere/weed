@@ -1,0 +1,120 @@
+@@include('./assets/frag/html.frag.html')
+
+<title>VideoPlayer component - Phylactery 1.0.0 by HUEMOR</title>
+
+<main class="Example-content">
+    @@include('./components/SiteHeader/phylactery_siteheader.frag.html')
+    <header class="HeroHeader HeroHeader--thin HeroHeader--dark_bg" style="background-image: url(../../components/HeroHeader/test_background.svg);">
+        <div class="HeroHeader-valign">
+            <div class="HeroHeader-container">
+                <h1 class="HeroHeader-title">VideoPlayer component</h1>
+            </div>
+        </div>
+    </header>
+
+    <section class="Container Example-section">
+        <h2>Standard player</h2>
+        <p>VideoPlayer ships with a play/pause, scrubber, and mute control. These are not necessary, as all video sources support some kind of controls. However, it is very useful if you want to brand the standard controls.</p>
+        
+        <div class="Example-specimen">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="VideoPlayer-specimen">View Source</button>
+            <div class="Example-large_specimen_content is-Example-specimen--visible" id="VideoPlayer-specimen" data-specimen>
+                <div class="VideoPlayer VideoPlayer--html5" data-videoplayer="html5" id="VideoPlayer--one">
+                    <div class="VideoPlayer-video VideoPlayer-video--sixteen_by_nine">
+                        <video>
+                            <source src="_example_files/Fill20150511-720p.mp4">
+                            <source src="_example_files/Fill20150511-720p.webm">
+                            <source src="_example_files/Fill20150511-540p.mp4">
+                            <source src="_example_files/Fill20150511-540p.webm">
+                            <source src="_example_files/Fill20150511-360p.mp4">
+                            <source src="_example_files/Fill20150511-360p.webm">
+                        </video>
+                    </div>
+                    <div class="VideoPlayer-controls">
+                        <button type="button" class="VideoPlayer-play_pause" data-videoplayer-playpause>
+                            <span class="sr-only VideoPlayer-play_text">Play</span>
+                            <span class="sr-only VideoPlayer-pause_text">Pause</span>
+                        </button>
+                        <button type="button" class="VideoPlayer-scrubber" data-videoplayer-scrubber>
+                            <div class="VideoPlayer-scrubber_range"></div>
+                            <div class="VideoPlayer-scrubber_fill" data-videoplayer-scrubberfill></div>
+                            <div class="VideoPlayer-scrubber_knob" data-videoplayer-scrubberknob></div>
+                        </button>
+                        <button type="button" class="VideoPlayer-mute" data-videoplayer-mute>
+                            <span class="sr-only VideoPlayer-mute_text">Mute</span>
+                            <span class="sr-only VideoPlayer-unmute_text">Unmute</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <pre data-specimen-source="VideoPlayer-specimen" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+    </section>
+
+    <section class="Container Example-section">
+        <h2>YouTube video source</h2>
+        <p>You can hide the default controls by adding <code>controls=0</code> as a query parameter to the YouTube embed.</p>
+        
+        <div class="Example-specimen">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="VideoPlayer-specimen--2">View Source</button>
+            <div class="Example-large_specimen_content is-Example-specimen--visible" id="VideoPlayer-specimen--2" data-specimen>
+                <div class="VideoPlayer VideoPlayer--youtube" data-videoplayer="youtube" id="VideoPlayer--two">
+                    <div class="VideoPlayer-video VideoPlayer-video--sixteen_by_nine">
+                        <iframe src="https://www.youtube.com/embed/lasWefVUCsI?enablejsapi=1&controls=0" frameborder="0" allowfullscreen id="VideoPlayer--two-iframe"></iframe>
+                    </div>
+                    <div class="VideoPlayer-controls">
+                        <button type="button" class="VideoPlayer-play_pause" data-videoplayer-playpause>
+                            <span class="sr-only VideoPlayer-play_text">Play</span>
+                            <span class="sr-only VideoPlayer-pause_text">Pause</span>
+                        </button>
+                        <button type="button" class="VideoPlayer-scrubber" data-videoplayer-scrubber>
+                            <div class="VideoPlayer-scrubber_range"></div>
+                            <div class="VideoPlayer-scrubber_fill" data-videoplayer-scrubberfill></div>
+                            <div class="VideoPlayer-scrubber_knob" data-videoplayer-scrubberknob></div>
+                        </button>
+                        <button type="button" class="VideoPlayer-mute" data-videoplayer-mute>
+                            <span class="sr-only VideoPlayer-mute_text">Mute</span>
+                            <span class="sr-only VideoPlayer-unmute_text">Unmute</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <pre data-specimen-source="VideoPlayer-specimen--2" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+        
+        <div class="Example-warning">
+            <p>Warning: You must add <code>?enablejsapi=1</code> to the <code>src</code> parameter of the <code>&lt;iframe&gt;</code> housing your YouTube video. Additionally, this <code>&lt;iframe&gt;</code> must have an <code>id</code> on it.</p>
+        </div>
+    </section>
+
+    <section class="Container Example-section">
+        <h2>Vimeo video source</h2>
+        
+        <div class="Example-specimen">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="VideoPlayer-specimen--3">View Source</button>
+            <div class="Example-large_specimen_content is-Example-specimen--visible" id="VideoPlayer-specimen--3" data-specimen>
+                <div class="VideoPlayer VideoPlayer--vimeo" data-videoplayer="vimeo" id="VideoPlayer--three">
+                    <div class="VideoPlayer-video VideoPlayer-video--sixteen_by_nine">
+                        <iframe src="https://player.vimeo.com/video/40653230" width="640" height="363" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                    <div class="VideoPlayer-controls">
+                        <button type="button" class="VideoPlayer-play_pause" data-videoplayer-playpause>
+                            <span class="sr-only VideoPlayer-play_text">Play</span>
+                            <span class="sr-only VideoPlayer-pause_text">Pause</span>
+                        </button>
+                        <button type="button" class="VideoPlayer-scrubber" data-videoplayer-scrubber>
+                            <div class="VideoPlayer-scrubber_range"></div>
+                            <div class="VideoPlayer-scrubber_fill" data-videoplayer-scrubberfill></div>
+                            <div class="VideoPlayer-scrubber_knob" data-videoplayer-scrubberknob></div>
+                        </button>
+                        <button type="button" class="VideoPlayer-mute" data-videoplayer-mute>
+                            <span class="sr-only VideoPlayer-mute_text">Mute</span>
+                            <span class="sr-only VideoPlayer-unmute_text">Unmute</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <pre data-specimen-source="VideoPlayer-specimen--3" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+    </section>
+</main>

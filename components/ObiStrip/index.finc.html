@@ -1,0 +1,34 @@
+@@include('./assets/frag/html.frag.html')
+
+<title>ObiStrip example - Phylactery 1.0.0 by HUEMOR</title>
+
+@@include('./components/SiteHeader/phylactery_siteheader.frag.html')
+<header class="HeroHeader HeroHeader--thin HeroHeader--dark_bg" style="background-image: url(../../components/HeroHeader/test_background.svg);">
+    <div class="HeroHeader-valign">
+        <div class="HeroHeader-container">
+            <h1 class="HeroHeader-title">ObiStrip example</h1>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="Container Example-section">
+        <h2>Standard obi strip</h2>
+        <p>Place it at the bottom of pages to provide an immediate and relevant
+        callout to another part of the site.</p>
+        
+        <div class="Example-specimen">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="ObiStrip-specimen">View Source</button>
+            <div class="Example-large_specimen_content is-Example-specimen--visible" id="ObiStrip-specimen" data-specimen>
+                <footer class="ObiStrip">
+                    <div class="ObiStrip-background" style="background-image: url('http://placehold.it/1200x800')"></div>
+                    <div class="ObiStrip-content">
+                        <p>We're always looking for Lorem Ipsum.</p>
+                        <a href="#">Work at Cicero's</a>
+                    </div>
+                </footer>
+            </div>
+            <pre data-specimen-source="ObiStrip-specimen" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+    </section>
+</main>

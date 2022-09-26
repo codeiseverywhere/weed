@@ -1,0 +1,36 @@
+$AjaxCart-totals--font_family: $Paragraph-font;
+$AjaxCart-totals--font_weight: $Font-weight--bold;
+$AjaxCart-totals--font_style: $Paragraph-style;
+$AjaxCart-totals--font_size: 12px;
+$AjaxCart-totals--line_height: 1.6;
+
+$AjaxCart-total_note--font_family: $Paragraph-font;
+$AjaxCart-total_note--font_weight: normal;
+$AjaxCart-total_note--font_style: $Paragraph-style;
+$AjaxCart-total_note--font_size: 12px;
+
+.AjaxCart-totals {
+    @include make-Column--gutter(12, min, $Viewport-xs, $AjaxCart--gutter_width);
+
+    font-family: $AjaxCart-totals--font_family;
+    font-weight: $AjaxCart-totals--font_weight;
+    font-style: $AjaxCart-totals--font_style;
+    font-size: $AjaxCart-totals--font_size;
+    line-height: $AjaxCart-totals--line_height;
+
+    th {
+        text-align: left;
+    }
+
+    td {
+        text-align: right;
+        position: relative;
+    }
+}
+
+.AjaxCart-total_note, .AjaxCart-shipping_address_edit_button {
+    font-family: $AjaxCart-total_note--font_family;
+    font-weight: $AjaxCart-total_note--font_weight;
+    font-style: $AjaxCart-total_note--font_style;
+    font-size: $AjaxCart-total_note--font_size;
+}

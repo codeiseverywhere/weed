@@ -1,0 +1,46 @@
+@import "mixins.scss";
+@import "reveal.scss";
+@import "auxiliary.scss";
+@import "backdrop.scss";
+@import "primary.scss";
+@import "toast.scss";
+
+$Offcanvas--width: 180px;
+$Offcanvas--width_xs: 240px;
+$Offcanvas--width_sm: 320px;
+
+$Offcanvas--border_color: $Color--white;
+$Offcanvas--border_width: 2px;
+
+$Offcanvas--background_color: $Color--white;
+
+$Offcanvas--lv1--z_index: $ZIndex-offcanvas--1;
+$Offcanvas--lv2--z_index: $ZIndex-offcanvas--2;
+$Offcanvas--lv3--z_index: $ZIndex-offcanvas--3;
+$Offcanvas--lv4--z_index: $ZIndex-offcanvas--4;
+
+.Offcanvas {
+}
+
+.Offcanvas--lv1 {
+}
+
+.Offcanvas--lv2 {
+    z-index: $Offcanvas--lv2--z_index;
+}
+
+.Offcanvas--lv3 {
+    z-index: $Offcanvas--lv3--z_index;
+}
+
+.Offcanvas--lv4 {
+    z-index: $Offcanvas--lv4--z_index;
+}
+
+.Offcanvas-scroller {
+    background: $Offcanvas--background_color;
+    height: 100%;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}

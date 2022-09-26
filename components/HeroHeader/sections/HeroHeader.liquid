@@ -1,0 +1,92 @@
+<header class="HeroHeader HeroHeader--{{ section.settings.size }} HeroHeader--{{ section.settings.background_color }} HeroHeader--{{section.settings.image_focus}}" style="background-image: url({{ section.settings.background_image | img_url: 'original' }});">
+    <div class="HeroHeader-valign HeroHeader-valign--{{section.settings.alignment}}">
+        <div class="HeroHeader-container">
+            <h1 class="HeroHeader-title">{{ section.settings.title }}</h1>
+            {{ section.settings.content }}
+        </div>
+    </div>
+</header>
+
+{% schema %}
+    {
+        "name": "Hero Header",
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Heading"
+            },
+            {
+                "type": "textarea",
+                "id": "content",
+                "label": "Text"
+            },
+            {
+                "type": "image_picker",
+                "id": "background_image",
+                "label": "Header BG"
+            },
+            {
+                "type": "radio",
+                "id": "background_color",
+                "label": "Background Color",
+                "options": [
+                    { "value": "dark_bg", "label": "Dark background (light text)" },
+                    { "value": "light_bg", "label": "Light background (dark text)" },
+                    { "value": "inherit_bg", "label": "No background (use theme's text color)" }
+                ]
+            },
+            {
+                "type": "radio",
+                "id": "image_focus",
+                "label": "Image Focus",
+                "options": [
+                    { "value": "image_focus_left", "label": "Focus on left" },
+                    { "value": "image_focus_right", "label": "Focus on right" },
+                    { "value": "image_focus_none", "label": "Don't apply image focus" }
+                ]
+            },
+            {
+                "type": "radio",
+                "id": "alignment",
+                "label": "Alignment",
+                "options": [
+                    { "value": "top", "label": "Top-aligned content" },
+                    { "value": "center", "label": "Vertically centered content" },
+                    { "value": "bottom", "label": "Bottom-aligned content" }
+                ]
+            },
+            {
+                "type": "radio",
+                "id": "size",
+                "label": "Size",
+                "options": [
+                    { "value": "normal", "label": "Normal size" },
+                    { "value": "thin", "label": "Thin hero header" }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "category": "Hero Headers",
+                "name": "Normal size",
+                "settings": {
+                    "background_color": "inherit_bg",
+                    "image_focus": "image_focus_none",
+                    "alignment": "center",
+                    "size": "normal"
+                }
+            },
+            {
+                "category": "Hero Headers",
+                "name": "Thin",
+                "settings": {
+                    "background_color": "inherit_bg",
+                    "image_focus": "image_focus_none",
+                    "alignment": "center",
+                    "size": "normal"
+                }
+            }
+        ]
+    }
+{% endschema %}

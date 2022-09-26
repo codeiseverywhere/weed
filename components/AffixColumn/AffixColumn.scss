@@ -1,0 +1,61 @@
+.AffixColumn-root {
+    position: relative;
+    @extend .clearfix;
+}
+
+.AffixColumn {
+    position: fixed;
+    top: 0;
+
+    &.is-AffixColumn--top {
+        position: absolute;
+    }
+
+    &.is-AffixColumn--bottom {
+        position: absolute;
+        bottom: 0;
+        top: auto;
+    }
+
+    &.is-AffixColumn--tallest {
+        position: static;
+    }
+}
+
+.AffixColumn--bottom {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+
+    &.is-AffixColumn--top {
+        position: absolute;
+        top: 0;
+        bottom: auto;
+    }
+
+    &.is-AffixColumn--bottom {
+        position: absolute;
+    }
+
+    &.is-AffixColumn--tallest {
+        position: static;
+    }
+}
+
+@mixin make-AffixColumn--revert() {
+    position: static;
+    top: auto;
+
+    &.is-AffixColumn--top {
+        position: static;
+    }
+
+    &.is-AffixColumn--bottom {
+        position: static;
+        bottom: auto;
+    }
+
+    &.is-AffixColumn--tallest {
+        position: static;
+    }
+}

@@ -1,0 +1,161 @@
+@@include('./assets/frag/html.frag.html')
+
+<title>FormItem component - Phylactery 1.0.0 by HUEMOR</title>
+
+<main class="Example-content">
+    @@include('./components/SiteHeader/phylactery_siteheader.frag.html')
+    <header class="HeroHeader HeroHeader--thin HeroHeader--dark_bg" style="background-image: url(../../components/HeroHeader/test_background.svg);">
+        <div class="HeroHeader-valign">
+            <div class="HeroHeader-container">
+                <h1 class="HeroHeader-title">FormItem component</h1>
+            </div>
+        </div>
+    </header>
+
+    <section class="Container Example-section">
+        <h2>Ordinary form elements</h2>
+        <p>Suitable for long lists of full-width form items. Use the FormItem--actions variant to markup a string of submit/cancel buttons.</p>
+        
+        <div class="Example-specimen" style="text-align: left">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="FormItem-specimen">View Source</button>
+            <form class="Example-large_specimen_content is-Example-specimen--visible" id="FormItem-specimen" data-specimen>
+                <div class="FormItem Example-one_up--no_gutter">
+                    <label for="FormItem-input_1">Name</label>
+                    <input id="FormItem-input_1">
+                </div>
+                <div class="FormItem Example-one_up--no_gutter">
+                    <label for="FormItem-input_2">Phone number</label>
+                    <input id="FormItem-input_2" type="phone">
+                    <p class="FormItem-description">Enter your real phone number, not any of that 555 stuff</p>
+                </div>
+                <div class="FormItem Example-one_up--no_gutter">
+                    <label for="FormItem-input_3">*new* States</label>
+                    <select id="FormItem-input_3">
+                        <option>New York</option>
+                        <option>New Jersey</option>
+                        <option>New Zealand</option>
+                    </select>
+                </div>
+                <fieldset class="FormItem-fieldset Example-one_up--no_gutter">
+                    <legend>I am feeling...</legend>
+                    <div class="FormItem-checkbox_wrapper">
+                        <div class="FormItem FormItem--type_checkbox">
+                            <input type="checkbox" id="FormItem-checkbox_1"><label for="FormItem-checkbox_1">Happy</label>
+                        </div>
+                        <div class="FormItem FormItem--type_checkbox">
+                            <input type="checkbox" id="FormItem-checkbox_2" checked><label for="FormItem-checkbox_2">Sad</label>
+                        </div>
+                        <div class="FormItem FormItem--type_checkbox">
+                            <input type="checkbox" id="FormItem-checkbox_3"><label for="FormItem-checkbox_3">Immobile</label>
+                        </div>
+                        <div class="FormItem FormItem--type_checkbox">
+                            <input type="checkbox" id="FormItem-checkbox_4"><label for="FormItem-checkbox_4">Determined</label>
+                        </div>
+                        <div class="FormItem FormItem--type_checkbox">
+                            <input type="checkbox" id="FormItem-checkbox_5" disabled><label for="FormItem-checkbox_5">Emotionless</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="FormItem Example-one_up--no_gutter">
+                    <label for="FormItem-textarea_1">Your Message</label>
+                    <textarea placeholder="Enter a message!"></textarea>
+                </div>
+                <div class="FormItem--actions">
+                    <button type="submit" class="FormItem-action FormItem-action--primary">Contact Owner</button>
+                    <button type="submit" class="FormItem-action FormItem-action--secondary">Cancel</button>
+                    <button type="submit" class="FormItem-action FormItem-action--secondary">Reset</button>
+                </div>
+            </form>
+            
+            <pre data-specimen-source="FormItem-specimen" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+        <h3>Layout caution</h3>
+        <p>When applying custom layouts to an <code>--actions</code> block, remember to set the <code>@Grid--gutter_width</code> of any <code>.make-Column--gutter</code> declarations equal to that of <code>@FormItem--action--spacing_anomaly</code> or the buttons within the <code>--actions</code> block will not align with other form fields.</p>
+    </section>
+
+    <section class="Container Example-section">
+        <h2>Stacked elements</h2>
+        <p>These elements stack the label on top of the form element (input, select, etc). More suitable for form elements in columns.</p>
+        
+        <div class="Example-specimen" style="text-align: left">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="FormItem-specimen--2">View Source</button>
+            <form class="Example-large_specimen_content is-Example-specimen--visible" id="FormItem-specimen--2" data-specimen>
+                <div class="FormItem FormItem--stacked Example-three_up--no_gutter">
+                    <label for="FormItem-input_4">Name</label>
+                    <input id="FormItem-input_4">
+                </div>
+                <div class="FormItem FormItem--stacked Example-three_up--no_gutter">
+                    <label for="FormItem-input_5">Phone number</label>
+                    <input id="FormItem-input_5" type="phone">
+                    <p class="FormItem-description">Enter your real phone number, not any of that 555 stuff</p>
+                </div>
+                <div class="FormItem FormItem--stacked Example-three_up--no_gutter">
+                    <label for="FormItem-input_6">*new* States</label>
+                    <select id="FormItem-input_6">
+                        <option>New York</option>
+                        <option>New Jersey</option>
+                        <option>New Zealand</option>
+                    </select>
+                </div>
+                <fieldset class="FormItem-fieldset Example-three_up--no_gutter">
+                    <legend>I am feeling...</legend>
+                    <div class="FormItem-checkbox_wrapper FormItem-checkbox_wrapper--stacked">
+                        <div class="FormItem FormItem--type_checkbox">
+                            <input type="checkbox" id="FormItem-checkbox2_1"><label for="FormItem-checkbox2_1">Happy</label>
+                        </div>
+                        <div class="FormItem FormItem--type_checkbox">
+                            <input type="checkbox" id="FormItem-checkbox2_2" checked><label for="FormItem-checkbox2_2">Sad</label>
+                        </div>
+                        <div class="FormItem FormItem--type_checkbox">
+                            <input type="checkbox" id="FormItem-checkbox2_3"><label for="FormItem-checkbox2_3">Immobile</label>
+                        </div>
+                        <div class="FormItem FormItem--type_checkbox">
+                            <input type="checkbox" id="FormItem-checkbox2_4" disabled><label for="FormItem-checkbox2_4">Emotionless</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="FormItem Example-three_up--no_gutter">
+                    <label for="FormItem-textarea_1">Your Message</label>
+                    <textarea placeholder="Enter a message!"></textarea>
+                </div>
+                <div class="FormItem--actions">
+                    <button type="submit" class="FormItem-action FormItem-action--primary">Contact Owner</button>
+                    <button type="submit" class="FormItem-action FormItem-action--secondary">Cancel</button>
+                    <button type="submit" class="FormItem-action FormItem-action--secondary">Reset</button>
+                </div>
+            </form>
+            
+            <pre data-specimen-source="FormItem-specimen--2" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+        
+        <p>Alternatively, you can just use placeholders and skip the --stacked specifier.</p>
+        
+        <div class="Example-specimen" style="text-align: left">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="FormItem-specimen--3">View Source</button>
+            <form class="Example-large_specimen_content is-Example-specimen--visible" id="FormItem-specimen--3" data-specimen>
+                <div class="FormItem Example-three_up--no_gutter">
+                    <input id="FormItem-input_7" placeholder="Name">
+                </div>
+                <div class="FormItem Example-three_up--no_gutter">
+                    <input id="FormItem-input_8" type="phone" placeholder="Phone number">
+                    <p class="FormItem-description">Enter your real phone number, not any of that 555 stuff</p>
+                </div>
+                <div class="FormItem Example-three_up--no_gutter">
+                    <select id="FormItem-input_9">
+                        <option>*new* States</option>
+                        <option>New York</option>
+                        <option>New Jersey</option>
+                        <option>New Zealand</option>
+                    </select>
+                </div>
+                <div class="FormItem--actions">
+                    <button type="submit" class="FormItem-action FormItem-action--primary">Contact Owner</button>
+                    <button type="submit" class="FormItem-action FormItem-action--secondary">Cancel</button>
+                    <button type="submit" class="FormItem-action FormItem-action--secondary">Reset</button>
+                </div>
+            </form>
+            
+            <pre data-specimen-source="FormItem-specimen--3" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,83 @@
+<style>
+  
+</style>
+
+<div class="hp__5050-CTA" class="hp__5050-CTA">
+  <div class="hp50c--inner">
+
+    <div class="hp50c__content">
+      <div class="hp50c__column hp50c__column-image">
+        <div class="hp50c__image-wrap">
+          <img src="{{ section.settings.image-1 | img_url: 'master' }}" class="hp50c__image">
+        </div>
+        <div class="hp50c__image-wrap">
+          <img src="{{ section.settings.image-2 | img_url: 'master' }}" class="hp50c__image">
+        </div>
+      </div>
+      <div class="hp50c__column hp50c__column-text">
+        <div class="hp50c__title-wrap">
+          <h4 class="hp50c__title">
+            {{ section.settings.title }}
+          </h4>
+        </div>
+        <div class="hp50c__text-wrap">
+          <p class="hp50c__text">
+            {{ section.settings.text }}
+          </p>
+        </div>
+        <div class="hp50c__cta-wrap">
+          <a href="{{ section.settings.link }}" class="hp50c__cta site-btn">
+            {{ section.settings.cta-text }}
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "HP 5050 CTA",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image-1",
+        "label": "First Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image-2",
+        "label": "Second Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Section Title",
+        "default": "Shop lorem ipsum dolor sit amet"
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Section Text",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+      },
+      {
+        "type": "url",
+        "id": "link",
+        "label": "Link for CTA"
+      },
+      {
+        "type": "text",
+        "id": "cta-text",
+        "label": "Text for CTA"
+      }
+    ],
+    "presets": [
+      {
+        "category": "Misc",
+        "name": "HP 5050 CTA"
+      }
+    ]
+  }
+{% endschema %}

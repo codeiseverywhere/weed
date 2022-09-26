@@ -1,0 +1,79 @@
+@Pager--font_size: 18px;
+@Pager--font_family: @Headings--font_family;
+
+@Pager--icon_size: 12px;
+
+@Pager--item_spacing: 20px;
+@Pager--item_padding: 15px;
+
+@Pager-page--active--background_color: @Color--blue;
+@Pager-page--active--color: contrast(@Pager-page--active--background_color; @Font-color--white; @Font-color--black);
+
+@Pager-link--previous--icon: @Icon-arrow_left;
+@Pager-link--next--icon: @Icon-arrow_right;
+
+.Pager {
+    text-align: center;
+    font-family: @Pager--font_family;
+}
+
+.Pager-menu {
+    list-style: none inside none;
+    margin: 0;
+    padding: 0;
+    
+    font-size: 0;
+}
+
+.make-Pager-item() {
+    display: inline-block;
+    vertical-align: middle;
+    
+    margin: 0px (@Pager--item_spacing / 2);
+    font-size: @Pager--font_size;
+    
+    a, a:hover, a:focus {
+        display: block;
+        color: inherit;
+        text-decoration: none;
+        
+        margin-top: -4px;
+        margin-bottom: -4px;
+        
+        span {
+            padding: 0px (@Pager--item_padding / 2);
+        }
+    }
+    
+    span {
+        position: relative;
+        top: -2px;
+        
+        display: inline-block;
+    }
+}
+
+.Pager-link {
+    .make-Pager-item();
+}
+
+.Pager-link--previous a {
+    .make-Icon--exclusive(@Pager-link--previous--icon; @Pager--icon_size);
+}
+
+.Pager-link--next a {
+    .make-Icon--exclusive(@Pager-link--next--icon; @Pager--icon_size);
+}
+
+.Pager-ellipsis {
+    .make-Pager-item();
+}
+
+.Pager-page {
+    .make-Pager-item();
+}
+
+.Pager-page--active {
+    background-color: @Pager-page--active--background_color;
+    color: @Pager-page--active--color;
+}

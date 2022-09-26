@@ -1,0 +1,43 @@
+.AjaxCart-shipping_address_edit_button {
+    @include make-Button--revert(button);
+    @include make-Button--link();
+}
+
+.is-AjaxCart-shipping_address_edit_button--being_edited {
+    display: none;
+}
+
+.AjaxCart-shipping_address_form {
+    display: none;
+}
+
+.is-AjaxCart-shipping_address_form--being_edited {
+    display: block;
+}
+
+.AjaxCart-shipping_address_input {
+    padding: 0px;
+
+    input, select {
+        height: 20px;
+    }
+
+    input {
+        padding: 0 5px;
+    }
+
+    select {
+        padding: 0;
+    }
+}
+
+.AjaxCart-shipping_address_action {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    button {
+        padding: 0 5px;
+        margin: 0;
+    }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width">
+
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,600" rel="stylesheet">
+<link rel="stylesheet" href="/build/main.css">
+
+<script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+<script src="/build/script.js" type="application/javascript"></script>
+
+<title>PageTransition component - Phylactery 1.0.0 by HUEMOR</title>
+
+<body data-offcanvas-hover-min="960">
+
+<main id="pagetransition-content" data-pagetransition-region class="PageTransition--scribble">
+    <header class="SiteHeader">
+    <div class="SiteHeader-container">
+        <div class="SiteHeader-banner">
+            <a class="SiteHeader-brand" href="/">
+                <img class="SiteHeader-logo" src="/components/SiteHeader/logo.svg" alt="Phylactery">
+            </a>
+
+            <button type="button" class="SiteHeader-toggle Button Button--menu_toggle" data-toggle="offcanvas" data-target="#SiteHeader-navigation_id0">
+                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--first"></span>
+                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--second"></span>
+                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--third"></span>
+                <span class="sr-only">Open/close menu</span>
+            </button>
+        </div>
+        <div class="SiteHeader-content is-Offcanvas--closed" id="SiteHeader-navigation_id0">
+            <div class="Offcanvas-scroller">
+                <nav class="SiteHeader-navigation SiteHeader-navigation--first_menu">
+                    <ul class="NavMenu NavMenu--main_menu">
+                        <li class="NavMenu-link NavMenu--main_menu-link">
+                            <a data-toggle="offcanvas" data-target="#Phylactery-core_dropdown" href="#"><span>UI &amp; UX</span> <span class="NavMenu-link--arrow"></span></a>
+                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="Phylactery-core_dropdown">
+                                <div class="Offcanvas-scroller">
+                                    <ul class="NavMenu NavMenu--dropdown">
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/examples/Typography/"><span>Typography</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Button"><span>Buttons</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/FormItem"><span>FormItem</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Page"><span>Page</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Breadcrumb"><span>Breadcrumb</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/SiteHeader"><span>SiteHeader</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/SiteFooter"><span>SiteFooter</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/VideoPlayer"><span>VideoPlayer</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Modal"><span>Modal</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/TabbedContent"><span>TabbedContent</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/CollapseContent"><span>CollapseContent</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="NavMenu-link NavMenu--main_menu-link">
+                            <a data-toggle="offcanvas" data-target="#Phylactery-effects_dropdown" href="#"><span>Interactive Effects</span> <span class="NavMenu-link--arrow"></span></a>
+                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="Phylactery-effects_dropdown">
+                                <div class="Offcanvas-scroller">
+                                    <ul class="NavMenu NavMenu--dropdown">
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/AffixColumn"><span>AffixColumn</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/ScrollEffects"><span>ScrollEffects</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Depaginate"><span>Depaginate</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/PageTransition"><span>PageTransition</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/GoogleMap/"><span>Google Maps</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-heading"><h3>Historical</h3></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Animations"><span>WOW.js</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="NavMenu-link NavMenu--main_menu-link">
+                            <a data-toggle="offcanvas" data-target="#Phylactery-patterns_dropdown" href="#"><span>Layout Patterns</span> <span class="NavMenu-link--arrow"></span></a>
+                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="Phylactery-patterns_dropdown">
+                                <div class="Offcanvas-scroller">
+                                    <ul class="NavMenu NavMenu--dropdown">
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/examples/Grid"><span>Grid Styling</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/HeroHeader"><span>HeroHeader</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/ContentSection"><span>ContentSection</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Triptych"><span>Triptych</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/StaffGrid"><span>StaffGrid</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/ObiStrip"><span>ObiStrip</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="NavMenu-link NavMenu--main_menu-link">
+                            <a data-toggle="offcanvas" data-target="#Phylactery-examples_dropdown" href="#"><span>Examples</span> <span class="NavMenu-link--arrow"></span></a>
+                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="Phylactery-examples_dropdown">
+                                <div class="Offcanvas-scroller">
+                                    <ul class="NavMenu NavMenu--dropdown">
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/examples/MarketingPage/"><span>Marketing Page</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/examples/About/"><span>About Page</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/layouts/Article/"><span>Blog Article</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/layouts/ContactPage/"><span>Contact Page</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+    <div class="PageTransition-backdrop PageTransition--scribble-backdrop" data-pagetransition-backdrop>
+        <div class="PageTransition-fbf_animation PageTransition--scribble-fbf_animation"></div>
+    </div>
+    <header class="HeroHeader HeroHeader--thin HeroHeader--dark_bg" style="background-image: url(../../../components/HeroHeader/test_background.svg);">
+        <div class="HeroHeader-valign">
+            <div class="HeroHeader-container">
+                <h1 class="HeroHeader-title">PageTransition component</h1>
+            </div>
+        </div>
+    </header>
+
+    <section class="Example-content">
+        <div class="Container Example-section">
+            <h2>Scribble Transition Demo</h2>
+            <p>You'll need to <a href="../index.html">go back</a> in order to see
+            it.</p>
+        </div>
+    </section>
+</main>

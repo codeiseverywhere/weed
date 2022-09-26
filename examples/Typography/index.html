@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width">
+
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,600" rel="stylesheet">
+<link rel="stylesheet" href="/build/main.css">
+
+<script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+<script src="/build/script.js" type="application/javascript"></script>
+
+<title>Typography theming - Phylactery 1.0.0 by HUEMOR</title>
+
+<header class="SiteHeader">
+    <div class="SiteHeader-container">
+        <div class="SiteHeader-banner">
+            <a class="SiteHeader-brand" href="/">
+                <img class="SiteHeader-logo" src="/components/SiteHeader/logo.svg" alt="Phylactery">
+            </a>
+
+            <button type="button" class="SiteHeader-toggle Button Button--menu_toggle" data-toggle="offcanvas" data-target="#SiteHeader-navigation_id0">
+                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--first"></span>
+                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--second"></span>
+                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--third"></span>
+                <span class="sr-only">Open/close menu</span>
+            </button>
+        </div>
+        <div class="SiteHeader-content is-Offcanvas--closed" id="SiteHeader-navigation_id0">
+            <div class="Offcanvas-scroller">
+                <nav class="SiteHeader-navigation SiteHeader-navigation--first_menu">
+                    <ul class="NavMenu NavMenu--main_menu">
+                        <li class="NavMenu-link NavMenu--main_menu-link">
+                            <a data-toggle="offcanvas" data-target="#Phylactery-core_dropdown" href="#"><span>UI &amp; UX</span> <span class="NavMenu-link--arrow"></span></a>
+                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="Phylactery-core_dropdown">
+                                <div class="Offcanvas-scroller">
+                                    <ul class="NavMenu NavMenu--dropdown">
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/examples/Typography/"><span>Typography</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Button"><span>Buttons</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/FormItem"><span>FormItem</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Page"><span>Page</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Breadcrumb"><span>Breadcrumb</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/SiteHeader"><span>SiteHeader</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/SiteFooter"><span>SiteFooter</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/VideoPlayer"><span>VideoPlayer</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Modal"><span>Modal</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/TabbedContent"><span>TabbedContent</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/CollapseContent"><span>CollapseContent</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="NavMenu-link NavMenu--main_menu-link">
+                            <a data-toggle="offcanvas" data-target="#Phylactery-effects_dropdown" href="#"><span>Interactive Effects</span> <span class="NavMenu-link--arrow"></span></a>
+                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="Phylactery-effects_dropdown">
+                                <div class="Offcanvas-scroller">
+                                    <ul class="NavMenu NavMenu--dropdown">
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/AffixColumn"><span>AffixColumn</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/ScrollEffects"><span>ScrollEffects</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Depaginate"><span>Depaginate</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/PageTransition"><span>PageTransition</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/GoogleMap/"><span>Google Maps</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-heading"><h3>Historical</h3></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Animations"><span>WOW.js</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="NavMenu-link NavMenu--main_menu-link">
+                            <a data-toggle="offcanvas" data-target="#Phylactery-patterns_dropdown" href="#"><span>Layout Patterns</span> <span class="NavMenu-link--arrow"></span></a>
+                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="Phylactery-patterns_dropdown">
+                                <div class="Offcanvas-scroller">
+                                    <ul class="NavMenu NavMenu--dropdown">
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/examples/Grid"><span>Grid Styling</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/HeroHeader"><span>HeroHeader</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/ContentSection"><span>ContentSection</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Triptych"><span>Triptych</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/StaffGrid"><span>StaffGrid</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/ObiStrip"><span>ObiStrip</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="NavMenu-link NavMenu--main_menu-link">
+                            <a data-toggle="offcanvas" data-target="#Phylactery-examples_dropdown" href="#"><span>Examples</span> <span class="NavMenu-link--arrow"></span></a>
+                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="Phylactery-examples_dropdown">
+                                <div class="Offcanvas-scroller">
+                                    <ul class="NavMenu NavMenu--dropdown">
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/examples/MarketingPage/"><span>Marketing Page</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/examples/About/"><span>About Page</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/layouts/Article/"><span>Blog Article</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/layouts/ContactPage/"><span>Contact Page</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<header class="HeroHeader HeroHeader--thin HeroHeader--dark_bg" style="background-image: url(../../components/HeroHeader/test_background.svg);">
+    <div class="HeroHeader-valign">
+        <div class="HeroHeader-container">
+            <h1 class="HeroHeader-title">Typography theming</h1>
+        </div>
+    </div>
+</header>
+
+<main class="Example-wysiwyg clearfix" style="background-image: url('../Example/transparency.png');">
+    <section class="Container Example-section">
+        <div class="Brand-section_label">Heading type</div>
+        <div class="h1">Lorem ipsum dolor sit amet</div>
+        <div class="h2">Lorem ipsum dolor sit amet</div>
+        <div class="h3">Lorem ipsum dolor sit amet</div>
+        <div class="h4">Lorem ipsum dolor sit amet</div>
+        <div class="h5">Lorem ipsum dolor sit amet</div>
+        <div class="h6">Lorem ipsum dolor sit amet</div>
+    </section>
+    
+    <section class="Container Example-section">
+        <div class="Brand-section_label">Paragraph type</div>
+        
+        <div class="Brand-subsection_label">Normal size</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque nisl et venenatis convallis. Vestibulum id scelerisque massa, in ultricies mauris. In sit amet neque mauris. Nulla ut massa finibus, pulvinar turpis dignissim, ultrices metus. Praesent eu purus finibus, iaculis arcu eget, hendrerit metus. Aliquam fermentum tortor eu lectus gravida pellentesque. Aliquam vitae purus pulvinar, facilisis enim vel, cursus felis. Nulla facilisi. Donec nec libero vitae nibh aliquet tincidunt non eu ipsum. Nulla suscipit augue orci. Maecenas metus odio, laoreet quis semper vel, blandit tincidunt lectus. Pellentesque venenatis rhoncus augue eu rhoncus. Morbi in ipsum in quam elementum fermentum. Mauris vulputate magna a dictum tempus. Morbi pretium at sem a cursus. Aliquam dui nulla, consequat et feugiat sit amet, mattis eget urna.</p>
+        
+        <div class="Brand-subsection_label">Small size</div>
+        <p class="small">Nullam congue leo turpis, non lobortis urna aliquet quis. Integer velit mi, pulvinar a justo eget, varius consequat sem. Proin in diam quis felis fringilla venenatis et eget eros. Nulla convallis justo ac nibh consequat pharetra. Donec viverra, lacus at accumsan finibus, neque turpis ultricies orci, a suscipit metus nunc ac sem. Nullam fermentum orci purus, vitae placerat ante suscipit nec. Nullam velit eros, condimentum ut suscipit eu, sollicitudin non mauris. Phasellus sit amet erat tempor, luctus felis ac, porta risus. Proin rhoncus libero est, sit amet maximus arcu pretium porttitor. Curabitur eros lacus, malesuada sed quam pellentesque, blandit consequat leo.</p>
+    </section>
+    
+    <section class="Container Example-section">
+        <div class="Brand-section_label">Blockquotes</div>
+        
+        <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></blockquote>
+        
+        <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</blockquote>
+    </section>
+    
+    <section class="Container Example-section">
+        <div class="Brand-section_label">Lists</div>
+        
+        <div class="Brand-subsection_label">Unordered lists</div>
+        <ul>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>
+                Consectetur adipiscing elit.
+                <ul>
+                    <li>In sit amet neque mauris.</li>
+                    <li>
+                        Nulla ut massa finibus, pulvinar turpis dignissim, ultrices metus.
+                        <ul>
+                            <li>Aliquam fermentum tortor eu lectus gravida pellentesque.</li>
+                            <li>Aliquam vitae purus pulvinar, facilisis enim vel, cursus felis.</li>
+                            <li>
+                                Nulla facilisi.
+                                <ul>
+                                    <li>Donec nec libero vitae nibh aliquet tincidunt non eu ipsum.</li>
+                                    <li>Nulla suscipit augue orci.</li>
+                                    <li>Maecenas metus odio, laoreet quis semper vel, blandit tincidunt lectus.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Praesent eu purus finibus, iaculis arcu eget, hendrerit metus.</li>
+                </ul>
+            </li>
+            <li><p>Praesent scelerisque nisl et venenatis convallis.</p></li>
+            <li>Vestibulum id scelerisque massa, in ultricies mauris.</li>
+        </ul>
+        
+        <div class="Brand-subsection_label">Ordered lists</div>
+        <ol>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>
+                Consectetur adipiscing elit.
+                <ol>
+                    <li>In sit amet neque mauris.</li>
+                    <li>
+                        Nulla ut massa finibus, pulvinar turpis dignissim, ultrices metus.
+                        <ol>
+                            <li>Aliquam fermentum tortor eu lectus gravida pellentesque.</li>
+                            <li>Aliquam vitae purus pulvinar, facilisis enim vel, cursus felis.</li>
+                            <li>
+                                Nulla facilisi.
+                                <ol>
+                                    <li>Donec nec libero vitae nibh aliquet tincidunt non eu ipsum.</li>
+                                    <li>Nulla suscipit augue orci.</li>
+                                    <li>Maecenas metus odio, laoreet quis semper vel, blandit tincidunt lectus.</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>Praesent eu purus finibus, iaculis arcu eget, hendrerit metus.</li>
+                </ol>
+            </li>
+            <li><p>Praesent scelerisque nisl et venenatis convallis.</p></li>
+            <li>Vestibulum id scelerisque massa, in ultricies mauris.</li>
+        </ol>
+        
+        <div class="Brand-subsection_label">Mixed lists</div>
+        <ul>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>
+                Consectetur adipiscing elit.
+                <ol>
+                    <li>In sit amet neque mauris.</li>
+                    <li>
+                        Nulla ut massa finibus, pulvinar turpis dignissim, ultrices metus.
+                        <ul>
+                            <li>Aliquam fermentum tortor eu lectus gravida pellentesque.</li>
+                            <li>Aliquam vitae purus pulvinar, facilisis enim vel, cursus felis.</li>
+                            <li>
+                                Nulla facilisi.
+                                <ol>
+                                    <li>Donec nec libero vitae nibh aliquet tincidunt non eu ipsum.</li>
+                                    <li>Nulla suscipit augue orci.</li>
+                                    <li>Maecenas metus odio, laoreet quis semper vel, blandit tincidunt lectus.</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Praesent eu purus finibus, iaculis arcu eget, hendrerit metus.</li>
+                </ol>
+            </li>
+            <li><p>Praesent scelerisque nisl et venenatis convallis.</p></li>
+            <li>Vestibulum id scelerisque massa, in ultricies mauris.</li>
+        </ul>
+        
+        <div class="Brand-subsection_label">The other way round...</div>
+        <ol>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>
+                Consectetur adipiscing elit.
+                <ul>
+                    <li>In sit amet neque mauris.</li>
+                    <li>
+                        Nulla ut massa finibus, pulvinar turpis dignissim, ultrices metus.
+                        <ol>
+                            <li>Aliquam fermentum tortor eu lectus gravida pellentesque.</li>
+                            <li>Aliquam vitae purus pulvinar, facilisis enim vel, cursus felis.</li>
+                            <li>
+                                Nulla facilisi.
+                                <ul>
+                                    <li>Donec nec libero vitae nibh aliquet tincidunt non eu ipsum.</li>
+                                    <li>Nulla suscipit augue orci.</li>
+                                    <li>Maecenas metus odio, laoreet quis semper vel, blandit tincidunt lectus.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>Praesent eu purus finibus, iaculis arcu eget, hendrerit metus.</li>
+                </ul>
+            </li>
+            <li><p>Praesent scelerisque nisl et venenatis convallis.</p></li>
+            <li>Vestibulum id scelerisque massa, in ultricies mauris.</li>
+        </ol>
+    </section>
+</main>

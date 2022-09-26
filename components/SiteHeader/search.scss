@@ -1,0 +1,28 @@
+$SiteHeader-search--border_radius: 20px;
+
+.SiteHeader-search {
+    position: relative;
+
+    input[type='search'] {
+        border-radius: $SiteHeader-search--border_radius;
+    }
+}
+
+.SiteHeader-search_button {
+    @include make-Icon--before($Icon-search);
+    margin: 0;
+}
+
+@media (min-width: $SiteHeader--breakpoint) {
+    .SiteHeader-search {
+        height: $SiteHeader--content_row_height_bp;
+    }
+
+    .SiteHeader-search--first_menu {
+        float: right;
+    }
+
+    .SiteHeader-search--second_menu {
+        float: left;
+    }
+}

@@ -1,0 +1,57 @@
+{% comment %}
+
+  For more information on collection tags:
+    - http://docs.shopify.com/themes/liquid-variables/collection
+
+{% endcomment %}
+
+
+{{ collection.metafields.shogun.above }}
+
+{% paginate collection.products by 32 %}
+
+<div id="Collection-Template" class="Collection-Template">
+	<div class="Col-Inner">
+
+		<header id="Collection-Header" class="Col-Header">
+			<div class="Col-Header__image-wrap">
+				<img src="{{ collection.image | img_url: 'master' }}" class="Col-Header__image">
+			</div>
+			<div class="Col-Header__text-box">
+				<div class="Col-Header__title-wrap">
+					<h3 class="Col-Header__title">
+						{{ collection.title }}
+					</h3>
+				</div>
+				{% if collection.description.size > 0 %}
+					<p class="Col-Header__description">
+						{{ collection.description }}
+					</p>
+				{% endif %}
+			</div>
+		</header>
+
+		<main id="Collection-Content" class="Col-Content">
+				<div class="Col-Grid">
+					{% for product in collection.products %}
+						{% include 'Product-grid_item' %}
+					{% endfor %}
+				</div>
+		</main>
+	</div>
+</div>
+
+{% endpaginate %}
+
+
+
+{{ collection.metafields.shogun.below }}
+
+{% schema %}
+	{
+		"name": "Collection Page",
+		"settings": [
+				
+		]
+	}
+{% endschema %}

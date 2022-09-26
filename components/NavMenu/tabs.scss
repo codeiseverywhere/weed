@@ -1,0 +1,7 @@
+.NavMenu--tabs {
+    @extend .TabbedContent-selector_list;
+
+    a.active {
+        @extend .TabbedContent--target_active_link;
+    }
+}

@@ -1,0 +1,74 @@
+
+<div id ="as-seen-in-{{ section.id }}" class="as-seen-in">
+  <div class="asi-inner">
+
+    <div class="asi__header-wrap">
+      <p class="asi__header">
+        {{ section.settings.section-title }}
+      </p>
+    </div>
+
+    <div class="asi__content-wrapper">
+
+      <div class="asi__inline-header-wrap">
+        <p class="asi__inline-header">
+          {{ section.settings.section-title }}
+        </p>
+      </div>
+
+      {% comment %} <div class="asi__Icons-wrap"> {% endcomment %}
+        {% for block in section.blocks %}
+          <div class="asi__Icon-wrap" style="opacity: {{ section.settings.opacity }}%;">
+            <img src="{{ block.settings.image | img_url: 'master' }}" class="asi__Icon" >
+          </div>
+        {% endfor %}
+      {% comment %} </div> {% endcomment %}
+
+    </div>
+
+  </div>
+</div> 
+
+{% schema %}
+  {
+    "name": "As Seen In",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section-title",
+        "label": "Section Title",
+        "default": "As Seen In"
+      },
+      {
+        "type": "range",
+        "id": "opacity",
+        "label": "Icon Opacity",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 50
+      }
+    ],
+    "blocks": [
+      {
+        "type": "Icons",
+        "name": "Icons",
+        "limit": 5,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Select an Icon"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "category": "Misc",
+        "name": "As Seen In"
+      }
+    ]
+  }
+{% endschema %}

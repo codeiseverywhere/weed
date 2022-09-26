@@ -1,0 +1,51 @@
+@mixin make-Offcanvas--toast() {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-height: 90vh;
+
+    border-bottom: $Offcanvas--border_width solid $Offcanvas--border_color;
+
+    transition: transform 0.5s;
+
+    &.is-Offcanvas--open {
+        transform: translateY(0%);
+    }
+
+    &.is-Offcanvas--closed {
+        transform: translateY(-100%);
+    }
+}
+
+@mixin make-Offcanvas--toast_lv1() {
+    z-index: $Offcanvas--lv1--z_index;
+
+    &.is-Offcanvas--open {
+        transform: translateY(0%);
+    }
+
+    &.is-Offcanvas--depth_1 {
+        transform: translateY(20%);
+    }
+
+    &.is-Offcanvas--depth_2 {
+        transform: translateY(40%);
+    }
+
+    &.is-Offcanvas--depth_3 {
+        transform: translateY(60%);
+    }
+}
+
+@mixin make-Offcanvas--toast_lv2() {
+    z-index: $Offcanvas--lv2--z_index;
+}
+
+@mixin make-Offcanvas--toast_lv3() {
+    z-index: $Offcanvas--lv3--z_index;
+}
+
+@mixin make-Offcanvas--toast_lv4() {
+    z-index: $Offcanvas--lv4--z_index;
+}

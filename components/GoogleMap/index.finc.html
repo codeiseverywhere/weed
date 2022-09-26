@@ -1,0 +1,36 @@
+@@include('./assets/frag/html.frag.html')
+
+<script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCNhUvQqbXGm0RPyc_jNF1EkybQUWpAjFI&#038;ver=3'></script>
+
+<title>GoogleMap example - Phylactery 1.0.0 by HUEMOR</title>
+
+@@include('./components/SiteHeader/phylactery_siteheader.frag.html')
+<header class="HeroHeader HeroHeader--thin HeroHeader--dark_bg" style="background-image: url(../../components/HeroHeader/test_background.svg);">
+    <div class="HeroHeader-valign">
+        <div class="HeroHeader-container">
+            <h1 class="HeroHeader-title">GoogleMap example</h1>
+            <p>Is that too brand-specific?</p>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="Container Example-section">
+        <h2>Regular Ol' GMap</h2>
+        <p>You will need to ensure Google Maps is loaded on pages that use this
+        component.</p>
+        
+        <div class="Example-specimen">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="GoogleMap-specimen">View Source</button>
+            <div class="Example-large_specimen_content is-Example-specimen--visible" id="GoogleMap-specimen" data-specimen>
+                <div class="GoogleMap" data-googlemap>
+                    <div data-googlemap-marker data-googlemap-lat="40.7629136" data-googlemap-lng="-73.4294749">
+                        <h2>Lorem Ipsum Dolor Sit Amet</h2>
+                        <p>Lipsum generator</p>
+                    </div>
+                </div>
+            </div>
+            <pre data-specimen-source="GoogleMap-specimen" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+    </section>
+</main>

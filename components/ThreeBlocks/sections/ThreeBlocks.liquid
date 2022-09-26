@@ -1,0 +1,83 @@
+
+<div id="three-blocks" class="three-blocks">
+  <div class="tb__inner">
+
+    <div class="tb__section-title-wrap">
+      <h4 class="tb__section-title">
+        {{ section.settings.section-title }}
+      </h4>
+    </div>
+
+    <div class="tb__content">
+      {% for block in section.blocks %}
+        <div class="tb__block">
+          <div class="tb__block-inner">
+          <div class="tb__block-image-wrap">
+            <img src="{{ block.settings.image | img_url: 'master' }}" class="tb__block-image" >
+          </div>
+            
+            <h5 class="tb__block-title">
+              {{ block.settings.title }}
+            </h5>
+            <p class="tb__block-text">
+              {{ block.settings.text }}
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Three Blocks",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section-title",
+        "label": "Section Title",
+        "default": "Lorem ipsum dolor sit amet"
+      },
+      {
+        "type": "color",
+        "id": "icon-hi-light",
+        "label": "Icon Hi Light Color",
+        "default": "#cccccc"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "Block",
+        "name": "Block",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Slide Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Block Title",
+            "default": "Formulated for all skin types"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Block Text",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "category": "Misc",
+        "name": "Three Blocks"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,276 @@
+.product-how-it-works {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: #f5f5f5;
+}
+.phiw__inner {
+  width: 100%;
+  height: 100%;
+  margin: 0px auto;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 1100px) {
+  .phiw__inner {
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+    padding: 80px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.phiw__column {
+  height: 100%;
+}
+
+/* Text Column */
+.phiw__column--text {
+}
+.phiw__text-box {
+  width: auto;
+  margin-left: auto;
+  padding: 10px 20px;
+  margin-right: 40px;
+}
+
+.phiw__title-wrap {
+  width: 100%;
+  height: auto;
+  margin-bottom: 5px;
+}
+.phiw__title {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  margin: 0;
+  margin-left: 30px;
+  opacity: 0.5;
+}
+
+.phiw__text-wrap {
+  width: 100%;
+  height: auto;
+  margin-bottom: 35px;
+}
+.phiw__text {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 42px;
+  margin: 0;
+  margin-left: 30px;
+}
+
+.phiw__steps-wrap {
+  width: 100%;
+  height: auto;
+}
+.phiw__step {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+.phiw__step:last-child {
+  margin-bottom: 0px;
+}
+.phiw__step-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.phiw__step-indicator-wrap {
+  width: 30px;
+  min-width: 30px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.phiw__step-indicator {
+  width: 11px;
+  height: 11px;
+  min-width: 11px;
+  min-height: 11px;
+  border-radius: 10px;
+  border: 1px solid #000;
+  background-color: #fff003;
+}
+
+.phiw__step-text-wrap {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+.phiw__step-title {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  margin: 0;
+  margin-bottom: 5px;
+}
+.phiw__step-text {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.phiw__step-spacer {
+  width: 30px;
+  height: 30px;
+  margin: 10px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.phiw__step-spacer-line {
+  width: 1px;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.3;
+}
+
+.phiw__step:last-child .phiw__step-spacer {
+  display: none;
+}
+@media screen and (max-width: 1100px) {
+  .phiw__column--text {
+    margin-bottom: 50px;
+  }
+  .phiw__text-box {
+    width: auto;
+    margin-left: auto;
+    padding: 0px 0px;
+    margin-right: 0px;
+  }
+
+  .phiw__title-wrap {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+  }
+  .phiw__title {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    margin: 0;
+    margin-left: 30px;
+    opacity: 0.5;
+  }
+
+  .phiw__text-wrap {
+    width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+  }
+  .phiw__text {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 42px;
+    margin: 0;
+    margin-left: 30px;
+  }
+
+  .phiw__steps-wrap {
+    width: 100%;
+    height: auto;
+  }
+  .phiw__step {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .phiw__step:last-child {
+    margin-bottom: 0px;
+  }
+  .phiw__step-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .phiw__step-indicator-wrap {
+    width: 30px;
+    min-width: 30px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .phiw__step-indicator {
+    width: 11px;
+    height: 11px;
+    min-width: 11px;
+    min-height: 11px;
+    border-radius: 10px;
+    border: 1px solid #000;
+    background-color: #fff003;
+  }
+
+  .phiw__step-text-wrap {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+  .phiw__step-title {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    margin: 0;
+    margin-bottom: 5px;
+  }
+  .phiw__step-text {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0;
+    opacity: 0.8;
+  }
+
+  .phiw__step-spacer {
+    width: 30px;
+    height: 30px;
+    margin: 10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .phiw__step-spacer-line {
+    width: 1px;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.3;
+  }
+
+  .phiw__step:last-child .phiw__step-spacer {
+    display: none;
+  }
+}
+//
+//
+//
+//
+//
+/* Image Column */
+.phiw__column--image {
+}
+.phiw__image-wrap {
+  width: 100%;
+  height: auto;
+  max-width: 777px;
+}
+.phiw__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

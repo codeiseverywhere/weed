@@ -1,0 +1,115 @@
+$StaffGrid-image--spacing: 30px;
+
+$StaffGrid-modal--breakpoint: $Viewport-md;
+
+.StaffGrid {
+    @include clearfix;
+    @include make-ContentSection--spacing();
+    @include make-Matrix(2, min, $Viewport-hh, $Border-width: 0px);
+    @include make-Matrix(3, min, $Viewport-xs, $Matrix--previous_column_count: 2, $Border-width: 0px);
+}
+
+.StaffGrid-item {
+    @include make-Padding();
+
+    display: block;
+    font-size: 0;
+    text-align: center;
+    padding-bottom: $ContentSection--spacing;
+
+    @media (min-width: $ContentSection--breakpoint) {
+        padding-bottom: $ContentSection--spacing_bp;
+    }
+}
+
+a.StaffGrid-item {
+    @include make-Button--revert(a);
+}
+
+button.StaffGrid-item {
+    @include make-Button--revert(button);
+    @include make-Padding();
+
+    padding-bottom: $ContentSection--spacing;
+
+    @media (min-width: $ContentSection--breakpoint) {
+        padding-bottom: $ContentSection--spacing_bp;
+    }
+}
+
+.StaffGrid-image {
+    width: 100%;
+    height: auto;
+
+    margin-bottom: $StaffGrid-image--spacing;
+}
+
+.StaffGrid-name {
+    @extend .h3;
+
+    margin: 0;
+}
+
+.StaffGrid-job_title {
+    @extend .h6;
+
+    margin: 0;
+}
+
+.StaffGrid-modal {
+    @extend .Container;
+
+    position: fixed;
+    width: 100%;
+}
+
+.StaffGrid-modal_content {
+    width: 100%;
+    padding: 0;
+}
+
+.StaffGrid-modal_slider_wrapper {
+    @extend .clearfix;
+    position: relative;
+}
+
+.StaffGrid-modal_image {
+    @include make-Column(5, min, $StaffGrid-modal--breakpoint);
+
+    display: none;
+    min-height: 630px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @media (min-width: $Viewport-md) {
+        display: block;
+    }
+}
+
+.StaffGrid-modal_info {
+    @include make-Column--gutter(6, min, $StaffGrid-modal--breakpoint);
+    @include make-Column--gutter-offset(0.5, min, $StaffGrid-modal--breakpoint);
+    @include make-Column--gutter-after(0.5, min, $StaffGrid-modal--breakpoint);
+
+    position: relative;
+
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding-bottom: 60px;
+}
+
+.StaffGrid-prev {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+}
+
+.StaffGrid-next {
+    position: absolute;
+
+    bottom: 0;
+    right: 0;
+}

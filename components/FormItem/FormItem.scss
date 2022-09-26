@@ -1,0 +1,61 @@
+@import "base.scss";
+@import "action.scss";
+@import "quantity_selector.scss";
+@import "checkboxes.scss";
+@import "fieldset.scss";
+
+.FormItem {
+    @include make-Padding($FormItem--spacing);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    label {
+        @include make-FormItem--label();
+    }
+
+    input {
+        @include make-FormItem--input();
+
+        max-width: 100%;
+        flex-grow: 1;
+    }
+
+    select {
+        @include make-FormItem--select();
+
+        max-width: 100%;
+        flex-grow: 1;
+    }
+
+    textarea {
+        @include make-FormItem--textarea();
+
+        width: 100%;
+        flex-grow: 1;
+
+        margin-top: $FormItem--label--spacing;
+    }
+
+    margin-bottom: 10px;
+}
+
+.FormItem--stacked {
+    display: block;
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    select {
+        width: 100%;
+    }
+}
+
+.FormItem-description {
+    width: 100%;
+}

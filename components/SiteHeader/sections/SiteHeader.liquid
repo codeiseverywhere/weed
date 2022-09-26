@@ -1,0 +1,363 @@
+{% assign has_third_menu = false %}
+{% for block in section.blocks %}
+    {% if block.settings.location == "third_menu" %}
+        {% assign has_third_menu = true %}
+    {% endif %}
+{% endfor %}
+
+<header class="SiteHeader {% if settings.header-position == 'fixed' %} SiteHeader--fixed{% endif %}" data-section-id="{{section.id}}" data-section-type="SiteHeader-section">
+    <div class="SiteHeader-container">
+        <div class="SiteHeader-banner">
+
+            <a class="SiteHeader-brand SiteHeader-brand--mobile SiteHeader-brand--centered" href="/">
+                <img class="SiteHeader-logo" src="{{ section.settings.header-logo | img_url: 'original' }}" alt="Phylactery">
+            </a>
+            
+            <nav class="SiteHeader-navigation SiteHeader-navigation--exposed_first_menu">
+                {% for block in section.blocks %}
+                    {% if block.settings.exposed and block.settings.location == "first_menu" %}
+                        {% render 'SiteHeader-block', block: block %}
+                    {% endif %}
+                {% endfor %}
+            </nav>
+
+            <nav class="SiteHeader-navigation SiteHeader-navigation--exposed_second_menu">
+                {% for block in section.blocks %}
+                    {% if block.settings.exposed and block.settings.location == "second_menu" %}
+                        {% render 'SiteHeader-block', block: block %}
+                    {% endif %}
+                {% endfor %}
+            </nav>
+
+            <button type="button" class="SiteHeader-toggle Button Button--menu_toggle" data-toggle="offcanvas" data-target="#SiteHeader-navigation_id0" data-toggle-options="nohover">
+                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--first"></span>
+                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--second"></span>
+                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--third"></span>
+                <span class="sr-only">Open/close menu</span>
+            </button>
+
+        </div>
+        <div class="SiteHeader-content is-Offcanvas--closed" id="SiteHeader-navigation_id0">
+            <div class="Offcanvas-scroller">
+
+            {% if settings.announcement-bar %}
+                <div class="SiteHeader-notice_bar">
+                    <div class="SiteHeader-notice">
+                        <p class="SiteHeader-notice-text">
+                            {{ settings.announcement-bar-text }}
+                        </p>
+                    </div>
+                </div>
+            {% endif %}
+
+                 <a class="SiteHeader-brand SiteHeader-brand--desktop SiteHeader-brand--centered" href="/">
+                    <img class="SiteHeader-logo" src="{{ section.settings.header-logo | img_url: 'original' }}" alt="Phylactery">
+                </a>
+                            
+
+
+                <nav class="SiteHeader-navigation SiteHeader-navigation--first_menu">
+                    {% for block in section.blocks %}
+                        {% unless block.settings.exposed %}
+                            {% if block.settings.location == "first_menu" %}
+                                {% render 'SiteHeader-block', block: block %}
+                            {% endif %}
+                        {% endunless %}
+                    {% endfor %}
+                </nav>
+                <nav class="SiteHeader-navigation SiteHeader-navigation--second_menu">
+                    {% for block in section.blocks %}
+                        {% unless block.settings.exposed %}
+                            {% if block.settings.location == "second_menu" %}
+                                {% render 'SiteHeader-block', block: block %}
+                            {% endif %}
+                        {% endunless %}
+                    {% endfor %}
+                </nav>
+                {% if has_third_menu %}
+                    <nav class="SiteHeader-navigation SiteHeader-navigation--third_menu" style="display: flex; justify-content: center;">
+                        {% for block in section.blocks %}
+                            {% if block.settings.location == "third_menu" %}
+                                {% render 'SiteHeader-block', block: block %}
+                            {% endif %}
+                        {% endfor %}
+                    </nav>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</header>
+
+{% schema %}
+    {
+        "name": "Site Header",
+        "settings": [
+            {
+                "type": "header",
+                "content": "General Info"
+            },
+            {
+                "type": "paragraph",
+                "content": "the following settigs can be found in the theme settings tab under Header: Colors for Header, Header Row Heights, Enabling announcement bar, announcement bar colors and text. "
+            },
+            {
+                "type": "header",
+                "content": "Header Logo"
+            },
+            {
+                "type": "image_picker",
+                "id": "header-logo",
+                "label": "Header Logo"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "menu",
+                "name": "Menu",
+                "settings": [
+                    {
+                        "type": "select",
+                        "id": "location",
+                        "label": "Placement",
+                        "options": [
+                            {
+                                "group": "Logo inline",
+                                "value": "first_menu",
+                                "label": "To the right of the navigation"
+                            },
+                            {
+                                "group": "Logo inline",
+                                "value": "second_menu",
+                                "label": "To the left of the navigation"
+                            },
+                            {
+                                "group": "Below logo",
+                                "value": "third_menu",
+                                "label": "Below the primary navigation bar"
+                            }
+                        ],
+                        "default": "first_menu",
+                        "info": "Select a location for this menu when displayed on desktop viewports. On mobile, menus are automatically placed inside an off-canvas hamburger menu."
+                    },
+                    {
+                        "type": "link_list",
+                        "id": "linklist",
+                        "label": "Menu linklist",
+                        "default": "main-menu"
+                    }
+                ]
+            },
+            {
+                "type": "accounts",
+                "name": "Accounts menu",
+                "limit": 1,
+                "settings": [
+                    {
+                        "type": "paragraph",
+                        "content": "Please ensure that accounts are enabled before using the accounts menu."
+                    },
+                    {
+                        "type": "select",
+                        "id": "location",
+                        "label": "Placement",
+                        "options": [
+                            {
+                                "group": "Logo inline",
+                                "value": "first_menu",
+                                "label": "To the right of the logo"
+                            },
+                            {
+                                "group": "Logo inline",
+                                "value": "second_menu",
+                                "label": "To the left of the logo"
+                            },
+                            {
+                                "group": "Below logo",
+                                "value": "third_menu",
+                                "label": "Below the primary navigation bar"
+                            }
+                        ],
+                        "default": "first_menu",
+                        "info": "Select a location for the accounts icon."
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "exposed",
+                        "label": "Exposed on mobile",
+                        "default": false,
+                        "info": "On mobile viewports, always display the accounts menu. Use this setting with caution as vertical space is limited. Only 'Logo inline' options allow mobile exposure."
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "account-icon",
+                        "label": "Choose an icon for your account",
+                        "info": "ensure that your image file is a .png and properly sized for best results."
+                    }
+
+                ]
+            },
+            {
+                "type": "cart",
+                "name": "Cart Icon",
+                "limit": 1,
+                "settings": [
+                    {
+                        "type": "select",
+                        "id": "location",
+                        "label": "Placement",
+                        "options": [
+                            {
+                                "group": "Logo inline",
+                                "value": "first_menu",
+                                "label": "To the right of the logo"
+                            },
+                            {
+                                "group": "Logo inline",
+                                "value": "second_menu",
+                                "label": "To the left of the logo"
+                            },
+                            {
+                                "group": "Below logo",
+                                "value": "third_menu",
+                                "label": "Below the primary navigation bar"
+                            }
+                        ],
+                        "default": "first_menu",
+                        "info": "Select a location for the accounts icon."
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "cart-icon",
+                        "label": "Choose an icon for you cart",
+                        "info": "ensure that your image file is a .png and properly sized for best results."
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "use-minicart",
+                        "label": "Use minicart",
+                        "default": false,
+                        "info": "When checked, clicking the cart button will open an AJAX minicart rather than linking to the cart page."
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "cart-count",
+                        "label": "Enable Cart Count",
+                        "default": false,
+                        "info": "By enabling the cart count, you will be able to see the number of item in the cart displayed in the cart notification circle."
+                    },
+                    {
+                        "type": "color",
+                        "id": "cart-notification-bg-color",
+                        "label": "Cart Notification Background Color",
+                        "default": "#eaeaea"
+                    },
+                    {
+                        "type": "color",
+                        "id": "cart-notification-text-color",
+                        "label": "Cart Notification Text Color",
+                        "default": "#000"
+                    }
+                ]
+            },
+            {
+                "type": "search",
+                "name": "Search Icon",
+                "limit": 1,
+                "settings": [
+                    {
+                        "type": "paragraph",
+                        "content": "Please ensure that accounts are enabled before using the accounts menu."
+                    },
+                    {
+                        "type": "select",
+                        "id": "location",
+                        "label": "Placement",
+                        "options": [
+                            {
+                                "group": "Logo inline",
+                                "value": "first_menu",
+                                "label": "To the right of the logo"
+                            },
+                            {
+                                "group": "Logo inline",
+                                "value": "second_menu",
+                                "label": "To the left of the logo"
+                            },
+                            {
+                                "group": "Below logo",
+                                "value": "third_menu",
+                                "label": "Below the primary navigation bar"
+                            }
+                        ],
+                        "default": "first_menu",
+                        "info": "Select a location for the accounts icon."
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "search-icon",
+                        "label": "Choose an icon for you cart",
+                        "info": "ensure that your image file is a .png and properly sized for best results."
+                    }
+                ]
+            },
+            {
+                "type": "hilight-button",
+                "name": "Hilight Button",
+                "limit": 1,
+                "settings": [
+                    {
+                        "type": "select",
+                        "id": "location",
+                        "label": "Placement",
+                        "options": [
+                            {
+                                "group": "Logo inline",
+                                "value": "first_menu",
+                                "label": "To the right of the logo"
+                            },
+                            {
+                                "group": "Logo inline",
+                                "value": "second_menu",
+                                "label": "To the left of the logo"
+                            },
+                            {
+                                "group": "Below logo",
+                                "value": "third_menu",
+                                "label": "Below the primary navigation bar"
+                            }
+                        ],
+                        "default": "first_menu",
+                        "info": "Select a location for the accounts icon."
+                    },
+                    {
+                        "type": "color",
+                        "id": "hilight-bg-color",
+                        "label": "Hilight Button Background Color",
+                        "default": "#eaeaea",
+                        "info": "Choose a background color for the hilight button"
+                    },
+                    {
+                        "type": "color",
+                        "id": "hilight-text-color",
+                        "label": "Hilight Button Text Color",
+                        "default": "#000",
+                        "info": "Choose a color for the hilight button text"
+                    },
+                    {
+                        "type": "text",
+                        "id": "hilight-text",
+                        "label": "Text for hilight button",
+                        "info": "*Keep this length of the text to a minimum to prevent from being to large and throwing off flow of header"
+                    },
+                    {
+                        "type": "url",
+                        "id": "hilight-url",
+                        "label": "Link for hilight button",
+                        "info": "Choose a link for the hilight button"
+                    }
+                ]
+            }
+
+        ]
+    }
+{% endschema %}

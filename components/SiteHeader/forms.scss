@@ -1,0 +1,81 @@
+$SiteHeader-form_item--margin_vertical: (($SiteHeader--height - $FormItem--height) / 2);
+$SiteHeader-form_item--padding_horizontal: ($FormItem--action--spacing_anomaly / 2);
+
+$SiteHeader-form_item--color: $SiteHeader--border_color;
+
+$SiteHeader-form_item--border_width: $SiteHeader--border_width;
+$SiteHeader-form_item--border_color: $SiteHeader--border_color;
+
+.SiteHeader-form_item {
+    position: relative;
+    font-size: 0; //needed because we have a lot of inline-blocks here
+
+    float: left;
+    padding-left: $SiteHeader-form_item--padding_horizontal;
+    padding-right: $SiteHeader-form_item--padding_horizontal;
+    margin: $SiteHeader-form_item--margin_vertical 0;
+
+    input[type="search"] {
+        border: $SiteHeader-form_item--border_width solid $SiteHeader-form_item--border_color;
+        -webkit-appearance: none;
+        border-radius: 0;
+        float: left;
+        min-width: 200px;
+    }
+}
+
+.SiteHeader-form_button_wrapper {
+    position: absolute;
+    right: $SiteHeader-form_item--padding_horizontal;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: auto;
+    margin: 0;
+}
+
+.SiteHeader-form_button {
+    @include make-Button--revert(button);
+
+    height: $FormItem--height;
+    min-width: $FormItem--height;
+    margin: $SiteHeader-form_item--margin_vertical 0;
+
+    display: inline-block;
+    vertical-align: middle;
+
+    color: $SiteHeader-form_item--color;
+
+    //Assuming that if the button has an icon, it's installed into :before
+    &:before {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+@media (min-width: $SiteHeader--breakpoint) {
+    .SiteHeader-form_item {
+        margin: 0;
+
+        padding-left: 0px;
+        padding-right: 0px;
+
+        height: 100%;
+
+        &:before {
+            content: "";
+            height: 100%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        > * {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        input[type="search"] {
+            float: none;
+        }
+    }
+}

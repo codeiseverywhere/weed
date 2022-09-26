@@ -1,0 +1,180 @@
+
+
+<style>
+/* put the bg-color 
+  on the container to 
+  have the highlight be 
+  half way */
+.dwi__title-container {
+  display: inline;
+  width: 100%;
+  height: auto;
+  padding: 3.4% 1% 1%;
+  background-color: {{ section.settings.title-hi-light-color }};
+}
+</style>
+
+<div id ="dropdown-with-image-{{ section.id }}" class="dropdown-with-image">
+  <div class="dwi__background" style="background-color: {{ section.settings.bg-color }}">
+    <div class="dwi__inner">
+
+      <div class="dwi__image-container">
+        <img src="{{ section.settings.image | img_url: 'master' }}" class="dwi__image">
+      </div>
+
+      <div class="dwi__content-container">
+
+        <div class="dwi__title-container">
+          <h2 class="dwi__title">
+            {{ section.settings.title }}
+          </h2>
+        </div>
+
+        {%comment%}
+          <div class="dwi__form-container">
+
+            <h4 class="dwi__question">
+              {{ section.settings.question }}
+            </h4>
+
+            <div class="dwi__dropdown">
+
+              <div class="dwi__dropdown-placeholder" style="border-bottom: 1px solid {{ section.settings.border-bottom-color }}">
+                <p class="dwi__option-text"></p>
+                <img src="{{ section.settings.dropdown-icon | img_url: 'master' }}" class="dwi__arrow">
+              </div>
+
+              <div class="dwi__dropdown-options dwi__dropdown-closed">
+              {% for block in section.blocks %}
+                <div id="option-{{ forloop.index }}" class="dwi__dropdown-option" data-option="{{ block.settings.value }}">
+                  <p class="dwi__dropdown-option-text">
+                    {{ block.settings.option }}
+                  </p>
+                </div>
+              {% endfor %}
+              </div>
+            </div>
+
+          </div>
+        {%endcomment%}
+
+        <div class="dwi__button">
+          <a href="{{ section.settings.button-link }}" class="dwi__button-link site-btn">
+            {{ section.settings.button-text }}
+            <img src="{{section.settings.icon | img_url: 'master' }}" class="dwi__button-icon dwi-button-icon-no-hover">
+            <img src="{{section.settings.icon-hover | img_url: 'master' }}" class="dwi__button-icon dwi-button-icon-hover">
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div> 
+
+
+{% schema %}
+  {
+    "name": "Dropdown With Image",
+    "settings": [
+      {
+        "type": "color",
+        "id": "bg-color",
+        "label": "Section Background Color",
+        "default": "#fff"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Section Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Find the perfect products for your skin type and skin concerns."
+      },
+      {
+        "type": "color",
+        "id": "title-hi-light-color",
+        "label": "Section Title Hi Light Color",
+        "default": "#eaeaea"
+      },
+      {
+        "type": "text",
+        "id": "question",
+        "label": "Question",
+        "default": "my skin is"
+      },
+      {
+        "type": "image_picker",
+        "id": "dropdown-icon",
+        "label": "choose an icon for the dropdown",
+        "info": "typically an arrow"
+      },
+      {
+        "type": "color",
+        "id": "border-bottom-color",
+        "label": "Drop Down Border Bottom Color",
+        "default": "#A3A5AD"
+      },
+      {
+        "type": "text",
+        "id": "button-text",
+        "label": "Button Text",
+        "default": "Take the Skin Quiz"
+      },
+      {
+        "type": "url",
+        "id": "button-link",
+        "label": "Button Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "icon",
+        "label": "Icon for Button"
+      },
+      {
+        "type": "image_picker",
+        "id": "icon-hover",
+        "label": "Icon for Hover Button"
+      },
+      {
+        "type": "color",
+        "id": "button-bg-color",
+        "label": "Button Background Color",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "button-color",
+        "label": "Button Text Color",
+        "default": "#fff"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "answer",
+        "name": "Answer",
+        "settings": [
+          {
+            "type": "text",
+            "id": "option",
+            "label": "Answer Text"
+          },
+          {
+            "type": "text",
+            "id": "value",
+            "label": "Answer Value"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "category": "Misc",
+        "name": "Dropdown With Image"
+      }
+    ]
+  }
+{% endschema %}

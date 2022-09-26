@@ -1,0 +1,90 @@
+$SiteHeader-logo--aspect_ratio: (154/40);
+
+$SiteHeader-brand--padding_horizontal: 10px;
+$SiteHeader-brand--margin_horizontal: 25px;
+$SiteHeader-brand--padding_vertical: 17px;
+
+$SiteHeader-brand--padding_horizontal_bp: 15px;
+$SiteHeader-brand--padding_vertical_bp: 15px;
+
+$SiteHeader-brand--padding_horizontal_mbp: 15px;
+$SiteHeader-brand--padding_vertical_mbp: 17px;
+
+$SiteHeader-brand--height: #{"{{ settings.siteHeader-top-row-height }}"};
+$SiteHeader-brand--height_bp: $SiteHeader--content_row_height_bp;
+
+$SiteHeader-toggle--margin_horizontal: $SiteHeader-brand--padding_horizontal;
+$SiteHeader-toggle--margin_vertical: (($SiteHeader--height - $Button--menu_toggle--height) / 2);
+
+.SiteHeader-brand {
+    display: block;
+    height: $SiteHeader-brand--height;
+    padding: $SiteHeader-brand--padding_vertical $SiteHeader-brand--padding_horizontal;
+
+    float: left;
+}
+
+
+
+.SiteHeader-logo {
+    height: 100%;
+}
+
+.SiteHeader-toggle {
+    float: right;
+    margin: $SiteHeader-toggle--margin_vertical $SiteHeader-toggle--margin_horizontal;
+
+    &.is-Offcanvas--target_open {
+        @include make-Button--menu_toggle_closed();
+    }
+}
+
+.SiteHeader-brand--centered {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.SiteHeader-brand--mobile {
+    display: block;
+}
+.SiteHeader-brand--desktop {
+    display: none;
+}
+
+
+@media (max-width: $SiteHeader--breakpoint_max) {
+    .SiteHeader-banner {
+        @include make-Border(border-bottom, $SiteHeader--border_width, $SiteHeader--border_color);
+
+        width: 100%;
+        height: $SiteHeader--height;
+        background: $SiteHeader--background;
+
+        position: relative;
+        z-index: $SiteHeader--z_index;
+    }
+}
+
+@media (min-width: $SiteHeader--breakpoint) {
+    
+
+    .SiteHeader-banner--with_notice_bar {
+        margin-top: $SiteHeader-notice_bar--height_bp;
+    }
+
+    .SiteHeader-brand {
+        height: $SiteHeader-brand--height_bp;
+        padding: $SiteHeader-brand--padding_vertical_bp $SiteHeader-brand--padding_horizontal_bp;
+    }
+
+    .SiteHeader-toggle {
+        display: none;
+    }
+    .SiteHeader-brand--mobile {
+        display: none;
+    }
+    .SiteHeader-brand--desktop {
+        display: block
+    }
+}

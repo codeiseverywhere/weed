@@ -1,0 +1,105 @@
+$HeroHeader--min_height: 556px;
+$HeroHeader--min_height_sm: 556px;
+$HeroHeader--min_height_md: 556px;
+$HeroHeader--min_height_lg: 556px;
+
+$HeroHeader--thin--min_height: 330px;
+$HeroHeader--thin--min_height_sm: 330px;
+$HeroHeader--thin--min_height_md: 330px;
+$HeroHeader--thin--min_height_lg: 330px;
+
+$HeroHeader--breakpoint: $Viewport-sm;
+
+.HeroHeader {
+    @include make-Padding();
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    display: table;
+    width: 100%;
+
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+
+    min-height: $HeroHeader--min_height;
+
+    @media (min-width: $Viewport-sm) {
+        min-height: $HeroHeader--min_height_sm;
+    }
+
+    @media (min-width: $Viewport-md) {
+        min-height: $HeroHeader--min_height_md;
+    }
+
+    @media (min-width: $Viewport-lg) {
+        min-height: $HeroHeader--min_height_lg;
+    }
+}
+
+.HeroHeader--thin {
+    min-height: $HeroHeader--thin--min_height;
+
+    @media (min-width: $Viewport-sm) {
+        min-height: $HeroHeader--thin--min_height_sm;
+    }
+
+    @media (min-width: $Viewport-md) {
+        min-height: $HeroHeader--thin--min_height_md;
+    }
+
+    @media (min-width: $Viewport-lg) {
+        min-height: $HeroHeader--thin--min_height_lg;
+    }
+}
+
+.HeroHeader--light_bg {
+    @include make-Type--color($Font-color--black);
+}
+
+.HeroHeader--dark_bg {
+    @include make-Type--color($Font-color--white);
+}
+
+.HeroHeader--image_focus_right {
+    background-position: center left;
+
+    @media (min-width: $HeroHeader--breakpoint) {
+        text-align: left;
+        background-position: center;
+    }
+}
+
+.HeroHeader--image_focus_left {
+    background-position: center right;
+
+    @media (min-width: $HeroHeader--breakpoint) {
+        text-align: right;
+        background-position: center;
+    }
+}
+
+.HeroHeader-container {
+    @extend .Container;
+}
+
+.HeroHeader-valign {
+    display: table-cell;
+    vertical-align: middle;
+
+    :first-child {
+        margin-top: 0;
+    }
+
+    :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.HeroHeader-valign--bottom {
+    vertical-align: bottom;
+}
+
+.HeroHeader-valign--top {
+    vertical-align: top;
+}

@@ -1,0 +1,136 @@
+@@include('./assets/frag/html.frag.html')
+
+<title>HeroHeader component - Phylactery 1.0.0 by HUEMOR</title>
+
+<body data-offcanvas-hover-min="960">
+
+<main>
+    @@include('./components/SiteHeader/phylactery_siteheader.frag.html')
+    <header class="HeroHeader HeroHeader--thin HeroHeader--dark_bg" style="background-image: url(../../components/HeroHeader/test_background.svg);">
+        <div class="HeroHeader-valign">
+            <div class="HeroHeader-container">
+                <h1 class="HeroHeader-title">Hero Header component</h1>
+                <p>Oh hey this page is already getting meta...</p>
+            </div>
+        </div>
+    </header>
+
+    <article class="Example-content">
+        <div class="Container Example-section">
+            <h2>Standard Hero Header</h2>
+        </div>
+        
+        <div class="Example-specimen Container">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="HeroHeader-specimen">View Source</button>
+            <div class="Example-large_specimen_content is-Example-specimen--visible" id="HeroHeader-specimen" data-specimen>
+                <header class="HeroHeader HeroHeader--light_bg" style="background-image: url('http://placehold.it/1200x600');">
+                    <div class="HeroHeader-valign">
+                        <div class="HeroHeader-container">
+                            <h1 class="HeroHeader-title">Hero Header component</h1>
+                            <p>Oh hey this page is already getting meta...</p>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            
+            <pre data-specimen-source="HeroHeader-specimen" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+        
+        <div class="Container Example-section">
+            <h2>Some modifications</h2>
+            <p>HeroHeader supports several qualifiers which allow adapting the
+            header to any particular background image. These qualifiers allow
+            you to indicate the background color, it's focal point, and how to
+            align the title and paragraph content. You may alter any of:</p>
+            <ul>
+                <li>The <strong>background color</strong>, which also changes
+                the text color for maximum contrast.</li>
+                <li>The <strong>image focal point</strong>.</li>
+                <li>The <strong>height</strong> may be decreased to thin
+                class height.</li>
+                <li>The content may be <strong>aligned</strong>
+                to the bottom or top.</li>
+            </ul>
+            <p>These options do not conflict and may be applied in any
+            combination.</p>
+            
+            <h3>Dark background image with subject on right</h3>
+        </div>
+        
+        <div class="Example-specimen Container">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="HeroHeader-specimen--2">View Source</button>
+            <div class="Example-large_specimen_content is-Example-specimen--visible" id="HeroHeader-specimen--2" data-specimen>
+                <header class="HeroHeader HeroHeader--dark_bg HeroHeader--image_focus_right" style="background-image: url(../../components/HeroHeader/test_background--with_logo.svg);">
+                    <div class="HeroHeader-valign">
+                        <div class="HeroHeader-container">
+                            <h1 class="HeroHeader-title">Hero Header component</h1>
+                            <p>Oh hey this page is already getting meta...</p>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            
+            <pre data-specimen-source="HeroHeader-specimen--2" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+        
+        <div class="Container Example-section">
+            <h3>Light background image with subject on left</h3>
+        </div>
+        
+        <div class="Example-specimen Container">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="HeroHeader-specimen--3">View Source</button>
+            <div class="Example-large_specimen_content is-Example-specimen--visible" id="HeroHeader-specimen--3" data-specimen>
+                <header class="HeroHeader HeroHeader--light_bg HeroHeader--image_focus_left" style="background-image: url(../../components/HeroHeader/test_background--blue_attack.svg);">
+                    <div class="HeroHeader-valign">
+                        <div class="HeroHeader-container">
+                            <h1 class="HeroHeader-title">Hero Header component</h1>
+                            <p>Oh hey this page is already getting meta...</p>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            
+            <pre data-specimen-source="HeroHeader-specimen--3" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+        
+        <div class="Container Example-section">
+            <h3>Thin hero header with bottom-aligned content</h3>
+        </div>
+        
+        <div class="Example-specimen Container">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="HeroHeader-specimen--4">View Source</button>
+            <div class="Example-large_specimen_content is-Example-specimen--visible" id="HeroHeader-specimen--4" data-specimen>
+                <header class="HeroHeader HeroHeader--light_bg HeroHeader--thin HeroHeader--image_focus_left" style="background-image: url('http://placehold.it/1200x600');">
+                    <div class="HeroHeader-valign HeroHeader-valign--bottom">
+                        <div class="HeroHeader-container">
+                            <h1 class="HeroHeader-title">Hero Header component</h1>
+                            <p>Oh hey this page is already getting meta...</p>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            
+            <pre data-specimen-source="HeroHeader-specimen--4" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+        
+        <div class="Container Example-section">
+            <h3>Thin hero header with top-aligned, centered content</h3>
+        </div>
+        
+        <div class="Example-specimen Container">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="HeroHeader-specimen--5">View Source</button>
+            <div class="Example-large_specimen_content is-Example-specimen--visible" id="HeroHeader-specimen--5" data-specimen>
+                <header class="HeroHeader HeroHeader--light_bg HeroHeader--thin" style="background-image: url('http://placehold.it/1200x600');">
+                    <div class="HeroHeader-valign HeroHeader-valign--top">
+                        <div class="HeroHeader-container">
+                            <h1 class="HeroHeader-title">Hero Header component</h1>
+                            <p>Oh hey this page is already getting meta...</p>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            
+            <pre data-specimen-source="HeroHeader-specimen--5" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+    </article>
+</main>

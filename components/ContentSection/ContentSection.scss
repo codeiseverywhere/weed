@@ -1,0 +1,137 @@
+$ContentSection--breakpoint: $Viewport-md;
+
+$ContentSection--spacing: 50px;
+$ContentSection--spacing_bp: 65px;
+
+//Add spacing between content blocks.
+//This particular mixin is only to be used on clearfixed, non-floating content
+//blocks at full width. Otherwise the margins won't merge properly. Other
+//spacing schemes are more error prone (e.g. result in duplicate margins or
+//having to remember which edge gets the spacing). Relying on the collapsing
+//properties of HTML margins is the intended solution.
+@mixin make-ContentSection--spacing($ContentSection--spacing_scale: 1) {
+    margin-top: $ContentSection--spacing * $ContentSection--spacing_scale;
+    margin-bottom: $ContentSection--spacing * $ContentSection--spacing_scale;
+
+    @media (min-width: $ContentSection--breakpoint) {
+        margin-top: $ContentSection--spacing_bp * $ContentSection--spacing_scale;
+        margin-bottom: $ContentSection--spacing_bp * $ContentSection--spacing_scale;
+    }
+}
+
+@mixin make-ContentSection--spacing_top_adjustment($ContentSection--spacing_scale: 1) {
+    margin-top: $ContentSection--spacing * $ContentSection--spacing_scale;
+
+    &:last-child {
+        margin-bottom: $ContentSection--spacing * $ContentSection--spacing_scale;
+    }
+
+    @media (min-width: $ContentSection--breakpoint) {
+        margin-top: $ContentSection--spacing_bp * $ContentSection--spacing_scale;
+
+        &:last-child {
+            margin-bottom: $ContentSection--spacing_bp * $ContentSection--spacing_scale;
+        }
+    }
+}
+
+//Remove spacing on the first and last content section in a page.
+//This used to be applied everywhere, but it only makes sense for certain
+//sections with backgrounds now.
+@mixin make-ContentSection--flush_with_ends($ContentSection--spacing_scale: 1) {
+    &:first-child {
+        margin-top: ($ContentSection--spacing * $ContentSection--spacing_scale / 2);
+    }
+
+    &:last-child {
+        margin-bottom: ($ContentSection--spacing * $ContentSection--spacing_scale / 2);
+    }
+
+    @media (min-width: $ContentSection--breakpoint) {
+        &:first-child {
+            margin-top: ($ContentSection--spacing_bp * $ContentSection--spacing_scale / 2);
+        }
+
+        &:last-child {
+            margin-bottom: ($ContentSection--spacing_bp * $ContentSection--spacing_scale / 2);
+        }
+    }
+}
+
+.ContentSection {
+    @extend .clearfix;
+    @include make-ContentSection--spacing();
+
+    position: relative;
+}
+
+.ContentSection--light_bg {
+    @include make-Type--color($Page--light--color);
+}
+
+.ContentSection--light_bg-background {
+    background-color: $Page--light--background_color;
+}
+
+.ContentSection--dark_bg {
+    @include make-Type--color($Page--dark--color);
+}
+
+.ContentSection--dark_bg-background {
+    background-color: $Page--dark--background_color;
+}
+
+.ContentSection-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ContentSection-caption {
+    font-family: $Font-family;
+    font-size: 12px;
+    text-align: center;
+
+    .ContentSection-image + & {
+        margin-top: 10px;
+    }
+}
+
+.ContentSection-modal_toggle {
+    @include make-Button--revert(button);
+}
+
+.ContentSection-modal_content--video {
+    padding: 0;
+}
+
+.ContentSection--light_bg + .ContentSection--dark_bg,
+.ContentSection--dark_bg + .ContentSection--light_bg,
+.ContentSection--inherit_bg + .ContentSection--light_bg,
+.ContentSection--light_bg + .ContentSection--inherit_bg,
+.ContentSection--inherit_bg + .ContentSection--dark_bg,
+.ContentSection--dark_bg + .ContentSection--inherit_bg {
+    @include make-ContentSection--spacing_top_adjustment(2);
+    @include make-ContentSection--flush_with_ends(2);
+}
+
+.ContentSection-background {
+    position: absolute;
+    width: 100%;
+    top: ($ContentSection--spacing / -1);
+    bottom: ($ContentSection--spacing / -1);
+    z-index: $ZIndex-background;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @media (min-width: $ContentSection--breakpoint) {
+        top: ($ContentSection--spacing_bp / -1);
+        bottom: ($ContentSection--spacing_bp / -1);
+    }
+}
+
+@import "body.scss";
+@import "split_50.scss";
+@import "video.scss";

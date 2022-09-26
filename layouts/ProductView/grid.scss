@@ -1,0 +1,4 @@
+.ProductView--grid-productslist {
+    @include make-Matrix(2, min, $Viewport-hh, $Border-width: 0px);
+    @include make-Matrix(3, min, $Viewport-xs, $Matrix--previous_column_count: 2, $Border-width: 0px);
+}

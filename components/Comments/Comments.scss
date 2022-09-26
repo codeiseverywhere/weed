@@ -1,0 +1,36 @@
+.Comments {
+    @include make-ContentSection--spacing();
+    @include make-Gutter();
+}
+
+.Comments-list {
+    padding: 0;
+    list-style: none inside none;
+}
+
+.Comments-image {
+    display: inline-block;
+    vertical-align: middle;
+
+    width: 50px;
+    height: auto;
+
+    margin-right: 15px;
+}
+
+.Comments-author {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.Comments-form {
+    @include make-ContentSection--spacing();
+}
+
+.Comments-form_title {
+    @include make-Gutter();
+}
+
+.Comments-form_notes {
+    @include make-Gutter();
+}

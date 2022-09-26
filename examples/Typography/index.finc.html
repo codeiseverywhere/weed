@@ -1,0 +1,162 @@
+@@include('./assets/frag/html.frag.html')
+
+<title>Typography theming - Phylactery 1.0.0 by HUEMOR</title>
+
+@@include('./components/SiteHeader/phylactery_siteheader.frag.html')
+<header class="HeroHeader HeroHeader--thin HeroHeader--dark_bg" style="background-image: url(../../components/HeroHeader/test_background.svg);">
+    <div class="HeroHeader-valign">
+        <div class="HeroHeader-container">
+            <h1 class="HeroHeader-title">Typography theming</h1>
+        </div>
+    </div>
+</header>
+
+<main class="Example-wysiwyg clearfix" style="background-image: url('../Example/transparency.png');">
+    <section class="Container Example-section">
+        <div class="Brand-section_label">Heading type</div>
+        <div class="h1">Lorem ipsum dolor sit amet</div>
+        <div class="h2">Lorem ipsum dolor sit amet</div>
+        <div class="h3">Lorem ipsum dolor sit amet</div>
+        <div class="h4">Lorem ipsum dolor sit amet</div>
+        <div class="h5">Lorem ipsum dolor sit amet</div>
+        <div class="h6">Lorem ipsum dolor sit amet</div>
+    </section>
+    
+    <section class="Container Example-section">
+        <div class="Brand-section_label">Paragraph type</div>
+        
+        <div class="Brand-subsection_label">Normal size</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque nisl et venenatis convallis. Vestibulum id scelerisque massa, in ultricies mauris. In sit amet neque mauris. Nulla ut massa finibus, pulvinar turpis dignissim, ultrices metus. Praesent eu purus finibus, iaculis arcu eget, hendrerit metus. Aliquam fermentum tortor eu lectus gravida pellentesque. Aliquam vitae purus pulvinar, facilisis enim vel, cursus felis. Nulla facilisi. Donec nec libero vitae nibh aliquet tincidunt non eu ipsum. Nulla suscipit augue orci. Maecenas metus odio, laoreet quis semper vel, blandit tincidunt lectus. Pellentesque venenatis rhoncus augue eu rhoncus. Morbi in ipsum in quam elementum fermentum. Mauris vulputate magna a dictum tempus. Morbi pretium at sem a cursus. Aliquam dui nulla, consequat et feugiat sit amet, mattis eget urna.</p>
+        
+        <div class="Brand-subsection_label">Small size</div>
+        <p class="small">Nullam congue leo turpis, non lobortis urna aliquet quis. Integer velit mi, pulvinar a justo eget, varius consequat sem. Proin in diam quis felis fringilla venenatis et eget eros. Nulla convallis justo ac nibh consequat pharetra. Donec viverra, lacus at accumsan finibus, neque turpis ultricies orci, a suscipit metus nunc ac sem. Nullam fermentum orci purus, vitae placerat ante suscipit nec. Nullam velit eros, condimentum ut suscipit eu, sollicitudin non mauris. Phasellus sit amet erat tempor, luctus felis ac, porta risus. Proin rhoncus libero est, sit amet maximus arcu pretium porttitor. Curabitur eros lacus, malesuada sed quam pellentesque, blandit consequat leo.</p>
+    </section>
+    
+    <section class="Container Example-section">
+        <div class="Brand-section_label">Blockquotes</div>
+        
+        <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></blockquote>
+        
+        <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</blockquote>
+    </section>
+    
+    <section class="Container Example-section">
+        <div class="Brand-section_label">Lists</div>
+        
+        <div class="Brand-subsection_label">Unordered lists</div>
+        <ul>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>
+                Consectetur adipiscing elit.
+                <ul>
+                    <li>In sit amet neque mauris.</li>
+                    <li>
+                        Nulla ut massa finibus, pulvinar turpis dignissim, ultrices metus.
+                        <ul>
+                            <li>Aliquam fermentum tortor eu lectus gravida pellentesque.</li>
+                            <li>Aliquam vitae purus pulvinar, facilisis enim vel, cursus felis.</li>
+                            <li>
+                                Nulla facilisi.
+                                <ul>
+                                    <li>Donec nec libero vitae nibh aliquet tincidunt non eu ipsum.</li>
+                                    <li>Nulla suscipit augue orci.</li>
+                                    <li>Maecenas metus odio, laoreet quis semper vel, blandit tincidunt lectus.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Praesent eu purus finibus, iaculis arcu eget, hendrerit metus.</li>
+                </ul>
+            </li>
+            <li><p>Praesent scelerisque nisl et venenatis convallis.</p></li>
+            <li>Vestibulum id scelerisque massa, in ultricies mauris.</li>
+        </ul>
+        
+        <div class="Brand-subsection_label">Ordered lists</div>
+        <ol>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>
+                Consectetur adipiscing elit.
+                <ol>
+                    <li>In sit amet neque mauris.</li>
+                    <li>
+                        Nulla ut massa finibus, pulvinar turpis dignissim, ultrices metus.
+                        <ol>
+                            <li>Aliquam fermentum tortor eu lectus gravida pellentesque.</li>
+                            <li>Aliquam vitae purus pulvinar, facilisis enim vel, cursus felis.</li>
+                            <li>
+                                Nulla facilisi.
+                                <ol>
+                                    <li>Donec nec libero vitae nibh aliquet tincidunt non eu ipsum.</li>
+                                    <li>Nulla suscipit augue orci.</li>
+                                    <li>Maecenas metus odio, laoreet quis semper vel, blandit tincidunt lectus.</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>Praesent eu purus finibus, iaculis arcu eget, hendrerit metus.</li>
+                </ol>
+            </li>
+            <li><p>Praesent scelerisque nisl et venenatis convallis.</p></li>
+            <li>Vestibulum id scelerisque massa, in ultricies mauris.</li>
+        </ol>
+        
+        <div class="Brand-subsection_label">Mixed lists</div>
+        <ul>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>
+                Consectetur adipiscing elit.
+                <ol>
+                    <li>In sit amet neque mauris.</li>
+                    <li>
+                        Nulla ut massa finibus, pulvinar turpis dignissim, ultrices metus.
+                        <ul>
+                            <li>Aliquam fermentum tortor eu lectus gravida pellentesque.</li>
+                            <li>Aliquam vitae purus pulvinar, facilisis enim vel, cursus felis.</li>
+                            <li>
+                                Nulla facilisi.
+                                <ol>
+                                    <li>Donec nec libero vitae nibh aliquet tincidunt non eu ipsum.</li>
+                                    <li>Nulla suscipit augue orci.</li>
+                                    <li>Maecenas metus odio, laoreet quis semper vel, blandit tincidunt lectus.</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Praesent eu purus finibus, iaculis arcu eget, hendrerit metus.</li>
+                </ol>
+            </li>
+            <li><p>Praesent scelerisque nisl et venenatis convallis.</p></li>
+            <li>Vestibulum id scelerisque massa, in ultricies mauris.</li>
+        </ul>
+        
+        <div class="Brand-subsection_label">The other way round...</div>
+        <ol>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>
+                Consectetur adipiscing elit.
+                <ul>
+                    <li>In sit amet neque mauris.</li>
+                    <li>
+                        Nulla ut massa finibus, pulvinar turpis dignissim, ultrices metus.
+                        <ol>
+                            <li>Aliquam fermentum tortor eu lectus gravida pellentesque.</li>
+                            <li>Aliquam vitae purus pulvinar, facilisis enim vel, cursus felis.</li>
+                            <li>
+                                Nulla facilisi.
+                                <ul>
+                                    <li>Donec nec libero vitae nibh aliquet tincidunt non eu ipsum.</li>
+                                    <li>Nulla suscipit augue orci.</li>
+                                    <li>Maecenas metus odio, laoreet quis semper vel, blandit tincidunt lectus.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>Praesent eu purus finibus, iaculis arcu eget, hendrerit metus.</li>
+                </ul>
+            </li>
+            <li><p>Praesent scelerisque nisl et venenatis convallis.</p></li>
+            <li>Vestibulum id scelerisque massa, in ultricies mauris.</li>
+        </ol>
+    </section>
+</main>

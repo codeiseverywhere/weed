@@ -1,0 +1,164 @@
+$VideoPlayer-controls--background: transparent;
+
+$VideoPlayer-controls--padding_horizontal: 10px;
+$VideoPlayer-controls--padding_vertical: 5px;
+
+$VideoPlayer-controls--icon_size: 15px;
+
+$VideoPlayer-scrubber--range_color: $Color--gray;
+$VideoPlayer-scrubber--played_color: $Color--primary;
+$VideoPlayer-scrubber--height: 5px;
+$VideoPlayer-scrubber_knob--size: 20px;
+$VideoPlayer-scrubber_knob--border_width: 2px;
+$VideoPlayer-scrubber_knob--border_color: white;
+$VideoPlayer-scrubber--margin_horizontal: 10px;
+
+.VideoPlayer {
+    position: relative;
+}
+
+.VideoPlayer-video {
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.VideoPlayer-video--sixteen_by_nine {
+    padding-top: (9 / 16 * 100%);
+}
+
+.VideoPlayer-video--four_by_three {
+    padding-top: (3 / 4 * 100%);
+}
+
+.VideoPlayer-controls {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+
+    display: flex;
+}
+
+//Required for video player JavaScript, surprisingly enough.
+.VideoPlayer-scrubber {
+    width: 100%;
+}
+
+.VideoPlayer-play_pause {
+    float: left;
+    background: $VideoPlayer-controls--background;
+    border-width: 0px;
+    padding: $VideoPlayer-controls--padding_vertical $VideoPlayer-controls--padding_horizontal;
+
+    &.is-VideoPlayer--paused {
+        &:before {
+            @include make-Icon--mixin($Icon-play, $VideoPlayer-controls--icon_size);
+            float: left;
+        }
+
+        .VideoPlayer-pause_text {
+            display: none;
+        }
+    }
+
+    &.is-VideoPlayer--playing {
+        &:before {
+            @include make-Icon--mixin($Icon-pause, $VideoPlayer-controls--icon_size);
+            float: left;
+        }
+
+        .VideoPlayer-play_text {
+            display: none;
+        }
+    }
+}
+
+.VideoPlayer-scrubber {
+    float: left;
+    background: $VideoPlayer-controls--background;
+    border-width: 0px;
+
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 $VideoPlayer-scrubber--margin_horizontal;
+}
+
+.VideoPlayer-scrubber_range {
+    background: $VideoPlayer-scrubber--range_color;
+    height: $VideoPlayer-scrubber--height;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.VideoPlayer-scrubber_fill {
+    background: $VideoPlayer-scrubber--played_color;
+    height: $VideoPlayer-scrubber--height;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.VideoPlayer-scrubber_knob {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 100%;
+    width: $VideoPlayer-scrubber_knob--size;
+    height: $VideoPlayer-scrubber_knob--size;
+    background-color: $Color--primary;
+    border: $VideoPlayer-scrubber_knob--border_width solid $VideoPlayer-scrubber_knob--border_color;
+}
+
+.VideoPlayer-mute {
+    float: left;
+    background: $VideoPlayer-controls--background;
+    border-width: 0px;
+    padding: $VideoPlayer-controls--padding_vertical $VideoPlayer-controls--padding_horizontal;
+
+    &.is-VideoPlayer--muted {
+        &:before {
+            @include make-Icon--mixin($Icon-volume-high, $VideoPlayer-controls--icon_size);
+            float: left;
+        }
+
+        .VideoPlayer-mute_text {
+            display: none;
+        }
+    }
+
+    &.is-VideoPlayer--audible {
+        &:before {
+            @include make-Icon--mixin($Icon-volume-mute, $VideoPlayer-controls--icon_size);
+            float: left;
+        }
+
+        .VideoPlayer-unmute_text {
+            display: none;
+        }
+    }
+}

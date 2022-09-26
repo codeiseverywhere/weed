@@ -1,0 +1,228 @@
+{% comment %}
+
+  Comments will not appear right after they are submitted, either to be checked for spam
+  or to await moderation. When a comment is submitted, the browser is redirected to a page
+  that includes the new comment id in its URL.
+    Example: http://shopname.myshopify.com/blogs/news/2022072-my-post?comment=3721372
+
+  More information:
+    - http://docs.shopify.com/themes/liquid-variables/comment
+
+{% endcomment %}
+
+{% comment %}
+  We're going to reference the number of comments below, so let's hold it in a variable.
+{% endcomment %}
+{% assign number_of_comments = article.comments_count %}
+
+{% comment %}
+  If a comment was just submitted and it has no blank fields, we have an extra comment to count.
+{% endcomment %}
+{% if comment and comment.created_at %}
+  {% assign number_of_comments = article.comments_count | plus: 1 %}
+{% endif %}
+
+{% include 'Breadcrumb' %}
+
+<div class="Page Page--article">
+
+  <article class="Article Article--standalone Page-content Page-content--withSidebar" itemscope itemtype="http://schema.org/Article">
+
+    <header class="Article-header">
+        <h1 class="Page-title Article-title">{{ article.title }}</h1>
+        <p class="Page-description Article-info">
+          <time class="Article-postdate" pubdate datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+            {{ article.published_at | date: '%b %d, %Y' }}
+          </time>
+          by <span class="Article-author">{{ article.author }}</span>
+        </p>
+        <div class="Article-share">
+          <ul class="SocialMediaList">
+            <li>SHARE: </li>
+            <li><a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{shop.url | append: article.url | replace: ' ', '%20' | replace: '&', '%26' | replace: '?', '%3F' | replace: '!', '%21' | replace: ',', '%2C' | replace: "'", "%27"}}" class="Product-share Product-share--facebook" target="_blank"><span class="sr-only">Share on Facebook</span></a></li>
+    <li><a class="twitter" href="https://twitter.com/share?url={{shop.url | append: article.url | replace: ' ', '%20' | replace: '&', '%26' | replace: '?', '%3F' | replace: '!', '%21' | replace: ',', '%2C' | replace: "'", "%27"}}{% if settings.twittercard_handle != "" %}&via={{settings.twittercard_handle}}{% endif %}" class="Product-share Product-share--twitter" target="_blank"><span class="sr-only">Share on Twitter</span></a></li>
+    <li><a href="http://pinterest.com/pin/create/button/?url={{shop.url | append: article.url | replace: ' ', '%20' | replace: '&', '%26' | replace: '?', '%3F' | replace: '!', '%21' | replace: ',', '%2C' | replace: "'", "%27"}}" count-layout="horizontal" class="pinterest" target="_blank"></a></li>
+          </ul>
+        </div>
+    </header>
+
+    <div class="rte Article-body" itemprop="articleBody">
+        {% if blog.title == "Testimonials" %}
+            <div style="text-align: center; margin-bottom: 15px;">{{ article.excerpt }}</div>
+        {% endif %}
+      {{ article.content }}
+    </div>
+
+    {% comment %}
+      Show off meta information like comments and tags.
+    {% endcomment %}
+    <ul class="Article-tags">
+
+      {% include 'tags-article' %}
+
+    </ul>
+
+    <ul class="Pager">
+        {% if blog.previous_article %}
+            <li class="Pager-item Pager-prev Pager-prev--link">
+                <a href="{{ blog.previous_article }}" title="Previous Testimonial"
+                   data-paginate="previous">
+                    <span class="sr-only">Previous Testimonial</span>
+                    <span class="Pager-previcon"></span>
+                </a>
+            </li>
+        {% else %}
+            <li class="Pager-item Pager-prev Pager-prev--disabled">
+                <span class="sr-only">Previous Testimonial</span>
+                <span class="Pager-previcon Pager-pagetitle"></span>
+            </li>
+        {% endif %}
+
+        {% if blog.next_article %}
+            <li class="Pager-item Pager-next Pager-next--link">
+                <a href="{{ blog.next_article }}" title="Next Testimonial"
+                   data-paginage="next">
+                    <span class="sr-only">Next Testimonial</span>
+                    <span class="Pager-nexticon"></span>
+                </a>
+            </li>
+        {% else %}
+            <li class="Pager-item Pager-next Pager-next--disabled">
+                <span class="sr-only">Next Page</span>
+                <span class="Pager-nexticon Pager-pagetitle"></span>
+            </li>
+        {% endif %}
+    </ul>
+
+
+    {% if blog.comments_enabled? %}
+
+    <hr>
+
+    {% comment %}
+      Just like our blog.liquid page, define how many comments should be on each page.
+    {% endcomment %}
+
+      {% paginate article.comments by 5 %}
+
+      {% comment %}
+        #comments is required, it is used as an anchor link by Shopify.
+      {% endcomment %}
+      <div id="comments" class="Article-comments">
+        <h2 class="Article-commentsTitle">{{ number_of_comments }} {{ number_of_comments | pluralize: 'comment', 'comments' }}</h2>
+
+        {% if comment and comment.created_at %}
+        <p class="Article-formmessage FormMessage FormMessage--success">
+          {% if blog.moderated? %}
+            Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.
+          {% else %}
+            Your comment was posted successfully! Thank you!
+          {% endif %}
+        </p>
+        {% endif %}
+
+        {% if number_of_comments > 0 %}
+          <ul class="Article-commentslist">
+            {% comment %}
+              If a comment was just submitted with no blank field, show it.
+            {% endcomment %}
+            {% if comment and comment.created_at %}
+            <li id="{{ comment.id }}" class="Article-comment Comment Comment--first{% if article.comments_count == 0 %} Comment--last{% endif %}">
+
+              {% include 'comment' %}
+
+            </li>
+            {% endif %}
+
+            {% comment %}
+              Showing the rest of the comments.
+            {% endcomment %}
+            {% for comment in article.comments %}
+            <li id="{{ comment.id }}" class="Article-comment Comment{% unless number_of_comments > article.comments_count %}{% if forloop.first %} Comment--first{% endif %}{% endunless %}{% if forloop.last %} Comment--last {% endif %}">
+
+              {% include 'comment' %}
+
+            </li>
+            {% endfor %}
+
+          </ul>
+
+          {% if paginate.pages > 1 %}
+          <hr>
+          {% include 'pagination-custom' %}
+          {% endif %}
+
+        {% endif %}
+
+        {% comment %}
+          Comment submission form
+        {% endcomment %}
+        <div class="Article-commentform Form Form--comment">
+            {% form 'new_comment', article %}
+
+              {% comment %}
+                #add-comment-title is used simply as an anchor link
+              {% endcomment %}
+              <h3 id="add-comment-title" class="Form-title">Leave a comment</h3>
+
+              {% include 'form-errors-custom' %}
+
+                <div class="FormItem FormItem--name_author FormItem--type_text{% if form.errors contains "author" %} FormItem--error{% endif %}">
+                    <label for="comment-author" class="FormItem-label">Name</label>
+                    <input class="FormItem-input" type="text" name="comment[author]" placeholder="Name" id="comment-author" value="{{ form.author }}" autocapitalize="words">
+                </div>
+
+                <div class="FormItem FormItem--name_email FormItem--type_email{% if form.errors contains "email" %} FormItem--error{% endif %}">
+                    <label for="comment-email" class="FormItem-label">Email</label>
+                    <input class="FormItem-input" type="email" name="comment[email]" placeholder="Email" id="comment-email" value="{{ form.email }}" autocorrect="off" autocapitalize="off">
+                </div>
+
+                <div class="FormItem FormItem--name_body FormItem--type_textarea{% if form.errors contains "body" %} FormItem--error{% endif %}">
+                    <label for="comment-body" class="FormItem-label">Message</label>
+                    <textarea class="FormItem-textarea" name="comment[body]" id="comment-body" placeholder="Message">{{ form.body }}</textarea>
+                </div>
+
+              {% if blog.moderated? %}
+                <p><em><strong>Please note:</strong> comments must be approved before they are published</em></p>
+              {% endif %}
+
+              <div class="Form-submitWrapper">
+                <input type="submit" class="btn Form-submit Button--md" value="Post Comment">
+              </div>
+
+              {% if form.errors %}
+                <script>
+                  window.location.hash = '#add-comment-title';
+                </script>
+              {% endif %}
+
+              {% if form.posted_successfully? %}
+                <script>
+                  window.location.hash = '#comments';
+                </script>
+              {% endif %}
+
+            {% endform %}
+        </div>
+
+      </div>
+
+      {% endpaginate %}
+
+    {% endif %}
+
+  </article>
+
+  <aside class="Page-sidebar  Blog-sidebar" role="complementary">
+    {% include 'blog-sidebar' %}
+  </aside>
+</div>
+
+{% schema %}
+  {
+    "name": "Article Page",
+    "settings": [
+      
+    ]
+  }
+{% endschema %}

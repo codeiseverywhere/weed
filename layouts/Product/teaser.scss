@@ -1,0 +1,28 @@
+.Product--teaser {
+    @include make-Button--revert(a);
+}
+
+.Product--teaser-image {
+    width: 100%;
+    padding-top: 100%;
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.Product--teaser-title {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.Product--teaser-price {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.Product--teaser-comparison_price {
+    display: block;
+    font-size: 12px;
+    text-decoration: line-through;
+}

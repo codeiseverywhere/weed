@@ -1,0 +1,26 @@
+@@include('./assets/frag/html.frag.html')
+
+<title>SiteHeader component - Phylactery 1.0.0 by HUEMOR</title>
+
+<body data-offcanvas-hover-min="960">
+
+<main>
+    @@include('./components/SiteHeader/phylactery_siteheader.frag.html')
+    <header class="HeroHeader HeroHeader--thin HeroHeader--dark_bg" style="background-image: url(../../components/HeroHeader/test_background.svg);">
+        <div class="HeroHeader-valign">
+            <div class="HeroHeader-container">
+                <h1 class="HeroHeader-title">SiteHeader component</h1>
+            </div>
+        </div>
+    </header>
+
+    <article class="Example-content">
+        <div class="Container Example-section">
+            <h2>Backdrop use case</h2>
+            <p>This particular page exists just to test backdrops with site
+            headers.</p>
+        </div>
+    </article>
+</main>
+
+<div class="Offcanvas-backdrop is-Offcanvas--backdrop_inactive" data-offcanvas-backdrop="1" data-offcanvas-backdrop-for="SiteHeader-navigation_id0"></div>

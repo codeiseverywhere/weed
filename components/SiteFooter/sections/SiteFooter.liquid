@@ -1,0 +1,318 @@
+
+<div id="SiteFooter" class="SiteFooter">
+
+<div class="SiteFooter-border-top"></div>
+
+  <div class="SiteFooter__top">
+    <div class="SiteFooter-inner">
+      <div class="SiteFooter__top-content">
+
+
+
+      <div class="SiteFooter-top-content__row">
+
+        <div class="SiteFooter-block__message">
+          <h6 class="SiteFooter-message-title">{{ section.settings.footer-message-title }}</h6>
+          <p class="SiteFooter-message-text">{{ section.settings.footer-message-text }}</p>
+          <a href="{{ section.settings.footer-message-link }}" class="SiteFooter-message-link" style="color: {{ section.settings.message-link-color }}">
+            <p class="SiteFooter-message-link-text">
+              {{ section.settings.footer-message-link-text }}
+            </p>
+          </a>
+        </div>
+
+        <div class="SiteFooter-block__links">
+          <div class="SiteFooter-block__links-inner">
+            <div class="SiteFooter-block__links-list">
+              {% for link in linklists[section.settings.footer-link-list-1].links %}
+                <a href="{{ link.url }}" class="SiteFooter-block__link">
+                  <p class="SiteFooter-block__link-text">
+                    {{ link.title }}
+                  </p>
+                </a>
+              {% endfor %}
+            </div>
+            <div class="SiteFooter-block__links-list">
+              {% for link in linklists[section.settings.footer-link-list-2].links %}
+                <a href="{{ link.url }}" class="SiteFooter-block__link">
+                  <p class="SiteFooter-block__link-text {% if forloop.last %}SiteFooter-block__link-text-no-margin{% endif %}">
+                    {{ link.title }}
+                  </p>
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <div class="SiteFooter-block__email SiteFooter-block__hide-mobile">
+          <h5 class="SiteFooter-block__email-title">
+            {{ section.settings.email-title }}
+          </h5>
+          <p class="SiteFooter-block__email-text">
+            {{ section.settings.email-text }}
+          </p>
+          <div class="SiteFooter-block__email-email-box"> Place third party email capture code here</div>
+          <div class="SiteFooter-block__email-social-icons">
+            {% if section.settings.social-icon-1 %}
+              <a href="{{ section.settings.social-icon-1-url }}" class="SiteFooter-block__email-social-icon">
+                <img src="{{ section.settings.social-icon-1 | img_url: 'master' }}" class="SiteFooter-block__email-social-icon-svg">
+              </a>
+            {% endif %} 
+            {% if section.settings.social-icon-2 %}
+              <a href="{{ section.settings.social-icon-2-url }}" class="SiteFooter-block__email-social-icon">
+                <img src="{{ section.settings.social-icon-2 | img_url: 'master' }}" class="SiteFooter-block__email-social-icon-svg">
+              </a>
+            {% endif %} 
+            {% if section.settings.social-icon-3 %}
+              <a href="{{ section.settings.social-icon-3-url }}" class="SiteFooter-block__email-social-icon">
+                <img src="{{ section.settings.social-icon-3 | img_url: 'master' }}" class="SiteFooter-block__email-social-icon-svg">
+              </a>
+            {% endif %} 
+            {% if section.settings.social-icon-4 %}
+              <a href="{{ section.settings.social-icon-4-url }}" class="SiteFooter-block__email-social-icon">
+                <img src="{{ section.settings.social-icon-4 | img_url: 'master' }}" class="SiteFooter-block__email-social-icon-svg">
+              </a>
+            {% endif %} 
+            {% if section.settings.social-icon-5 %}
+              <a href="{{ section.settings.social-icon-5-url }}" class="SiteFooter-block__email-social-icon">
+                <img src="{{ section.settings.social-icon-5 | img_url: 'master' }}" class="SiteFooter-block__email-social-icon-svg">
+              </a>
+            {% endif %} 
+          </div>
+        </div>
+
+      </div>
+
+
+       <div class="SiteFooter-block__email SiteFooter-block__show-mobile">
+          <h5 class="SiteFooter-block__email-title">
+            {{ section.settings.email-title }}
+          </h5>
+          <p class="SiteFooter-block__email-text">
+            {{ section.settings.email-text }}
+          </p>
+          <div class="SiteFooter-block__email-email-box"> Place third party email capture code here</div>
+          <div class="SiteFooter-block__email-social-icons">
+            {% if section.settings.social-icon-1 %}
+              <a href="{{ section.settings.social-icon-1-url }}" class="SiteFooter-block__email-social-icon">
+                <img src="{{ section.settings.social-icon-1 | img_url: 'master' }}" class="SiteFooter-block__email-social-icon-svg">
+              </a>
+            {% endif %} 
+            {% if section.settings.social-icon-2 %}
+              <a href="{{ section.settings.social-icon-2-url }}" class="SiteFooter-block__email-social-icon">
+                <img src="{{ section.settings.social-icon-2 | img_url: 'master' }}" class="SiteFooter-block__email-social-icon-svg">
+              </a>
+            {% endif %} 
+            {% if section.settings.social-icon-3 %}
+              <a href="{{ section.settings.social-icon-3-url }}" class="SiteFooter-block__email-social-icon">
+                <img src="{{ section.settings.social-icon-3 | img_url: 'master' }}" class="SiteFooter-block__email-social-icon-svg">
+              </a>
+            {% endif %} 
+            {% if section.settings.social-icon-4 %}
+              <a href="{{ section.settings.social-icon-4-url }}" class="SiteFooter-block__email-social-icon">
+                <img src="{{ section.settings.social-icon-4 | img_url: 'master' }}" class="SiteFooter-block__email-social-icon-svg">
+              </a>
+            {% endif %} 
+            {% if section.settings.social-icon-5 %}
+              <a href="{{ section.settings.social-icon-5-url }}" class="SiteFooter-block__email-social-icon">
+                <img src="{{ section.settings.social-icon-5 | img_url: 'master' }}" class="SiteFooter-block__email-social-icon-svg">
+              </a>
+            {% endif %} 
+          </div>
+        </div>
+
+          
+      </div>
+    </div>
+  </div>
+
+  <div class="SiteFooter__bottom">
+    <div class="SiteFooter-inner">
+      <div class="SiteFooter__bottom-content">
+        <div class="SiteFooter-bottom-content__links">
+          {% for link in linklists[section.settings.bottom-link-list].links %}
+            <a href="{{ link.url }}" class="SiteFooter-bottom-content__link">
+              <p class="SiteFooter-bottom-content__link-text">
+                {{ link.title }}
+              </p>
+            </a>
+          {% endfor %}
+        </div>
+        <div class="SiteFooter-bottom-content__icons">
+          {% for block in section.blocks %}
+            <img src="{{ block.settings.payment_icon | img_url: 'master' }}" class="SiteFooter-bottom-content__icon-image">
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Site Footer",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Footer Top Settings"
+      },
+      {
+        "type": "header",
+        "content": "Message"
+      },
+        {
+            "type": "text",
+            "id": "footer-message-title",
+            "label": "Title for message",
+            "default": "Ingredients Lorem Ipsum"
+        },
+        {
+            "type": "text",
+            "id": "footer-message-text",
+            "label": "Content of message",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor."
+        },
+        {
+            "type": "text",
+            "id": "footer-message-link-text",
+            "label": "Link Text for message",
+            "default": "See All Lorem Ipsum"
+        },
+        {
+            "type": "url",
+            "id": "footer-message-link",
+            "label": "Choose a url to link to"
+        },
+        {
+            "type": "color",
+            "id": "message-link-color",
+            "label": "Choose a color for your link"
+        },
+
+      {
+        "type": "header",
+        "content": "Link Lists"
+      },
+        {
+          "type": "link_list",
+          "id": "footer-link-list-1",
+          "label": "First List of Links"
+        },
+        {
+          "type": "link_list",
+          "id": "footer-link-list-2",
+          "label": "Second List of Links"
+        },
+
+      {
+        "type": "header",
+        "content": "Email Capture"
+      },
+        {
+          "type": "text",
+          "id": "email-title",
+          "label": "Title for Email Capture",
+          "default": "Lorem Ipsum"
+        },
+        {
+          "type": "text",
+          "id": "email-text",
+          "label": "Text for Email Capture",
+          "default": "Dolor sit amet, consectetur adipisicing!"
+        },
+
+      {
+        "type": "header",
+        "content": "Social Icons"
+      },
+        {
+          "type": "image_picker",
+          "id": "social-icon-1",
+          "label": "Social Icon 1"
+        },
+        {
+          "type": "url",
+          "id": "social-icon-1-url",
+          "label": "Social Icon 1 Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "social-icon-2",
+          "label": "Social Icon 2"
+        },
+        {
+          "type": "url",
+          "id": "social-icon-2-url",
+          "label": "Social Icon 2 Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "social-icon-3",
+          "label": "Social Icon 3"
+        },
+        {
+          "type": "url",
+          "id": "social-icon-3-url",
+          "label": "Social Icon 3 Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "social-icon-4",
+          "label": "Social Icon 4"
+        },
+        {
+          "type": "url",
+          "id": "social-icon-4-url",
+          "label": "Social Icon 4 Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "social-icon-5",
+          "label": "Social Icon 5"
+        },
+        {
+          "type": "url",
+          "id": "social-icon-5-url",
+          "label": "Social Icon 5 Link"
+        },
+
+
+
+      {
+        "type": "header",
+        "content": "Footer Bottom Settings"
+      },
+
+      {
+        "type": "header",
+        "content": "Bottom Links"
+      },
+        {
+          "type": "link_list",
+          "id": "bottom-link-list",
+          "label": "Bottom List of links"
+        },
+
+      {
+        "type": "header",
+        "content": "Payment Icons"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "payment_icons",
+        "name": "Payment Icons",
+        "settings": [
+          {
+            "id": "payment_icon",
+            "type": "image_picker",
+            "label": "choose or upload an image for payment icons"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

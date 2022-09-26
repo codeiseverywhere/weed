@@ -1,0 +1,54 @@
+$SiteHeader-account_button--icon_size: 24px;
+
+$SiteHeader-account_button-padding_vertical: (($SiteHeader--height - $SiteHeader-account_button--icon_size) / 2);
+$SiteHeader-account_button-padding_horizontal: 8px;
+
+$SiteHeader-account_button-padding_vertical_bp: (($SiteHeader--content_row_height_bp - $SiteHeader-account_button--icon_size) / 2);
+$SiteHeader-account_button-padding_horizontal_bp: 8px;
+
+.SiteHeader-account {
+    position: relative;
+}
+
+.SiteHeader-account_button {
+    @include make-Button--revert(button);
+    @include make-Icon--before($Icon-user, $SiteHeader-account_button--icon_size);
+    
+    padding: $SiteHeader-account_button-padding_vertical $SiteHeader-account_button-padding_horizontal;
+    
+    color: inherit;
+    
+    &:before {
+        display: block;
+    }
+}
+
+.SiteHeader-account_menu {
+    @extend .SiteHeader-dropdown;
+}
+
+.SiteHeader-account {
+    float: left;
+    padding-left: 10px;
+}
+
+.SiteHeader-account_button {
+}
+
+.SiteHeader-block--main_menu {
+    float: left;
+    width: 100%;
+}
+
+@media (min-width: $SiteHeader--breakpoint) {
+    .SiteHeader-account_button {
+        padding: $SiteHeader-account_button-padding_vertical_bp $SiteHeader-account_button-padding_horizontal_bp;
+    }
+    .SiteHeader-block--main_menu {
+        float: right;
+        width: auto;
+    }
+    .SiteHeader-account {
+        padding-left: 0;
+    }
+}

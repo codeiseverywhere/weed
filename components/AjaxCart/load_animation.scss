@@ -1,0 +1,84 @@
+$AjaxCart-load_indicator--icon_size: 20px;
+
+@keyframes AjaxCart-load_indicator--fade_shade {
+    0% {
+        opacity: 0.0;
+    }
+
+    50% {
+        opacity: 0.1;
+    }
+
+    100% {
+        opacity: 0.0;
+    }
+}
+
+@keyframes AjaxCart-load_indicator--fade {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@keyframes AjaxCart-load_indicator--spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.is-AjaxCart--updating {
+    &:after {
+        content: "";
+        display: block;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        background-color: black;
+        opacity: 0.2;
+        animation: 3.0s AjaxCart-load_indicator--fade_shade infinite;
+    }
+}
+
+.is-AjaxCart-item_quantity_selector--updating {
+    opacity: 0.8;
+    animation: 1.5s AjaxCart-load_indicator--fade infinite;
+}
+
+.is-AjaxCart-item_remove--updating,
+.is-AjaxCart-total--updating td {
+    &:before {
+        @include make-Icon--mixin($Icon-loading, $AjaxCart-load_indicator--icon_size);
+
+        position: absolute;
+        top: 50%;
+
+        margin-top: $AjaxCart-load_indicator--icon_size / -2;
+
+        display: inline-block;
+        animation: 0.5s AjaxCart-load_indicator--spin infinite linear;
+    }
+}
+
+.is-AjaxCart-item_remove--updating:before {
+    left: 100%;
+}
+
+.is-AjaxCart-total--updating td:before {
+    margin-left: $AjaxCart-load_indicator--icon_size / -1;
+}

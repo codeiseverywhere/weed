@@ -1,0 +1,429 @@
+//BreakPoints can be found in main.scss or assets/scss/viewport.scss
+
+$Hero-breakpoint--xlg: 1920px;
+$Hero-breakpoint--xlg_max: ($Hero-breakpoint--xlg - 1px);
+
+$Hero-breakpoint--lg: 1250px;
+$Hero-breakpoint--lg_max: ($Hero-breakpoint--lg - 1px);
+
+$Hero-breakpoint--md: 1024px;
+$Hero-breakpoint--md_max: ($Hero-breakpoint--md - 1px);
+
+$Hero-breakpoint--sm: 768px;
+$Hero-breakpoint--sm_max: ($Hero-breakpoint--sm - 1px);
+
+$Hero-breakpoint--xs: 450px;
+$Hero-breakpoint--xs_max: ($Hero-breakpoint--xs - 1px);
+
+$Hero-breakpoint--xxs: 400px;
+$Hero-breakpoint--xxs_max: ($Hero-breakpoint--xxs - 1px);
+
+$Hero-breakpoint--xxxs: 350px;
+$Hero-breakpoint--xxxs_max: ($Hero-breakpoint--xxs - 1px);
+
+$Hero-breakpoint--height-sm: 850px;
+$Hero-breakpoint--height-sm_max: ($Hero-breakpoint--height-sm - 1px);
+
+$Hero-breakpoint--height-xs: 600px;
+$Hero-breakpoint--height-xs_max: ($Hero-breakpoint--height-xs - 1px);
+
+.Hero {
+  width: 100vw;
+  height: 39vw;
+  max-height: 1000px;
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+@media screen and (max-width: $Hero-breakpoint--xlg_max) {
+  .Hero {
+    height: 42vw;
+    max-height: #{"calc(
+      97vh -
+        (
+          {{settings.siteHeader-top-row-height}} + {{settings.siteHeader-bottom-row-height}}
+        )
+    )"};
+  }
+}
+@media screen and (max-width: $Hero-breakpoint--md_max) {
+  .Hero {
+    /* height: calc(97vh - {{ settings.theme-spacing-top }});*/
+    /*height: calc(95vh - 100px);
+    min-height: 700px;
+    max-height: 800px; */
+    height: auto;
+    min-height: 0px;
+    max-height: 100%;
+  }
+}
+@media screen and (max-width: $Hero-breakpoint--sm_max) {
+  .Hero {
+    /* min-height: 600px;
+    max-height: 780px; */
+  }
+}
+
+.Hero__inner {
+  width: 100%;
+  height: 100%;
+}
+.Hero__slides {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Nav */
+.Hero__nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 60%;
+  height: 100%;
+}
+.Hero__nav-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.Hero__nav-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.Hero__nav-item {
+  width: 40px;
+  height: 5px;
+  background-color: #fff;
+  opacity: 0.5;
+  margin: 0px 10px;
+  cursor: pointer;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.Hero_nav-item-selected {
+  opacity: 1;
+}
+
+@media screen and (max-width: $Hero-breakpoint--md_max) {
+  .Hero__nav {
+    width: 100%;
+    height: 64vw;
+  }
+}
+@media screen and (max-width: $Hero-breakpoint--xs_max) {
+  .Hero__nav {
+    width: 100%;
+  }
+}
+
+/* Slide */
+.Hero__slide {
+  display: none;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transition: display 0.4s ease-in-out;
+}
+.Hero-selected-slide {
+  display: block;
+  z-index: 2;
+}
+.Hero-slide-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/*Image Container */
+.Hero-slide__image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.Hero-slide__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.Hero-slide-mobile-image {
+  display: none;
+}
+
+/* Text Container */
+.Hero-slide__text-container {
+  position: relative;
+  width: 100%;
+  max-width: 37%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Hero-slide__text-box {
+  width: 100%;
+  max-width: 450px;
+  overflow: hidden;
+  color: #000;
+  padding: 20px 20px 20px 0px;
+  margin-left: 10%;
+}
+
+.Hero-text-box__title-box {
+  width: 100%;
+  height: auto;
+  margin-bottom: 17px;
+}
+.Hero-text-box__title {
+  font-family: poppins, "sans-serif";
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 52px;
+  margin: 0;
+}
+
+.Hero-text-box__text-box {
+  width: 100%;
+  max-width: 345px;
+  height: auto;
+  margin-bottom: 40px;
+}
+.Hero-text-box__text {
+  font-family: poppins, "sans-serif";
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 400;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.Hero-text-box__cta-box {
+  width: 100%;
+  max-width: 345px;
+  height: 60px;
+}
+
+.Hero-text-box__cta {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  color: #fff;
+  font-family: poppins, "sans-serif";
+  font-size: 14px;
+  letter-spacing: 1.4px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* For In/Out Animations */
+.Hero-selected-slide .slide__image {
+}
+.Hero-selected-slide .slide__text-box {
+}
+
+@media screen and (max-width: $Hero-breakpoint--lg_max) {
+  .Hero-slide__text-container {
+    position: relative;
+    width: 100%;
+    max-width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .Hero-slide__text-box {
+    margin-left: 7%;
+  }
+
+  .Hero-text-box__title-box {
+    width: 100%;
+    height: auto;
+    margin-bottom: 17px;
+  }
+  .Hero-text-box__title {
+    font-family: poppins, "sans-serif";
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 52px;
+    margin: 0;
+  }
+
+  .Hero-text-box__text-box {
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+  }
+  .Hero-text-box__text {
+    font-family: poppins, "sans-serif";
+    font-size: 15px;
+    line-height: 29px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  .Hero-text-box__cta-box {
+    width: 100%;
+    max-width: 345px;
+    height: 60px;
+  }
+
+  .Hero-text-box__cta {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+    font-family: poppins, "sans-serif";
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: $Hero-breakpoint--md_max) {
+  .Hero-slide-inner {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .Hero-slide__image-container {
+    height: 64vw;
+  }
+  .Hero-slide__text-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-grow: 1;
+  }
+  .Hero-slide__text-box {
+    width: 100%;
+    max-width: 450px;
+    overflow: hidden;
+    color: #000;
+    padding: 35px 20px 0px 20px;
+    margin: 0;
+    text-align: center;
+  }
+
+  .Hero-text-box__title-box {
+    margin-bottom: 15px;
+  }
+  .Hero-text-box__text-box {
+    margin: 0px auto 35px;
+  }
+  .Hero-text-box__title {
+    font-size: 34px;
+    line-height: 45px;
+  }
+  .Hero-text-box__text {
+    font-size: 18px;
+    letter-spacing: 0.3px;
+    margin: 0px auto;
+  }
+  .Hero-text-box__cta-box {
+    margin: 0px auto;
+  }
+
+  .Hero-slide-large-image {
+    display: none;
+  }
+  .Hero-slide-mobile-image {
+    display: block;
+  }
+}
+
+@media screen and (max-width: $Hero-breakpoint--sm_max) and (max-height: $Hero-breakpoint--height-sm_max) {
+  .Hero {
+    // min-height: 650px;
+  }
+}
+
+@media screen and (max-width: $Hero-breakpoint--sm_max) and (max-height: $Hero-breakpoint--height-xs_max) {
+  .Hero {
+    // min-height: 545px;
+  }
+  .Hero-text-box__title-box {
+    margin-bottom: 15px;
+  }
+  .Hero-text-box__text-box {
+    margin-bottom: 25px;
+  }
+  .Hero-text-box__title {
+    font-size: 32px;
+    line-height: 43px;
+  }
+  .Hero-text-box__text {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+@media screen and (max-width: $Hero-breakpoint--sm_max) and (max-height: $Hero-breakpoint--height-xs_max) {
+  .Hero {
+    // min-height: 650px;
+  }
+  .Hero-text-box__title-box {
+    margin-bottom: 15px;
+  }
+  .Hero-text-box__text-box {
+    margin-bottom: 20px;
+  }
+  .Hero-text-box__text {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+@media screen and (max-width: $Hero-breakpoint--xxs_max) {
+  .Hero {
+    // min-height: 650px;
+  }
+  .Hero-text-box__title-box {
+    margin-bottom: 15px;
+  }
+  .Hero-text-box__text-box {
+    margin-bottom: 20px;
+  }
+  .Hero-text-box__title {
+    font-size: 30px;
+  }
+  .Hero-text-box__text {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+@media screen and (max-width: $Hero-breakpoint--xxxs_max) {
+  .Hero {
+    // min-height: 700px;
+  }
+  .Hero-text-box__title-box {
+    margin-bottom: 15px;
+  }
+  .Hero-text-box__text-box {
+    margin-bottom: 20px;
+  }
+  .Hero-text-box__title {
+    font-size: 30px;
+  }
+  .Hero-text-box__text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

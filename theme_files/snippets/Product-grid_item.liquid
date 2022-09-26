@@ -1,0 +1,101 @@
+
+
+<div id="product-grid-item-{{ product.id }}" class="product-grid-item">
+  <div class="pgi-inner">
+
+    {% include 'Product-grid_item_label' %}
+
+    <a href="{{ product.url }}" class="pgi__image-wrap">
+      <img src="{{ product.featured_image | product_img_url: 'original' }}" class="pgi__image">
+      <div class="pgi__quick-view">
+        <p class="pgi__quick-view-text">Quick View</p>
+      </div>
+    </a>
+
+    <div class="pgi__info-wrap">
+
+      <div class="pgi__details">
+        <a href="{{ product.url }}" class="pgi__product-title">
+          {{ product.title }}
+        </a>
+        <p class="p-small pgi__product-detail">
+          with Tumeric + Aloe Vera
+        </p>
+      </div>
+
+      <div class="pgi__form">
+        {% form 'product', product, data-productid: product.id, id:form_id, class:'x-fc__form', data-cart-form: '' %}
+
+          {% comment %}
+            Select element hidden when JS initializes. Safeguard for JS-disabled.
+          {% endcomment %}
+          <select name="id" data-productid="{{ product.id }}" id="ProductSelect-{{ section.id }}" style="display: none">
+            {% for variant in product.variants %}
+              <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} {% unless variant.available %} disabled="disabled" {% endunless %} value="{{ variant.id }}" data-sku="{{ variant.sku }}">{{ variant.title }} - {% if variant.available %}{{ variant.price | money_with_currency }}{% else %}{{ 'products.product.sold_out' | t }}{% endif %}</option>
+            {% endfor %}
+          </select>
+
+          {% assign price = current_variant.price | money_without_trailing_zeros %}
+          <p class="product__price{% if shop.taxes_included or shop.shipping_policy.body != blank %} product__price--has-policies{% endif %}" style="display: none">
+            <meta itemprop="priceCurrency" content="{{ cart.currency.iso_code }}">
+            <meta itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
+            {% comment %} {% if product.compare_at_price_max > product.price %}
+              <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+              <span class="product__price--reg">{{ current_variant.compare_at_price | money_without_trailing_zeros }}</span>
+              <span class="product__price--sale">{{ 'products.general.now_price_html' | t: price: price }}</span>
+            {% else %}
+              <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+              <span class="product__price--reg js-price">
+                {{ price }}
+              </span>
+            {% endif %} {% endcomment %}
+            {% include 'product-unit-price', variant: current_variant %}
+          </p>
+
+          {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
+            <div class="product__policies rte" style="display: none">
+              {%- if shop.taxes_included -%}
+                {{ 'products.general.include_taxes' | t }}
+              {%- endif -%}
+              {%- if shop.shipping_policy.body != blank -%}
+                {{ 'products.general.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+
+
+          {% if product.available %}
+            <button id="AddToCart-{{ section.id }}" type="submit" name="add" class="btn btn--add-to-cart{% if section.settings.enable_payment_button %} btn--secondary-accent{% endif %} pgi-form-btn site-btn">
+              <span class="x-fc__product-text">Add to Bag</span>
+              <p class="x-fc__product-price"> - {{ product.price | money }}</p>
+            </button>
+          {% else %}
+            <button type="button" class="btn btn--add-to-cart btn--disabled{% if section.settings.enable_payment_button %} btn--secondary-accent{% endif %}pgi-form-btn site-btn" disabled="disabled">
+              {{ 'products.product.sold_out' | t }}
+            </button>
+          {% endif %}
+          {% if section.settings.enable_payment_button %}
+            {% unless shop.metafields.subscriptions.subscription_active and product.metafields.subscriptions.shipping_interval_frequency %}
+            {{ form | payment_button }}
+            {% endunless %}
+          {% endif %}
+
+        {% endform %}
+      </div>
+
+    </div>
+
+  </div>
+</div>  
+
+<script>
+(function(){
+  const qv = document.querySelectorAll('.pgi__quick-view');
+  qv.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('Quick View!')
+    })
+  })
+}())
+</script>

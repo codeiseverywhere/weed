@@ -1,0 +1,22 @@
+//Styling for holding multiple checkboxes in a row.
+.FormItem-checkbox_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.FormItem-checkbox_wrapper--stacked {
+    flex-direction: column;
+}
+
+//Styling for an individual checkbox
+.FormItem--type_checkbox {
+    input {
+        @include make-FormItem--type_checkbox();
+        flex-grow: 0;
+    }
+
+    label {
+        margin-left: $FormItem--label--spacing;
+        margin-right: 0;
+    }
+}

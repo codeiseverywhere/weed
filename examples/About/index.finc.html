@@ -1,0 +1,143 @@
+@@include('./assets/frag/html.frag.html')
+
+<title>About layout example - Phylactery 1.0.0 by HUEMOR</title>
+
+<link rel="stylesheet" href="../../assets/vendor/slick/slick/slick.css">
+<script src="../../assets/vendor/slick/slick/slick.min.js" type="text/javascript"></script>
+
+@@include('./components/SiteHeader/phylactery_siteheader.frag.html')
+<header class="HeroHeader HeroHeader--thin HeroHeader--dark_bg" style="background-image: url(../../components/HeroHeader/test_background.svg);">
+    <div class="HeroHeader-valign">
+        <div class="HeroHeader-container">
+            <h1 class="HeroHeader-title">Something About The Company</h1>
+            <p>Lorem ipsum dolor sit amet</p>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="Container ContentSection ContentSection--body">
+        <div class="ContentSection-text ContentSection--body-text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque bibendum orci a laoreet venenatis. Nulla ac ante sapien. Nunc lacinia orci tellus, ac vulputate sapien interdum at. In et nulla quis est condimentum cursus. Curabitur a dapibus erat. Donec eget cursus nibh. Nam turpis lectus, gravida ut sollicitudin ut, tempor ac tellus. Sed vulputate dui et porta posuere.</p>
+        </div>
+    </section>
+    
+    <section class="Container StaffGrid">
+        <button type="button" class="StaffGrid-item" data-target="#TestModal" data-toggle="offcanvas" data-toggle-options="nohover" data-staffgrid-slider-index="0">
+            <img src="http://placehold.it/300x300" class="StaffGrid-image">
+            <h3 class="StaffGrid-name">Lorem P. Ipsum</h3>
+            <p class="StaffGrid-job_title">Cofounder &amp; Dolor Sit Amet</p>
+        </button>
+        <button type="button" class="StaffGrid-item" data-target="#TestModal" data-toggle="offcanvas" data-toggle-options="nohover" data-staffgrid-slider-index="1">
+            <img src="http://placehold.it/300x300" class="StaffGrid-image">
+            <h3 class="StaffGrid-name">Lorem P. Ipsum</h3>
+            <p class="StaffGrid-job_title">Cofounder &amp; Dolor Sit Amet</p>
+        </button>
+        <button type="button" class="StaffGrid-item" data-target="#TestModal" data-toggle="offcanvas" data-toggle-options="nohover" data-staffgrid-slider-index="2">
+            <img src="http://placehold.it/300x300" class="StaffGrid-image">
+            <h3 class="StaffGrid-name">Lorem P. Ipsum</h3>
+            <p class="StaffGrid-job_title">Cofounder &amp; Dolor Sit Amet</p>
+        </button>
+        <button type="button" class="StaffGrid-item" data-target="#TestModal" data-toggle="offcanvas" data-toggle-options="nohover" data-staffgrid-slider-index="3">
+            <img src="http://placehold.it/300x300" class="StaffGrid-image">
+            <h3 class="StaffGrid-name">Lorem P. Ipsum</h3>
+            <p class="StaffGrid-job_title">Cofounder &amp; Dolor Sit Amet</p>
+        </button>
+        <button type="button" class="StaffGrid-item" data-target="#TestModal" data-toggle="offcanvas" data-toggle-options="nohover" data-staffgrid-slider-index="4">
+            <img src="http://placehold.it/300x300" class="StaffGrid-image">
+            <h3 class="StaffGrid-name">Lorem P. Ipsum</h3>
+            <p class="StaffGrid-job_title">Cofounder &amp; Dolor Sit Amet</p>
+        </button>
+        <button type="button" class="StaffGrid-item" data-target="#TestModal" data-toggle="offcanvas" data-toggle-options="nohover" data-staffgrid-slider-index="5">
+            <img src="http://placehold.it/300x300" class="StaffGrid-image">
+            <h3 class="StaffGrid-name">Lorem P. Ipsum</h3>
+            <p class="StaffGrid-job_title">Cofounder &amp; Dolor Sit Amet</p>
+        </button>
+    </section>
+    
+    <div class="Offcanvas-backdrop is-Offcanvas--backdrop_inactive" data-offcanvas-backdrop="1" data-offcanvas-backdrop-for="TestModal"></div>
+    
+    <section class="StaffGrid-modal Modal is-Offcanvas--closed" id="TestModal" data-staffgrid-modal>
+        <button type="button" class="Modal-close" data-dismiss="offcanvas">X</button>
+        <div class="StaffGrid-modal_content Modal-content">
+            <div class="StaffGrid-modal_slider_wrapper">
+                <div data-staffgrid-slider>
+                    <div>
+                        <div class="StaffGrid-modal_image" style="background-image: url('http://placehold.it/300x300')"></div>
+                        <div class="StaffGrid-modal_info">
+                            <h3 class="StaffGrid-name">Lorem P. Ipsum</h3>
+                            <p class="StaffGrid-job_title">Cofounder &amp; Dolor Sit Amet</p>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                            
+                            <button type="button" class="StaffGrid-next" data-staffgrid-next><span>Next</span></button>
+                            <button type="button" class="StaffGrid-prev" data-staffgrid-prev><span>Prev</span></button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="StaffGrid-modal_image" style="background-image: url('http://placehold.it/300x300')"></div>
+                        <div class="StaffGrid-modal_info">
+                            <h3 class="StaffGrid-name">Lorem P. Ipsum</h3>
+                            <p class="StaffGrid-job_title">Cofounder &amp; Dolor Sit Amet</p>
+                            <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker / Macintosh Plus / Lisa Frank 420 / Modern Computing</p>
+                            <p>Multi-track drifting!</p>
+                            
+                            <button type="button" class="StaffGrid-next" data-staffgrid-next><span>Next</span></button>
+                            <button type="button" class="StaffGrid-prev" data-staffgrid-prev><span>Prev</span></button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="StaffGrid-modal_image" style="background-image: url('http://placehold.it/300x300')"></div>
+                        <div class="StaffGrid-modal_info">
+                            <h3 class="StaffGrid-name">Lorem P. Ipsum</h3>
+                            <p class="StaffGrid-job_title">Cofounder &amp; Dolor Sit Amet</p>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                            
+                            <button type="button" class="StaffGrid-next" data-staffgrid-next><span>Next</span></button>
+                            <button type="button" class="StaffGrid-prev" data-staffgrid-prev><span>Prev</span></button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="StaffGrid-modal_image" style="background-image: url('http://placehold.it/300x300')"></div>
+                        <div class="StaffGrid-modal_info">
+                            <h3 class="StaffGrid-name">Lorem P. Ipsum</h3>
+                            <p class="StaffGrid-job_title">Cofounder &amp; Dolor Sit Amet</p>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                            
+                            <button type="button" class="StaffGrid-next" data-staffgrid-next><span>Next</span></button>
+                            <button type="button" class="StaffGrid-prev" data-staffgrid-prev><span>Prev</span></button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="StaffGrid-modal_image" style="background-image: url('http://placehold.it/300x300')"></div>
+                        <div class="StaffGrid-modal_info">
+                            <h3 class="StaffGrid-name">Lorem P. Ipsum</h3>
+                            <p class="StaffGrid-job_title">Cofounder &amp; Dolor Sit Amet</p>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                            
+                            <button type="button" class="StaffGrid-next" data-staffgrid-next><span>Next</span></button>
+                            <button type="button" class="StaffGrid-prev" data-staffgrid-prev><span>Prev</span></button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="StaffGrid-modal_image" style="background-image: url('http://placehold.it/300x300')"></div>
+                        <div class="StaffGrid-modal_info">
+                            <h3 class="StaffGrid-name">Lorem P. Ipsum</h3>
+                            <p class="StaffGrid-job_title">Cofounder &amp; Dolor Sit Amet</p>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                            
+                            <button type="button" class="StaffGrid-next" data-staffgrid-next><span>Next</span></button>
+                            <button type="button" class="StaffGrid-prev" data-staffgrid-prev><span>Prev</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="ObiStrip">
+        <div class="ObiStrip-content">
+            <p>We're always looking for Lorem Ipsum.</p>
+            <a href="#">Work at Cicero's</a>
+        </div>
+    </footer>
+</main>

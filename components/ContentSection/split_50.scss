@@ -1,0 +1,60 @@
+$ContentSection--split_50--vertical_spacing: 30px;
+
+.ContentSection--split_50-row {
+    @include make-Container(sm);
+    @include make-Container(md);
+    @include make-Container(lg);
+
+    display: flex;
+    flex-flow: column-reverse wrap;
+
+    position: relative;
+    margin: 0 auto;
+
+    @media (min-width: $ContentSection--breakpoint) {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+}
+
+.ContentSection--split_50-figure {
+    @include make-Column(6, min, $ContentSection--breakpoint);
+    @include make-Padding();
+
+    position: relative;
+    margin: 0;
+
+    &:last-child {
+        margin-top: $ContentSection--split_50--vertical_spacing;
+
+        @media (min-width: $ContentSection--breakpoint) {
+            margin-top: 0;
+        }
+    }
+}
+
+.ContentSection--split_50-text {
+    @include make-Column(6, min, $ContentSection--breakpoint);
+    @include make-Padding();
+
+    &:last-child {
+        margin-top: $ContentSection--split_50--vertical_spacing;
+
+        @media (min-width: $ContentSection--breakpoint) {
+            margin-top: 0;
+        }
+    }
+}
+
+.ContentSection--split_50-valign_top {
+    @media (min-width: $ContentSection--breakpoint) {
+        vertical-align: top;
+    }
+}
+
+.ContentSection--split_50-valign_bottom {
+    @media (min-width: $ContentSection--breakpoint) {
+        vertical-align: bottom;
+    }
+}

@@ -1,0 +1,58 @@
+@@include('./assets/frag/html.frag.html')
+
+<title>ScrollEffects component - Phylactery 1.0.0 by HUEMOR</title>
+
+<body data-offcanvas-hover-min="960">
+
+@@include('./components/SiteHeader/phylactery_siteheader.frag.html')
+<header class="HeroHeader HeroHeader--thin HeroHeader--dark_bg" style="background-image: url(../../components/HeroHeader/test_background.svg);">
+    <div class="HeroHeader-valign">
+        <div class="HeroHeader-container">
+            <h1 class="HeroHeader-title">ScrollEffects component</h1>
+        </div>
+    </div>
+</header>
+
+<main class="Example-content">
+    <div class="Container Example-section">
+        <h2>CSS-based scroll effects</h2>
+        <p>These effects are triggered by special state classes provided by
+        the ScrollEffects script.</p>
+
+        <div class="Example-specimen" style="text-align: left">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="ScrollEffects-specimen">View Source</button>
+            <div class="Example-unstyled_specimen_content is-Example-specimen--visible" id="ScrollEffects-specimen" data-specimen>
+                <div class="ScrollEffects ScrollEffects--appear is-ScrollEffects--inactive" data-scrolleffects="visible">
+                    <p class="h3">ScrollEffects--appear</p>
+                    <p>The --appear effect causes content to transition from opacity 0
+                    to opacity 1 when visible. The visible effect mode allows the content
+                    to disappear once more when it is scrolled off the page.</p>
+                </div>
+            </div>
+            <pre data-specimen-source="ScrollEffects-specimen" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+    </div>
+
+    <section class="Container Example-section">
+        <h3>Trigger-once scroll animations</h3>
+        <p>By changing <code>data-scrolleffects</code> to use the <code>visible_once</code> mode, this animation below will trigger when the block is visble, and then stay active forever.</p>
+
+        <div class="Example-specimen" style="text-align: left">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="ScrollEffects-specimen--2">View Source</button>
+            <div class="Example-unstyled_specimen_content is-Example-specimen--visible" id="ScrollEffects-specimen--2" data-specimen>
+                <div class="ScrollEffects ScrollEffects--appear is-ScrollEffects--inactive" data-scrolleffects="visible_once">
+                    <p class="h4">ScrollEffects--appear</p>
+                    <p>The --appear effect causes content to transition from opacity 0
+                    to opacity 1 when visible. The visible_once effect mode causes the
+                    content to be visible always once it appears.</p>
+                </div>
+            </div>
+            <pre data-specimen-source="ScrollEffects-specimen--2" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+    </section>
+
+    <section class="Container Example-section">
+        <h2>WebAnimation-based scroll effects</h2>
+        <p>Coming soon: For more complicated scroll effects...</p>
+    </section>
+</main>

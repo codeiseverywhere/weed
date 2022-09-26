@@ -1,0 +1,54 @@
+.PageTransition-fbf_animation {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+@mixin make-PageTransition-fbf_animation($name: scrub, $frame_count: 25, $timing: 0.8s, $format: png, $base_path: components/PageTransition/fbf_animations) {
+    .PageTransition--#{$name}-fbf_animation {
+        width: (100% * $frame_count);
+        background-image: url("../#{$base_path}/#{$name}.#{$format}");
+        transform: translateY(-50%) translateX(100% / $frame_count / -2);
+
+        .is-PageTransition--transition_in & {
+            animation: PageTransition--#{$name}-fbf_animation $timing steps($frame_count - 1) forwards reverse;
+            transform: translateY(-50%) translateX(100% / $frame_count / -2);
+        }
+
+        .is-PageTransition--transition_loading & {
+            transform: translateY(-50%) translateX(-100% + 100% / $frame_count / 2);
+        }
+
+        .is-PageTransition--transition_out & {
+            animation: PageTransition--#{$name}-fbf_animation $timing steps($frame_count - 1) forwards;
+            transform: translateY(-50%) translateX(-100% + 100% / $frame_count / 2);
+        }
+    }
+
+    @keyframes PageTransition--#{$name}-fbf_animation {
+        0% {
+            /* translateX(-2%) is used to horizontally center the first frame inside the viewport */
+            transform: translateY(-50%) translateX(100% / $frame_count / -2);
+        }
+        100% {
+            /* translateX(-98%) (2% + 96) is used to horizontally center the last frame inside the viewport  */
+            transform: translateY(-50%) translateX(-100% + 100% / $frame_count / 2);
+        }
+    }
+}
+
+@include make-PageTransition-fbf_animation(extinguisher, 25);
+@include make-PageTransition-fbf_animation(scrub, 25);
+@include make-PageTransition-fbf_animation(glitch, 25);
+@include make-PageTransition-fbf_animation(scribble, 38);
+@include make-PageTransition-fbf_animation(gummy, 25);
+@include make-PageTransition-fbf_animation(gooey, 25);
+@include make-PageTransition-fbf_animation(mirror, 25);
+@include make-PageTransition-fbf_animation(diamond, 20);
+@include make-PageTransition-fbf_animation(cartoon, 25);
+@include make-PageTransition-fbf_animation(clones, 25);
+@include make-PageTransition-fbf_animation(kaleidoscope, 25);

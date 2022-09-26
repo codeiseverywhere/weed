@@ -1,0 +1,95 @@
+@@include('./assets/frag/html.frag.html')
+
+<title>Modal component - Phylactery 1.0.0 by HUEMOR</title>
+
+@@include('./components/SiteHeader/phylactery_siteheader.frag.html')
+<header class="HeroHeader HeroHeader--thin HeroHeader--dark_bg" style="background-image: url(../../components/HeroHeader/test_background.svg);">
+    <div class="HeroHeader-valign">
+        <div class="HeroHeader-container">
+            <h1 class="HeroHeader-title">Modal component</h1>
+        </div>
+    </div>
+</header>
+
+<main class="Example-content">
+    <section class="Example-content">
+        <div class="Container Example-section">
+            <h2>Standard modal</h2>
+        </div>
+        
+        <div class="Container Example-specimen">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="Modal-specimen">View Source</button>
+            <div class="is-Example-specimen--visible" id="Modal-specimen" data-specimen>
+                <button type="button" class="Button Button--antiman" data-target="#TestModal" data-toggle="offcanvas" data-toggle-options="nohover"><span>Launch specimen modal</span></button>
+                <section class="Modal is-Offcanvas--closed" id="TestModal">
+                    <button type="button" class="Modal-close" data-dismiss="offcanvas">X</button>
+                    <div class="Modal-content">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
+                </section>
+            </div>
+            <pre data-specimen-source="Modal-specimen" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+        
+        <div class="Container Example-section">
+            <h2>Video modal</h2>
+            <p>This modal contains a video which automatically plays when opened
+            and pauses when closed.</p>
+        </div>
+        
+        <div class="Container Example-specimen">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="Modal-specimen--video">View Source</button>
+            <div class="is-Example-specimen--visible" id="Modal-specimen--video" data-specimen>
+                <button type="button" class="Button Button--antiman" data-target="#TestModal2" data-toggle="offcanvas" data-toggle-options="nohover"><span>Launch specimen modal</span></button>
+                <section class="Modal is-Offcanvas--closed" id="TestModal2" data-videoplayer-offcanvas>
+                    <button type="button" class="Modal-close" data-dismiss="offcanvas">X</button>
+                    <div class="Modal-content">
+                        <div class="VideoPlayer VideoPlayer--youtube" data-videoplayer="youtube" id="VideoPlayer--two">
+                            <div class="VideoPlayer-video VideoPlayer-video--sixteen_by_nine">
+                                <iframe src="https://www.youtube.com/embed/lasWefVUCsI?enablejsapi=1&controls=0" frameborder="0" allowfullscreen id="VideoPlayer--two-iframe"></iframe>
+                            </div>
+                            <div class="VideoPlayer-controls">
+                                <button type="button" class="VideoPlayer-play_pause" data-videoplayer-playpause>
+                                    <span class="sr-only VideoPlayer-play_text">Play</span>
+                                    <span class="sr-only VideoPlayer-pause_text">Pause</span>
+                                </button>
+                                <button type="button" class="VideoPlayer-scrubber" data-videoplayer-scrubber>
+                                    <div class="VideoPlayer-scrubber_range"></div>
+                                    <div class="VideoPlayer-scrubber_fill" data-videoplayer-scrubberfill></div>
+                                    <div class="VideoPlayer-scrubber_knob" data-videoplayer-scrubberknob></div>
+                                </button>
+                                <button type="button" class="VideoPlayer-mute" data-videoplayer-mute>
+                                    <span class="sr-only VideoPlayer-mute_text">Mute</span>
+                                    <span class="sr-only VideoPlayer-unmute_text">Unmute</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <pre data-specimen-source="Modal-specimen--video" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+
+        <div class="Container Example-section">
+            <h2>Toast modal</h2>
+        </div>
+
+        <div class="Container Example-specimen">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="Modal-specimen">View Source</button>
+            <div class="is-Example-specimen--visible" id="Modal-specimen" data-specimen>
+                <button type="button" class="Button Button--antiman" data-target="#TestModal3" data-toggle="offcanvas" data-toggle-options="nohover"><span>Launch specimen modal</span></button>
+                <section class="Modal Modal--toast is-Offcanvas--closed" id="TestModal3">
+                    <button type="button" class="Modal-close" data-dismiss="offcanvas">X</button>
+                    <div class="Modal-content">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
+                </section>
+            </div>
+            <pre data-specimen-source="Modal-specimen" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+    </section>
+</main>

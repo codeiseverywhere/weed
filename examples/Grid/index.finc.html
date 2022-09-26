@@ -1,0 +1,391 @@
+@@include('./assets/frag/html.frag.html')
+
+
+<meta name="viewport" content="width=device-width">
+
+<script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+<script src="../../build/script.js" type="application/javascript"></script>
+
+<title>Grid - Phylactery 1.0.0 by HUEMOR</title>
+
+<body data-offcanvas-hover-min="960">
+    <main>
+        @@include('./components/SiteHeader/phylactery_siteheader.frag.html')
+
+        <header class="HeroHeader HeroHeader--thin HeroHeader--dark_bg" style="background-image: url(../../components/HeroHeader/test_background.svg);">
+            <div class="HeroHeader-valign">
+                <div class="HeroHeader-container">
+                    <h1 class="HeroHeader-title">Grid</h1>
+                </div>
+            </div>
+        </header>
+
+        <article class="Example-content AffixColumn-root" data-affixcolumn='root'>
+            <div class="Example--affix_column-sidebar">
+                <section class="Grid-example--affix_column-sidebar_content AffixColumn is-AffixColumn--top" data-affixcolumn="column">
+                    <ul class="Sidebar-list">
+                        <li><a href="#nogutter">Example columns with no gutter</a></li>
+                        <li><a href="#gutter">Example columns with gutter</a></li>
+                        <li><a href="#padding">Example columns with padding</a></li>
+                        <li><a href="#viewport">Example columns with viewport</a></li>
+                        <li><a href="#adjustedgutter">Example columns with adjusted gutter width</a></li>
+                        <li><a href="#offset">Example columns with -offset</a></li>
+                        <li><a href="#after">Example columns with -after</a></li>
+                        <li><a href="#push">Example columns with -push</a></li>
+                        <li><a href="#pull">Example columns with -pull</a></li>
+                        <li><a href="#swap">Swapping element positions based on screen size</a></li>
+                    </ul>
+                </section>
+            </div>
+            <div class="Example--affix_column-content">
+                <section class="Grid-example--affix_column-content_content AffixColumn is-AffixColumn--top is-AffixColumn--tallest" data-affixcolumn="column">
+                    <div class="Container Example-section"> <!-- example columns with no gutter -->
+                        <a name="nogutter"><h2>Example columns no gutter</h2></a>
+                        <p>Three equal columns</p>
+                        <div class="Example-row">
+                            <div class="Example-column Example-column_four">
+                                .make-Column(4)
+                            </div>
+                            <div class="Example-column Example-column_four">
+                                .make-Column(4)
+                            </div>
+                            <div class="Example-column Example-column_four">
+                                .make-Column(4)
+                            </div>
+                        </div>
+                        <p>Three unequal columns</p>
+                        <div class="Example-row">
+                            <div class="Example-column Example-column_three">
+                                .make-Column(3)
+                            </div>
+                            <div class="Example-column Example-column_six">
+                                .make-Column(6)
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                .make-Column(3)
+                            </div>
+                        </div>
+                        <p>Two columns</p>
+                        <div class="Example-row">
+                            <div class="Example-column Example-column_eight">
+                                .make-Column(8)
+                            </div>
+                            <div class="Example-column Example-column_four">
+                                .make-Column(4)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Container Example-section"> <!-- example columns with gutter -->
+                        <a name="gutter"><h2>Example columns with gutter</h2></a>
+                        <p>Three equal columns</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_four--gutter">
+                                .make-Column--gutter(4)
+                            </div>
+                            <div class="Example-column Example-column_four--gutter">
+                                .make-Column--gutter(4)
+                            </div>
+                            <div class="Example-column Example-column_four--gutter">
+                                .make-Column--gutter(4)
+                            </div>
+                        </div>
+                        <p>Three unequal columns</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_three--gutter">
+                                .make-Column--gutter(3)
+                            </div>
+                            <div class="Example-column Example-column_six--gutter">
+                                .make-Column--gutter(6)
+                            </div>
+                            <div class="Example-column Example-column_three--gutter">
+                                .make-Column--gutter(3)
+                            </div>
+                        </div>
+                        <p>Two columns</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_eight--gutter">
+                                .make-Column--gutter(8)
+                            </div>
+                            <div class="Example-column Example-column_four--gutter">
+                                .make-Column--gutter(4)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Container Example-section"> <!-- example columns with padding -->
+                        <a name="padding"><h2>Example columns with padding</h2></a>
+                        <p>Three equal columns</p>
+                        <div class="Example-row">
+                            <div class="Example-column Example-column--padded Example-column_four--padded">
+                                <div>.make-Column--padded(4)</div>
+                            </div>
+                            <div class="Example-column Example-column--padded Example-column_four--padded">
+                                <div>.make-Column--padded(4)</div>
+                            </div>
+                            <div class="Example-column Example-column--padded Example-column_four--padded">
+                                <div>.make-Column--padded(4)</div>
+                            </div>
+                        </div>
+                        <p>Three unequal columns</p>
+                        <div class="Example-row">
+                            <div class="Example-column Example-column--padded Example-column_three--padded">
+                                <div>.make-Column--padded(3)</div>
+                            </div>
+                            <div class="Example-column Example-column--padded Example-column_six--padded">
+                                <div>.make-Column--padded(6)</div>
+                            </div>
+                            <div class="Example-column Example-column--padded Example-column_three--padded">
+                                <div>.make-Column--padded(3)</div>
+                            </div>
+                        </div>
+                        <p>Two columns</p>
+                        <div class="Example-row">
+                            <div class="Example-column Example-column--padded Example-column_eight--padded">
+                                <div>.make-Column--padded(8)</div>
+                            </div>
+                            <div class="Example-column Example-column--padded Example-column_four--padded">
+                                <div>.make-Column--padded(4)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Container Example-section"> <!-- example columns with viewport -->
+                        <div>
+                            <div class="Container Example-section">
+                                <a name="viewport"><h2>Example columns with viewport</h2></a>
+                                <p>Three equal columns</p>
+                                <div class="Example-row">
+                                    <div class="Example-column Example-column_four--viewport-sm">
+                                        <div>.make-Column(4) (@Viewport-sm)</div>
+                                    </div>
+                                    <div class="Example-column Example-column_four--viewport-sm">
+                                        <div>.make-Column(4) (@Viewport-sm)</div>
+                                    </div>
+                                    <div class="Example-column Example-column_four--viewport-sm">
+                                        <div>.make-Column(4) (@Viewport-sm)</div>
+                                    </div>
+                                </div>
+                                <p>Three unequal columns</p>
+                                <div class="Example-row">
+                                    <div class="Example-column Example-column_three--viewport-xs">
+                                        <div>.make-Column(3) (@Viewport-xs)</div>
+                                    </div>
+                                    <div class="Example-column Example-column_six--viewport-xs">
+                                        <div>.make-Column(6) (@Viewport-xs) </div>
+                                    </div>
+                                    <div class="Example-column Example-column_three--viewport-xs">
+                                        <div>.make-Column(3) (@Viewport-xs) </div>
+                                    </div>
+                                </div>
+                                <p>Two columns</p>
+                                <div class="Example-row">
+                                    <div class="Example-column Example-column_eight--viewport-md">
+                                        <div>.make-Column(8) (@Viewport-md)</div>
+                                    </div>
+                                    <div class="Example-column Example-column_four--viewport-md">
+                                        <div>.make-Column(4) (@Viewport-md)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Container Example-section"> <!-- example columns with adjusted gutter width -->
+                        <div class="Container Example-section">
+                            <a name="adjustedgutter"><h2>Example columns with adjusted gutter width</h2></a>
+                            <p>Three equal columns</p>
+                            <div class="Example-row Example-row--gutter">
+                                <div class="Example-column Example-column_four--adjusted_gutter">
+                                    <div>.make-Column(4) (5px)</div>
+                                </div>
+                                <div class="Example-column Example-column_four--adjusted_gutter">
+                                    <div>.make-Column(4) (5px)</div>
+                                </div>
+                                <div class="Example-column Example-column_four--adjusted_gutter">
+                                    <div>.make-Column(4) (5px)</div>
+                                </div>
+                            </div>
+                            <p>Three unequal columns</p>
+                            <div class="Example-row Example-row--gutter">
+                                <div class="Example-column Example-column_three--adjusted_gutter">
+                                    <div>.make-Column(3) (25px)</div>
+                                </div>
+                                <div class="Example-column Example-column_six--adjusted_gutter">
+                                    <div>.make-Column(6) (25px)</div>
+                                </div>
+                                <div class="Example-column Example-column_three--adjusted_gutter">
+                                    <div>.make-Column(3) (25px)</div>
+                                </div>
+                            </div>
+                            <p>Two columns</p>
+                            <div class="Example-row Example-row--gutter">
+                                <div class="Example-column Example-column_eight--adjusted_gutter">
+                                    <div>.make-Column(8) (100px)</div>
+                                </div>
+                                <div class="Example-column Example-column_four--adjusted_gutter_big">
+                                    <div>.make-Column(4) (100px)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Container Example-section"> <!-- example columns with offset -->
+                        <a name="offset"><h2>Example columns with -offset</h2></a>
+                        <h3>-offset adds spacing on the left-hand side of the element.</h3>
+                        <p>Three equal offset columns</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_three Example-column_three--offset">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                        <p>Three unequal offset columns</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_three Example-column_two--offset">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_four">
+                                <div>.make-Column(4)</div>
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                        <p>Two offset columns</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_three Example-column_six--offset">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Container Example-section"> <!-- example columns with after -->
+                        <a name="#after"><h2>Example columns with -after</h2></a>
+                        <h3>-after adds spacing on the right-hand side of the element.</h3>
+                        <p>Three equal columns with -after</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_three Example-column_three--after">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                        <p>Three unequal columns with -after</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_four">
+                                <div>.make-Column(4)</div>
+                            </div>
+                            <div class="Example-column Example-column_three Example-column_two--after">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                        <p>Two columns with -after</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_three Example-column_six--after">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Container Example-section"> <!-- example columns with push -->
+                        <a name="push"><h2>Example columns with -push</h2></a>
+                        <h3>-push moves the element to the right some number of columns without affecting other columns.</h3>
+                        <p>Three equal columns with -push</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_three Example-column_nine--push">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                        <p>Three unequal columns with -push</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_two Example-column_ten--push">
+                                <div>.make-Column(2)</div>
+                            </div>
+                            <div class="Example-column Example-column_four">
+                                <div>.make-Column(4)</div>
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                        <p>Two columns with -push</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_three Example-column_six--push">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Container Example-section"> <!-- example columns with pull -->
+                        <a name="pull"><h2>Example columns with pull</h2></a>
+                        <h3>-pull moves the element to the left some number of columns without affecting other columns.</h3>
+                        <p>Three equal columns with pull</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_three Example-column_one--pull">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                        <p>Three unequal columns with pull</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                            <div class="Example-column Example-column_four Example-column_two--pull">
+                                <div>.make-Column(4)</div>
+                            </div>
+                            <div class="Example-column Example-column_three">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                        <p>Two columns with pull</p>
+                        <div class="Example-row Example-row--gutter">
+                            <div class="Example-column Example-column_six">
+                                <div>.make-Column(6)</div>
+                            </div>
+                            <div class="Example-column Example-column_three Example-column_three--pull">
+                                <div>.make-Column(3)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Container Example-section">
+                        <a name="swap"><h2>Swapping element positions based on screen size</h2></a>
+                        <div class="Example-row">
+                            <div class="Example-column Example-column_four Example-column_four--pull-sm">
+                                <div>A</div>
+                            </div>
+                            <div class="Example-column Example-column_eight">
+                                <div>B</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </article>
+</main>

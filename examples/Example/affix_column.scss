@@ -1,0 +1,54 @@
+.Example--affix_column-sidebar {
+    @include make-Column--gutter(4, min, $Viewport-md);
+}
+
+.Example--affix_column-content {
+    @include make-Column--gutter(8, min, $Viewport-md);
+}
+
+.Example--affix_column-row {
+    @include make-Column--gutter(12);
+}
+
+//To be used when the column is full-width.
+.Example--affix_column-sidebar_content {
+    @include make-Column--gutter(4, min, $Viewport-md);
+
+    &.is-AffixColumn--tallest {
+        width: 100%;
+    }
+}
+
+.Example--affix_column-content_content {
+    @include make-Column--gutter(8, min, $Viewport-md);
+
+    &.is-AffixColumn--tallest {
+        width: 100%;
+    }
+}
+
+.Example--affix_column-row_content {
+    @include make-Column--gutter(12);
+
+    background: $Color--white;
+    text-align: center;
+}
+
+//To be used when the column is in a container.
+.Example--affix_column-sidebar_content--in_container {
+    @include make-Container-column--gutter(md, 4);
+    @include make-Container-column--gutter(lg, 4);
+
+    &.is-AffixColumn--tallest {
+        width: 100%;
+    }
+}
+
+.Example--affix_column-content_content--in_container {
+    @include make-Container-column--gutter(md, 8);
+    @include make-Container-column--gutter(lg, 8);
+
+    &.is-AffixColumn--tallest {
+        width: 100%;
+    }
+}

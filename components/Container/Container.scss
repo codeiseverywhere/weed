@@ -1,0 +1,91 @@
+$Container-xs: 444px;
+$Container-sm: 750px;
+$Container-md: 970px;
+$Container-lg: 1170px;
+$Container-xl: 1596px;
+
+@mixin make-Container($screen-break: "", $container-width: "") {
+    //Predefined container tiers
+    @if $screen-break == xs {
+        @media (min-width: $Viewport-xs) {
+            max-width: $Container-xs;
+        }
+    } @else if $screen-break == sm {
+        @media (min-width: $Viewport-sm) {
+            max-width: $Container-sm;
+        }
+    } @else if $screen-break == md {
+        @media (min-width: $Viewport-md) {
+            max-width: $Container-md;
+        }
+    } @else if $screen-break == lg {
+        @media (min-width: $Viewport-lg) {
+            max-width: $Container-lg;
+        }
+    } @else if $screen-break == xl {
+        @media (min-width: $Viewport-xl) {
+            max-width: $Container-xl;
+        }
+    } @else if $screen-break == "" {
+        //Extend the default container class
+        @extend .Container;
+    } @else if $container-width == "" {
+        @error "Container width cannot be unspecified unless using predefined tiers or default container.";
+    } @else {
+        //Make your own container
+        @media (min-width: $screen-break) {
+            max-width: $container-width;
+        }
+    }
+}
+
+//The default container most people should use
+.Container {
+    @include make-Container(sm);
+    @include make-Container(md);
+    @include make-Container(lg);
+    position: relative;
+    margin: 0 auto;
+
+    @extend .clearfix;
+}
+
+//Precalculate a pixel grid width based on a particular container width.
+@mixin make-Container-column($screen-break: "", $container-width: "", $columns: "", $float: left) {
+    //$container-width contains the column count with the xs/sm/md/lg/xl tiers
+    @if $screen-break == xs {
+        @include make-Column($container-width, min, $Viewport-xs, $Grid--parent_width: $Container-xs, $float: $float);
+    } @else if $screen-break == sm {
+        @include make-Column($container-width, min, $Viewport-sm, $Grid--parent_width: $Container-sm, $float: $float);
+    } @else if $screen-break == md {
+        @include make-Column($container-width, min, $Viewport-md, $Grid--parent_width: $Container-md, $float: $float);
+    } @else if $screen-break == lg {
+        @include make-Column($container-width, min, $Viewport-lg, $Grid--parent_width: $Container-lg, $float: $float);
+    } @else if $screen-break == xl {
+        @include make-Column($container-width, min, $Viewport-xl, $Grid--parent_width: $Container-xl, $float: $float);
+    } @else if $columns == "" {
+        @error "You must specify a column count";
+    } @else {
+        @include make-Column($columns, min, $screen-break, $Grid--parent_width: $container-width, $float: $float);
+    }
+}
+
+//With margin gutters, too.
+@mixin make-Container-column--gutter($screen-break: "", $container-width: "", $columns: "", $Grid--gutter_width: 30px, $float: left) {
+    //$container-width contains the column count with the xs/sm/md/lg/xl tiers
+    @if $screen-break == xs {
+        @include make-Column--gutter($container-width, min, $Viewport-xs, $Grid--parent_width: $Container-xs, $Grid--gutter_width: $Grid--gutter_width, $float: $float);
+    } @else if $screen-break == sm {
+        @include make-Column--gutter($container-width, min, $Viewport-sm, $Grid--parent_width: $Container-sm, $Grid--gutter_width: $Grid--gutter_width, $float: $float);
+    } @else if $screen-break == md {
+        @include make-Column--gutter($container-width, min, $Viewport-md, $Grid--parent_width: $Container-md, $Grid--gutter_width: $Grid--gutter_width, $float: $float);
+    } @else if $screen-break == lg {
+        @include make-Column--gutter($container-width, min, $Viewport-lg, $Grid--parent_width: $Container-lg, $Grid--gutter_width: $Grid--gutter_width, $float: $float);
+    } @else if $screen-break == xl {
+        @include make-Column--gutter($container-width, min, $Viewport-xl, $Grid--parent_width: $Container-xl, $Grid--gutter_width: $Grid--gutter_width, $float: $float);
+    } @else if $columns == "" {
+        @error "You must specify a column count";
+    } @else {
+        @include make-Column--gutter($columns, min, $screen-break, $Grid--parent_width: $container-width, $Grid--gutter_width: $Grid--gutter_width, $float: $float);
+    }
+}

@@ -1,0 +1,85 @@
+$Page--light--background_color: $Color--white;
+$Page--light--color: $Font-color--black; //contrast($Page--light--background_color, $Font-color--white, $Font-color--black);
+
+$Page--dark--background_color: $Color--black;
+$Page--dark--color: $Font-color--white; //contrast($Page--dark--background_color, $Font-color--white, $Font-color--black);
+
+$Page--with_border--border_width: 15px;
+
+.Page {
+    @include clearfix;
+
+    font-family: $Font-family;
+    font-weight: $Font-weight;
+
+    position: relative;
+    z-index: $ZIndex-ordinary;
+}
+
+@mixin make-Page--color($color, $background_color, $border_color) {
+    background-color: $background_color;
+    @include make-Type--color($color);
+
+    .Page-border {
+        background-color: $border_color;
+    }
+}
+
+.Page--light {
+    @include make-Page--color($Page--light--color, $Page--light--background_color, $Page--dark--background_color);
+}
+
+.Page--dark {
+    @include make-Page--color($Page--dark--color, $Page--dark--background_color, $Page--light--background_color);
+}
+
+.Page--with_border {
+    margin: $Page--with_border--border_width;
+}
+
+.Page-border {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: $ZIndex-site_border;
+}
+
+
+/* Theme.liquid file */
+
+$Theme-Spacing-Top: #{"calc({{ settings.announcement-bar-height }} + {{ settings.siteHeader-top-row-height }} + {{ settings.siteHeader-bottom-row-height }})"};
+
+$Theme-Spacing-Top-No-Announcement: #{"calc({{ settings.siteHeader-top-row-height }} + {{ settings.siteHeader-bottom-row-height }})"};
+
+@media screen and (max-width: 768px){
+
+    $Theme-Spacing-Top: #{"calc({{ settings.siteHeader-top-row-height--mobile }} + {{ settings.siteHeader-bottom-row-height--mobile }})"};
+
+    $Theme-Spacing-Top-No-Announcement: #{"calc({{ settings.siteHeader-top-row-height--mobile }} + {{ settings.siteHeader-bottom-row-height--mobile }})"};
+}
+
+
+.MainContent {
+  margin-top: 0px
+}
+
+.MainContent-site_header--fixed {
+  margin-top: $Theme-Spacing_Top-No-Announcement;
+}
+.MainContent-site_header--fixed-with-announcement-bar {
+  margin-top: $Theme-Spacing_Top;
+}
+
+
+//Setting margin bottom (space between sections)
+.MainContent .shopify-section {
+    margin-bottom: 100px;
+}
+@media screen and (max-width: 768px){
+    .MainContent .shopify-section {
+        margin-bottom: 80px;
+    }
+}

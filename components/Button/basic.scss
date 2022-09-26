@@ -1,0 +1,37 @@
+$Button--bg_color: $Color--primary;
+$Button--hover_color: black;
+$Button--border_width: $Border-width--normal;
+
+@mixin make-Button--common_styles() {
+  display: inline-block;
+  vertical-align: top;
+}
+
+@mixin make-Button--basic(
+  $Button--bg_color: $Button--bg_color,
+  $Button--color: $Button--color,
+  $Button--border_width: $Button--border_width,
+  $Button--border_color: $Button--border_color,
+  $Button--padding: $Button--padding,
+  $Button--font_family: $Button--font_family,
+  $Button--font_weight: $Button--font_weight
+) {
+  @include make-Button--common_styles();
+
+  background: $Button--bg_color;
+  color: $Button--color;
+  border: $Button--border_width solid $Button--border_color;
+  font-family: $Button--font_family;
+  font-weight: $Button--font_weight;
+  appearance: none;
+  padding: $Button--padding;
+}
+
+.site-btn {
+  background-color: #000;
+  color: #fff;
+}
+.site-btn:hover {
+  background-color: #fff003 !important;
+  color: #000;
+}

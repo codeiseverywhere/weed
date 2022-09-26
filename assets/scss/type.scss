@@ -1,0 +1,406 @@
+$Font-family: #{"{{ settings.paragraph-font.family }}"};
+
+$Paragraph-font: #{"{{ settings.paragraph-font.family }}"};
+$Paragraph-weight: #{"{{ settings.paragraph-font.weight }}"};
+$Paragraph-style: #{"{{ settings.paragraph-font.style }}"};
+
+$Headline-large-font: #{"{{ settings.headline-large-font.family }}"};
+$Headline-large-weight: #{"{{ settings.headline-large-font.weight }}"};
+$Headline-large-style: #{"{{ settings.headline-large-font.style }}"};
+
+$Headline-small-font: #{"{{ settings.headline-small-font.family }}"};
+$Headline-small-weight: #{"{{ settings.headline-small-font.weight }}"};
+$Headline-small-style: #{"{{ settings.headline-small-font.style }}"};
+
+$Font-weight--light: 	300;
+$Font-weight--normal: 	400;
+$Font-weight--bold: 	   600;
+
+$Font-weight: $Font-weight--normal;
+
+//DEPRECATED: Do not use $Font-size tiers.
+$Font-size--tier_8:		64px;
+$Font-size--tier_7:		48px;
+$Font-size--tier_6:		36px;
+$Font-size--tier_5:		24px;
+$Font-size--tier_4:		18px;
+$Font-size--tier_3:		16px;
+$Font-size--tier_2:		14px;
+$Font-size--tier_1:		12px;
+$Font-size--tier_0: 	10px;
+
+//DEPRECATED: Do not use $Font-line_height tiers.
+$Font-line_height--tier_4:  2.0;
+$Font-line_height--tier_3:  1.75;
+$Font-line_height--tier_2:  1.5;
+$Font-line_height--tier_1:  1.25;
+$Font-line_height--tier_0:  1.0;
+
+//DEPRECATED: Do not use $Font-letter_spacing tiers.
+$Font-letter_spacing--tier_3:	4px;
+$Font-letter_spacing--tier_2:	3px;
+$Font-letter_spacing--tier_1:	2px;
+$Font-letter_spacing--tier_0:	1px;
+
+$Font-color--black: #{"{{ settings.color_body_text_black }}"};
+$Font-color--white: #{"{{ settings.color_body_text_white }}"};
+$Font-color:            $Font-color--black;
+
+
+$Headings-h1--font_family: $Headline-large-font;
+$Headings-h1--font_weight: $Headline-large-weight;
+$Headings-h1--font_style: $Headline-large-style;
+$Headings-h1--font_size: #{"{{ settings.h1-mobile-font-size }}"};
+$Headings-h1--font_size_sm: #{"{{ settings.h1-desktop-font-size }}"};
+$Headings-h1--line_height: #{"{{ settings.h1-mobile-line-height }}"};
+$Headings-h1--line_height_sm: #{"{{ settings.h1-desktop-line-height }}"};
+$Headings-h1--letter_spacing: #{"{{ settings.h1-mobile-letter-spacing }}"};
+$Headings-h1--letter_spacing_sm: #{"{{ settings.h1-desktop-letter-spacing }}"};
+$Headings-h1--margin_vertical: 25px;
+
+
+$Headings-h2--font_family: $Headline-large-font;
+$Headings-h2--font_weight: $Headline-large-weight;
+$Headings-h2--font_style: $Headline-large-style;
+$Headings-h2--font_size: #{"{{ settings.h2-mobile-font-size }}"};
+$Headings-h2--font_size_sm: #{"{{ settings.h2-desktop-font-size }}"};
+$Headings-h2--line_height: #{"{{ settings.h2-mobile-line-height }}"};
+$Headings-h2--line_height_sm: #{"{{ settings.h2-desktop-line-height }}"};
+$Headings-h2--letter_spacing: #{"{{ settings.h2-mobile-letter-spacing }}"};
+$Headings-h2--letter_spacing_sm: #{"{{ settings.h2-desktop-letter-spacing }}"};
+$Headings-h2--margin_vertical: 25px;
+
+
+$Headings-h3--font_family: $Headline-large-font;
+$Headings-h3--font_weight: $Headline-large-weight;
+$Headings-h3--font_style: $Headline-large-style;
+$Headings-h3--font_size: #{"{{ settings.h3-mobile-font-size }}"};
+$Headings-h3--font_size_sm: #{"{{ settings.h3-desktop-font-size }}"};
+$Headings-h3--line_height: #{"{{ settings.h3-mobile-line-height }}"};
+$Headings-h3--line_height_sm: #{"{{ settings.h3-desktop-line-height }}"};
+$Headings-h3--letter_spacing: #{"{{ settings.h3-mobile-letter-spacing }}"};
+$Headings-h3--letter_spacing_sm: #{"{{ settings.h3-desktop-letter-spacing }}"};
+$Headings-h3--margin_vertical: 25px;
+
+
+$Headings-h4--font_family: $Headline-small-font;
+$Headings-h4--font_weight: $Headline-small-weight;
+$Headings-h4--font_style: $Headline-small-style;
+$Headings-h4--font_size: #{"{{ settings.h4-mobile-font-size }}"};
+$Headings-h4--font_size_sm: #{"{{ settings.h4-desktop-font-size }}"};
+$Headings-h4--line_height: #{"{{ settings.h4-mobile-line-height }}"};
+$Headings-h4--line_height_sm: #{"{{ settings.h4-desktop-line-height }}"};
+$Headings-h4--letter_spacing: #{"{{ settings.h4-mobile-letter-spacing }}"};
+$Headings-h4--letter_spacing_sm: #{"{{ settings.h4-desktop-letter-spacing }}"};
+$Headings-h4--margin_vertical: 25px;
+
+
+$Headings-h5--font_family: $Headline-small-font;
+$Headings-h5--font_weight: $Headline-small-weight;
+$Headings-h5--font_style: $Headline-small-style;
+$Headings-h5--font_size: #{"{{ settings.h5-mobile-font-size }}"};
+$Headings-h5--font_size_sm: #{"{{ settings.h5-desktop-font-size }}"};
+$Headings-h5--line_height: #{"{{ settings.h5-mobile-line-height }}"};
+$Headings-h5--line_height_sm: #{"{{ settings.h5-desktop-line-height }}"};
+$Headings-h5--letter_spacing: #{"{{ settings.h5-mobile-letter-spacing }}"};
+$Headings-h5--letter_spacing_sm: #{"{{ settings.h5-desktop-letter-spacing }}"};
+$Headings-h5--margin_vertical: 25px;
+
+
+$Headings-h6--font_family: $Headline-small-font;
+$Headings-h6--font_weight: $Headline-small-weight;
+$Headings-h6--font_style: $Headline-small-style;
+$Headings-h6--font_size: #{"{{ settings.h6-mobile-font-size }}"};
+$Headings-h6--font_size_sm: #{"{{ settings.h6-desktop-font-size }}"};
+$Headings-h6--line_height: #{"{{ settings.h6-mobile-line-height }}"};
+$Headings-h6--line_height_sm: #{"{{ settings.h6-desktop-line-height }}"};
+$Headings-h6--letter_spacing: #{"{{ settings.h6-mobile-letter-spacing }}"};
+$Headings-h6--letter_spacing_sm: #{"{{ settings.h6-desktop-letter-spacing }}"};
+$Headings-h6--margin_vertical: 25px;
+
+
+$Paragraph--font_family: $Paragraph-font;
+$Paragraph--font_weight: $Paragraph-weight;
+$Paragraph--font_style: $Paragraph-style;
+$Paragraph--font_size: #{"{{ settings.p-font-size }}"};
+$Paragraph--font_size_sm: #{"{{ settings.p-font-size }}"};
+$Paragraph--line_height: #{"{{ settings.p-line-height }}"};
+$Paragraph--line_height_sm: #{"{{ settings.p-line-height }}"};
+$Paragraph--letter_spacing: #{"{{ settings.p-letter-spacing }}"};
+$Paragraph--margin_vertical: 15px;
+
+$Paragraph--small--font_family: $Paragraph-font;
+$Paragraph--small--font_weight: $Paragraph-weight;
+$Paragraph--small--font_style: $Paragraph-style;
+$Paragraph--small--font_size: #{"{{ settings.p-small-font-size }}"};
+$Paragraph--small--font_size_sm: #{"{{ settings.p-small-font-size }}"};
+$Paragraph--small--line_height: #{"{{ settings.p-small-line-height }}"};
+$Paragraph--small--line_height_sm: #{"{{ settings.p-small-line-height }}"};
+$Paragraph--small--letter_spacing: #{"{{ settings.p-small-letter-spacing }}"};
+$Paragraph--small--margin_vertical: 10px;
+
+
+$Blockquote--margin_vertical: 50px;
+$Blockquote--margin_horizontal: 40px;
+$Blockquote--quote_size: 128px;
+$Blockquote--quote_color: $Color--gray;
+
+$List--spacing: 10px;
+$List--indent: 30px;
+
+@mixin make-Type--color($Font-color: $Font-color) {
+    color: $Font-color;
+
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+        color: $Font-color;
+    }
+}
+
+/* h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: $Headings--font_family;
+    font-weight: $Headings--font_weight;
+    color: $Headings--color;
+    -webkit-font-smoothing: antialiased;
+    margin: 10px 0;
+} */
+
+
+h1, .h1 {
+    font-family: $Headings-h1--font_family;
+    font-size: $Headings-h1--font_size;
+    line-height: $Headings-h1--line_height;
+    font-weight: $Headings-h1--font_weight;
+    font-style: $Headings-h1--font_style;
+    letter-spacing: $Headings-h1--letter_spacing;
+
+    @media (min-width: $Viewport-sm) {
+        font-size: $Headings-h1--font_size_sm;
+        line-height: $Headings-h1--line_height_sm;
+        letter-spacing: $Headings-h1--letter_spacing_sm;
+    }
+}
+
+h2, .h2 {
+    font-family: $Headings-h2--font_family;
+    font-size: $Headings-h2--font_size;
+    line-height: $Headings-h2--line_height;
+    font-weight: $Headings-h2--font_weight;
+    font-style: $Headings-h2--font_style;
+    letter-spacing: $Headings-h2--letter_spacing;
+
+    @media (min-width: $Viewport-sm) {
+        font-size: $Headings-h2--font_size_sm;
+        line-height: $Headings-h2--line_height_sm;
+        letter-spacing: $Headings-h2--letter_spacing_sm;
+    }
+}
+
+h3, .h3 {
+    font-family: $Headings-h3--font_family;
+    font-size: $Headings-h3--font_size;
+    line-height: $Headings-h3--line_height;
+    font-weight: $Headings-h3--font_weight;
+    font-style: $Headings-h3--font_style;
+    letter-spacing: $Headings-h3--letter_spacing;
+
+    @media (min-width: $Viewport-sm) {
+        font-size: $Headings-h3--font_size_sm;
+        line-height: $Headings-h3--line_height_sm;
+        letter-spacing: $Headings-h3--letter_spacing_sm;
+    }
+}
+
+h4, .h4 {
+    font-family: $Headings-h4--font_family;
+    font-size: $Headings-h4--font_size;
+    line-height: $Headings-h4--line_height;
+    font-weight: $Headings-h4--font_weight;
+    font-style: $Headings-h4--font_style;
+    letter-spacing: $Headings-h4--letter_spacing;
+
+    @media (min-width: $Viewport-sm) {
+        font-size: $Headings-h4--font_size_sm;
+        line-height: $Headings-h4--line_height_sm;
+        letter-spacing: $Headings-h4--letter_spacing_sm;
+    }
+}
+
+h5, .h5 {
+    font-family: $Headings-h5--font_family;
+    font-size: $Headings-h5--font_size;
+    line-height: $Headings-h5--line_height;
+    font-weight: $Headings-h5--font_weight;
+    font-style: $Headings-h5--font_style;
+    letter-spacing: $Headings-h5--letter_spacing;
+
+    @media (min-width: $Viewport-sm) {
+        font-size: $Headings-h5--font_size_sm;
+        line-height: $Headings-h5--line_height_sm;
+        letter-spacing: $Headings-h5--letter_spacing_sm;
+    }
+}
+
+h6, .h6 {
+    font-family: $Headings-h6--font_family;
+    font-size: $Headings-h6--font_size;
+    line-height: $Headings-h6--line_height;
+    font-weight: $Headings-h6--font_weight;
+    font-style: $Headings-h6--font_style;
+    letter-spacing: $Headings-h6--letter_spacing;
+
+    @media (min-width: $Viewport-sm) {
+        font-size: $Headings-h6--font_size_sm;
+        line-height: $Headings-h6--line_height_sm;
+        letter-spacing: $Headings-h6--letter_spacing_sm;
+    }
+}
+
+@mixin make-Paragraph() {
+    font-family: $Paragraph--font_family;
+    font-size: $Paragraph--font_size;
+    font-weight: $Paragraph--font_weight;
+    font-style: $Paragraph--font_style;
+    line-height: $Paragraph--line_height;
+    letter-spacing: $Paragraph--letter_spacing;
+    -webkit-font-smoothing: antialiased;
+
+    @media (min-width: $Viewport-sm) {
+        font-size: $Paragraph--font_size_sm;
+        line-height: $Paragraph--line_height_sm;
+    }
+}
+
+@mixin make-Paragraph--small() {
+    font-family: $Paragraph--small--font_family;
+    font-size: $Paragraph--small--font_size;
+    font-weight: $Paragraph--small--font_weight;
+    font-style: $Paragraph--small--font_style;
+    line-height: $Paragraph--small--line_height;
+    letter-spacing: $Paragraph--small--letter_spacing;
+    -webkit-font-smoothing: antialiased;
+
+    @media (min-width: $Viewport-sm) {
+        font-size: $Paragraph--small--font_size_sm;
+        line-height: $Paragraph--small--line_height_sm;
+    }
+}
+
+
+p, .p {
+    @include make-Paragraph();
+
+    &.small {
+        @include make-Paragraph--small();
+    }
+}
+
+@mixin make-List--revert() {
+    list-style: none inside none;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    @include make-List--revert();
+}
+
+ol {
+    @include make-List--revert();
+}
+
+blockquote {
+    position: relative;
+    text-align: center;
+
+    margin: $Blockquote--margin_vertical $Blockquote--margin_horizontal;
+
+    &:before {
+        content: '"';
+        z-index: $ZIndex-backdrop_type;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        font-size: $Blockquote--quote_size;
+        margin-top: ($Blockquote--quote_size * -0.5);
+        color: $Blockquote--quote_color;
+    }
+
+    &:after {
+        content: '"';
+        z-index: $ZIndex-backdrop_type;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        font-size: $Blockquote--quote_size;
+        margin-bottom: ($Blockquote--quote_size * -1.25);
+        color: $Blockquote--quote_color;
+    }
+}
+
+@mixin make-List($_) {
+    @include make-Paragraph();
+
+    @if $_ == ul {
+        list-style: disc;
+    } @else if $_ == ol {
+        list-style: decimal;
+    }
+
+    list-style-position: outside;
+    margin: $List--spacing 0;
+    padding: 0 0 0 $List--indent;
+
+    //Override any internal paragraphs
+    p {
+        margin: 0;
+    }
+
+    //2nd level lists
+    li ul {
+        list-style: lower-latin;
+    }
+
+    li ol {
+        list-style: circle;
+    }
+
+    //3rd level lists
+    li li ul {
+        list-style: lower-roman;
+    }
+
+    li li ol {
+        list-stule: square;
+    }
+}
+
+//Re-enable list and other styling reverted by default.
+@mixin make-Wysiwyg() {
+    font-family: $Paragraph-font;
+    font-size: $Paragraph--font_size;
+    line-height: $Paragraph--line_height;
+    font-weight: $Paragraph-weight;
+    font-style: $Paragraph-style;
+    -webkit-font-smoothing: antialiased;
+
+    @media (min-width: $Viewport-sm) {
+        font-size: $Paragraph--font_size_sm;
+        line-height: $Paragraph--line_height_sm;
+    }
+
+    ul {
+        @include make-List(ul);
+    }
+
+    ol {
+        @include make-List(ol);
+    }
+}
+
+
+
+

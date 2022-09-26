@@ -1,0 +1,70 @@
+$Button--menu_toggle--color: $Button--color;
+$Button--menu_toggle--background: $Button--bg_color;
+$Button--menu_toggle--spacing: 5px;
+$Button--menu_toggle--border_radius: 2px;
+$Button--menu_toggle--border_width: 1px;
+
+$Button--menu_toggle-bar--width: 20px;
+$Button--menu_toggle-bar--height: 3px;
+$Button--menu_toggle-bar--border_radius: 1px;
+$Button--menu_toggle-bar--spacing: 4px;
+
+$Button--menu_toggle--width: ($Button--menu_toggle-bar--width + $Button--menu_toggle--spacing * 2 + $Button--menu_toggle--border_width * 2);
+$Button--menu_toggle--height: ($Button--menu_toggle-bar--height * 3 + $Button--menu_toggle-bar--spacing * 2 + $Button--menu_toggle--spacing * 2 + $Button--menu_toggle--border_width * 2);
+
+@mixin make-Button--menu_toggle($toggle-bar: Button--menu_toggle-bar) {
+    background: $Button--menu_toggle--background;
+    border: $Button--menu_toggle--border_width solid $Button--menu_toggle--background;
+    padding: $Button--menu_toggle--spacing;
+    border-radius: $Button--menu_toggle--border_radius;
+
+    .#{$toggle-bar} {
+        display: block;
+
+        width: $Button--menu_toggle-bar--width;
+        height: $Button--menu_toggle-bar--height;
+        border-radius: $Button--menu_toggle-bar--border_radius;
+
+        background-color: $Button--menu_toggle--color;
+
+        margin-top: $Button--menu_toggle-bar--spacing;
+        transform: translate(0%, 0px) rotate(0deg) translate(0%, 0px) scaleX(1);
+        transition: transform 0.5s, opacity 0.5s;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    &:hover, &:focus {
+        background: $Button--menu_toggle--color;
+
+        .#{$toggle-bar} {
+            background-color: $Button--menu_toggle--background;
+        }
+    }
+
+    &:focus {
+        outline-width: 0;
+    }
+}
+
+@mixin make-Button--menu_toggle_closed($toggle-bar: Button--menu_toggle-bar) {
+    .#{$toggle-bar} {
+        opacity: 0;
+    }
+
+    .#{$toggle-bar}:first-child {
+        transform: translate(-40%, 0px) rotate(40deg) translate(55%, 0px) scaleX(1.2);
+        opacity: 1;
+    }
+
+    .#{$toggle-bar}:nth-child(3n+3) {
+        transform: translate(-40%, 0px) rotate(-40deg) translate(55%, 0px) scaleX(1.2);
+        opacity: 1;
+    }
+}
+
+.Button--menu_toggle {
+    @include make-Button--menu_toggle;
+}

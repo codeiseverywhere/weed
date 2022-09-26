@@ -1,0 +1,23 @@
+
+<div id="product-grid-item-label-{{ product.id }}" class="product-grid-item-label">
+  {% if product.compare_at_price_varies %}
+    <div class="pgil__inner">
+      <p class="pgil__text">Sale</p>
+    </div>
+  {% else %}
+    {% for tag in product.tags %}
+      {% if tag == 'B' %}
+        <div class="pgil__inner">
+          <p class="pgil__text">Bestseller</p>
+        </div>
+      {% elsif tag == 'New' %}
+        <div class="pgil__inner">
+          <p class="pgil__text">New</p>
+        </div>
+      {% else %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+</div>
+
+

@@ -1,0 +1,74 @@
+$Modal--background_color:   white;
+$Modal--gutter_width:       $Grid--gutter_width;
+$Modal--maximum_height:     90vh;
+
+$Modal-close--background_color:     black;
+$Modal-close--color:                $Font-color--black;
+
+$Modal-content--width:      $Container-sm;
+
+@mixin make-Modal($Modal--background_color: $Modal--background_color, $Modal--maximum_height: $Modal--maximum_height) {
+    background-color: $Modal--background_color;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    max-height: $Modal--maximum_height;
+    max-width: 100%;
+
+    z-index: $ZIndex-modal;
+
+    &.is-Offcanvas--closed {
+        display: none;
+    }
+}
+
+@mixin make-Modal-content--width($Modal-content--width: $Modal-content--width) {
+    width: $Modal-content--width;
+}
+
+@mixin make-Modal-content($Modal--gutter_width: $Modal--gutter_width, $Modal--maximum_height: $Modal--maximum_height) {
+    @include make-Container();
+    @include make-Padding($Modal--gutter_width);
+
+    position: relative;
+
+    max-height: $Modal--maximum_height;
+    overflow-y: auto;
+}
+
+@mixin make-Modal-close($Modal-close--background_color: $Modal-close--background_color, $Modal-close--color: $Modal-close--color) {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    background-color: $Modal-close--background_color;
+    color: $Modal-close--color;
+
+    padding: 10px;
+    z-index: 1;
+}
+
+.Modal {
+    @include make-Modal();
+}
+
+.Modal--toast {
+    @include make-Offcanvas--toast();
+    @include make-Offcanvas--toast_lv1();
+
+    &.is-Offcanvas--closed {
+        display: block;
+    }
+}
+
+.Modal-content {
+    @include make-Modal-content();
+    @include make-Modal-content--width();
+}
+
+.Modal-close {
+    @include make-Modal-close();
+}

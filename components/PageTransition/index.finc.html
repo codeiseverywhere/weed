@@ -1,0 +1,62 @@
+@@include('./assets/frag/html.frag.html')
+
+<title>PageTransition component - Phylactery 1.0.0 by HUEMOR</title>
+
+<body data-offcanvas-hover-min="960">
+
+<main id="pagetransition-content" data-pagetransition-region class="PageTransition--scrub">
+    @@include('./components/SiteHeader/phylactery_siteheader.frag.html')
+    <div class="PageTransition-backdrop PageTransition--scrub-backdrop" data-pagetransition-backdrop>
+        <div class="PageTransition-fbf_animation PageTransition--scrub-fbf_animation"></div>
+    </div>
+    <header class="HeroHeader HeroHeader--thin HeroHeader--dark_bg" style="background-image: url(../../components/HeroHeader/test_background.svg);">
+        <div class="HeroHeader-valign">
+            <div class="HeroHeader-container">
+                <h1 class="HeroHeader-title">PageTransition component</h1>
+            </div>
+        </div>
+    </header>
+
+    <section class="Example-content">
+        <div class="Container Example-section">
+            <h2>Page transitions</h2>
+            <p>This is a special effect which allows replacing content with
+            another page's content while simulating navigation.</p>
+
+            <p>By default, all internal links within a page transition area
+            will trigger this behavior. External links will not transition
+            using AJAX.</p>
+
+            <p>You can try it out with <a href="result.html">this link</a>.</p>
+
+            <h3>Transition examples</h3>
+            <p>Each of these pages has their own transition type which applies
+            to any link on that page. The current page uses the "Scrub" effect.
+            </p>
+
+            <p><a href="examples/extinguisher.html">Extinguisher</a></p>
+            <p><a href="examples/scrub.html">Scrub</a></p>
+            <p><a href="examples/glitch.html">Glitch</a></p>
+            <p><a href="examples/scribble.html">Scribble</a></p>
+            <p><a href="examples/gummy.html">Gummy</a></p>
+            <p><a href="examples/gooey.html">Gooey</a></p>
+            <p><a href="examples/mirror.html">Mirror</a></p>
+            <p><a href="examples/diamond.html">Diamond</a></p>
+            <p><a href="examples/cartoon.html">Cartoon</a></p>
+            <p><a href="examples/clones.html">Clones</a></p>
+            <p><a href="examples/kaleidoscope.html">Kaleidoscope</a></p>
+
+            <h3>Internal/external detection examples</h3>
+
+            <p><a href="#herpderp">Hash link</a></p>
+            <p><a href="/">Internal link (relative)</a></p>
+            <p><a href="../">Internal link (relative)</a></p>
+            <p><a href="//127.0.0.1:64916/components/PageTransition/index.html">External link to ourselves</a></p>
+            <p><a href="http://127.0.0.1:64916/components/PageTransition/index.html">External link to ourselves</a></p>
+            <p><a href="https://127.0.0.1:64916/components/PageTransition/index.html">External link to ourselves</a></p>
+            <p><a href="//example.com">External link elsewhere</a></p>
+            <p><a href="http://example.com">External link elsewhere</a></p>
+            <p><a href="https://example.com">External link elsewhere</a></p>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,192 @@
+{% comment %}
+
+  This is your /cart template. If you are using the Ajaxify Cart plugin,
+  your form (with action="/cart") layout will be used in the drawer/modal.
+
+  For info on test orders:
+    - General http://docs.shopify.com/manual/your-store/orders/test-orders
+    - Shopify Payments - http://docs.shopify.com/manual/more/shopify-payments/testing-shopify-payments
+
+{% endcomment %}
+<div class="Page--cartWrapper{% if cart.item_count == 0 %} Page--cartWrapper_empty{% endif %}">
+{% if cart.item_count > 0 %}
+  <form action="/cart" method="post" novalidate class="Page Page--cart Cart Form Form--cart">
+
+    <h1 class="Page-title Cart-title">My Shopping Cart</h1>
+    
+    {% include "sale-banner" %}
+    
+    {% comment %}
+      Loop through products in the cart
+    {% endcomment %}
+    <ul class="Cart-contents">
+        <li class="Cart-lineitemHeading">
+          <div class="LineItem-heading LineItem-heading--product">Product</div>
+          <div class="LineItem-heading LineItem-heading--productName">Product Name</div>
+          <div class="LineItem-heading LineItem-heading--delivery">Delivery</div>
+          <div class="LineItem-heading LineItem-heading--unitPrice">Unit Price</div>
+          <div class="LineItem-heading LineItem-heading--qty">Quantity</div>
+          <div class="LineItem-heading LineItem-heading--totalPrice">Total Price</div>
+        </li>
+        {% for item in cart.items %}
+            <li class="Cart-lineitem LineItem LineItem--product LineItem--cart" data-id="{{ item.id }}">
+                {% comment %}
+                  Let's use a sub grids to keep our product image and title together,
+                  and our quantity, price and remove buttons together
+                {% endcomment %}
+
+                <a class="LineItem-link LineItem-link--image LineItem--cart-linkimage" href="{{ item.product.url | within: collections.all }}">
+                    {% comment %}
+                      More image size options at:
+                        - http://docs.shopify.com/themes/filters/product-img-url
+                    {% endcomment %}
+                    <img class="LineItem-image LineItem--cart-image" src="{{ item.product.featured_image.src | product_img_url: 'large' }}" alt="{{ item.title | escape }}" srcset="{{ item.product.featured_image.src | product_img_url: 'large' }} 480w, {{ item.product.featured_image.src | product_img_url: 'grande' }} 600w, {{ item.product.featured_image.src | product_img_url: '1024x1024' }} 1024w" sizes="(min-width: 280px) 250px, (min-width: 768px) 33vw, 100vw">
+                </a>
+
+                {% comment %}
+                  If you want the product title and any variants in one line, use {{ item.title }}.
+                  Below they've been separated for styling purposes.
+                {% endcomment %}
+                <div class="LineItem-info LineItem--cart-info">
+                    <h6 class="LineItem-product">
+                        <a class="LineItem-title" href="{{ item.product.url }}">
+                          {{ item.product.title }}
+                        </a>
+                        {% unless item.variant.title contains 'Default' %}
+                        <br>
+                        <span class="LineItem-variant">{{ item.variant.title }}</span>
+                        {% endunless %}
+                    </h6>
+                    
+                    {% comment %}
+                        Optional, add the vendor
+                    {% endcomment %}
+                    <div class="LineItem-vendor">{{ item.vendor }}</div>
+                    <div class="LineItem-sku">SKU {{ item.sku }}</div>
+
+                    {% comment %}
+                        Optional, loop through custom product line items if available
+
+                        For more info on line item properties, visit:
+                          - http://docs.shopify.com/support/your-store/products/how-do-I-collect-additional-information-on-the-product-page-Like-for-a-monogram-engraving-or-customization
+                    {% endcomment %}
+                    {% if item.properties.size > 0 %}
+                        <ul class="LineItem-propertylist">
+                            {% for p in item.properties %}
+                                <li class="LineItem-property">
+                                    {% unless p.last == blank %}
+                                        {{ p.first }}:
+                                        
+                                        {% comment %}
+                                            Check if there was an uploaded file associated
+                                        {% endcomment %}
+                                        {% if p.last contains '/uploads/' %}
+                                            <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                                        {% else %}
+                                            {{ p.last }}
+                                        {% endif %}
+
+                                        <br>
+                                    {% endunless %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+
+                <div class="LineItem-delivery LineItem--cart-delivery" data-title="Delivery: ">
+                  {{item.product.metafields.c_f.lead-time}}
+                </div>
+
+                <div class="LineItem-price LineItem--cart-price" data-title="Unit Price: ">{{ item.price | money }}</div>
+
+                <div class="LineItem-qty LineItem--cart-qty" data-title="Quantity: ">
+                    {% comment %}
+                        Added data-id for the ajax cart implementation only.
+                    {% endcomment %}
+                    <div class="LineItem--cart-qtywidget FormItem FormItem--name_qty FormItem--type_number">
+                        <input type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" min="0" data-id="{{ item.id }}" class="FormItem-input"{% if item.product.metafields.inventory.ShappifyHidden == "true" %} readonly="readonly" {% endif %}>
+                    </div>
+
+                    {% comment %}
+                        To remove an item from the cart, reload the page with the following parameters.
+                        Added data-id for the ajax cart implementation only.
+                    {% endcomment %}
+                    <a class="LineItem-removelink" href="/cart/change?line={{ forloop.index }}&amp;quantity=0" data-id="{{ item.id }}">Remove</a>
+                </div>
+
+                <div class="LineItem-price--total LineItem--cart-price" data-title="Total Price: ">{{ item.price | times: item.quantity | money }}</div>
+            </li>
+        {% endfor %}
+    </ul>
+    
+    <div id="cc-injection-point"></div>
+    
+    <div class="Cart-actions">
+        {% comment %}
+          Optional, add a textarea for special notes
+            - Your theme settings can turn this on or off. Default is on.
+            - Make sure you have name="note" for the message to be submitted properly
+        {% endcomment %}
+        {% if settings.cart_notes %}
+          <div class="Cart-notes FormItem FormItem--name_note FormItem--type_textarea">
+            <label for="cartSpecialInstructions" class="FormItem-label">Special instructions</label>
+            <textarea name="note" class="input-full FormItem-textarea" id="cartSpecialInstructions">{{ cart.note }}</textarea>
+          </div>
+        {% endif %}
+        
+        <div class="Cart-totalslist">
+            <div class="Cart-subtotal">
+                <span class="Cart-subtotaltext">Subtotal:</span><span class="Cart-price Cart--page-price">{{ cart.total_price | money }}</span>
+            </div>
+
+            {% comment %}
+                name="update" is required for the update button to work
+            {% endcomment %}
+            <div class="Cart-actionslist Form-actionslist">
+                <button type="submit" name="update" class="Cart-formaction Cart-updateaction--cart FormAction FormAction--strength_update FormAction--type_submit FormAction--name-update" value="Update cart">
+                    Update cart
+                </button>
+                {% comment %}
+                    name="checkout" is required for the submit button to work
+                {% endcomment %}
+                <button type="submit" name="checkout" class="Cart-formaction Cart-checkoutaction--cart FormAction FormAction--strength_continue FormAction--type_submit FormAction--name-update" value="Check out">
+                    Check out
+                </button>
+            </div>
+          {% comment %}
+            Paypal and Google checkout buttons
+          {% endcomment %}
+          {% if additional_checkout_buttons %}
+            <div class="Cart-actionslist Cart-actionslist--extra">{{ content_for_additional_checkout_buttons }}</div>
+          {% endif %}
+
+        </div>
+        
+    </div>
+
+  </form>
+
+{% else %}
+
+  {% comment %}
+    It's likely people won't have items in the cart sometimes.
+    Do something fun here, it's a great chance to show your company's human side.
+  {% endcomment %}
+    <div class="Page Page--cart Cart Cart--empty">
+        <h1 class="Page-title Cart-title Cart--empty-title">It appears that your cart is currently empty.</h1>
+        <p class="Page-description Cart--empty-description">Continue browsing <a href="/collections/all">here</a>.</p>
+    </div>
+
+{% endif %}
+</div>
+
+
+{% schema %}
+  {
+    "name": "Cart Page",
+    "settings": [
+
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,119 @@
+//Breakpoint and Height are defined in NavMenu due to SASS limitations.
+
+
+$SiteHeader-max-width: #{"{{ settings.siteHeader-max-width }}"};
+
+$SiteHeader-notice_bar--height_bp: 30px;
+
+$SiteHeader--content_row_height_bp: #{"{{ settings.siteHeader-top-row-height }}"};
+
+$SiteHeader-navbar--height_bp: auto;
+
+$SiteHeader-height: #{"{{ settings.announcement-bar-height }}"} + #{"{{ settings.siteHeader-top-row-height }}"} + #{"{{ settings.siteHeader-bottom-row-height }}"};
+
+$SiteHeader--margin: 10px;
+
+$SiteHeader--border_color: $Color--site_header;
+$SiteHeader--border_width: $Border-width--thin;
+
+$SiteHeader--background: $Color--SiteHeader__Main-Background;
+$SiteHeader--background_transparent: $SiteHeader--background;
+
+$SiteHeader--box_shadow_spread: 0px;
+$SiteHeader--box_shadow: 0px 0px $SiteHeader--box_shadow_spread $Color--black;
+
+$SiteHeader--z_index: #{"{{ settings.siteHeader-z-index }}"};
+
+@import "brand.scss";
+@import "content.scss";
+@import "forms.scss";
+@import "noticebar.scss";
+@import "account.scss";
+@import "dropdown.scss";
+@import "cart.scss";
+@import "extra_row.scss";
+@import "search.scss";
+@import "contact.scss";
+
+.SiteHeader {
+    position: relative;
+
+    margin: 0;
+
+    background: $SiteHeader--background;
+    box-shadow: $SiteHeader--box_shadow;
+
+    z-index: $SiteHeader--z_index;
+
+    transition: margin 0.5s;
+}
+
+.SiteHeader--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.SiteHeader--flush {
+    max-width: none;
+    margin: 0;
+
+    &.is-SiteHeader--at_top {
+        margin: 0;
+    }
+}
+
+.SiteHeader--detached {
+    &.is-SiteHeader--at_top {
+        margin: $SiteHeader--margin;
+    }
+
+    @media (min-width: ($Viewport-lg * 1.1)) {
+        max-width: none;
+        margin: 0 auto;
+
+        &.is-SiteHeader--at_top {
+            margin: $SiteHeader--margin 2%;
+        }
+    }
+}
+
+.SiteHeader-spacing {
+    height: $SiteHeader--height;
+}
+
+.SiteHeader-container {
+    @include make-Container($SiteHeader--breakpoint_sm, $Container-sm);
+    @include make-Container($SiteHeader--breakpoint_md, $Container-md);
+    @include make-Container($SiteHeader--breakpoint_lg, $Container-lg);
+    margin: 0 auto;
+
+    @extend .clearfix;
+
+    max-width: 100% !important;
+}
+
+.SiteHeader-overlap {
+    padding-top: $SiteHeader--height;
+
+    @media (min-width: $SiteHeader--breakpoint) {
+        padding-top: $SiteHeader--height_bp;
+    }
+}
+
+@media (max-width: $SiteHeader--breakpoint_max) {
+    .SiteHeader-content {
+        @include make-Border(border-bottom, $SiteHeader--border_width, $SiteHeader--border_color);
+    }
+}
+
+@media (min-width: $SiteHeader--breakpoint) {
+    .SiteHeader-spacing {
+        height: $SiteHeader--height_bp;
+    }
+
+    .SiteHeader-content {
+        order: 1;
+    }
+}

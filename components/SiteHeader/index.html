@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width">
+
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,600" rel="stylesheet">
+<link rel="stylesheet" href="/build/main.css">
+
+<script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+<script src="/build/script.js" type="application/javascript"></script>
+
+<title>SiteHeader component - Phylactery 1.0.0 by HUEMOR</title>
+
+<body data-offcanvas-hover-min="960">
+
+<main>
+    <header class="SiteHeader">
+    <div class="SiteHeader-container">
+        <div class="SiteHeader-banner">
+            <a class="SiteHeader-brand" href="/">
+                <img class="SiteHeader-logo" src="/components/SiteHeader/logo.svg" alt="Phylactery">
+            </a>
+
+            <button type="button" class="SiteHeader-toggle Button Button--menu_toggle" data-toggle="offcanvas" data-target="#SiteHeader-navigation_id0">
+                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--first"></span>
+                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--second"></span>
+                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--third"></span>
+                <span class="sr-only">Open/close menu</span>
+            </button>
+        </div>
+        <div class="SiteHeader-content is-Offcanvas--closed" id="SiteHeader-navigation_id0">
+            <div class="Offcanvas-scroller">
+                <nav class="SiteHeader-navigation SiteHeader-navigation--first_menu">
+                    <ul class="NavMenu NavMenu--main_menu">
+                        <li class="NavMenu-link NavMenu--main_menu-link">
+                            <a data-toggle="offcanvas" data-target="#Phylactery-core_dropdown" href="#"><span>UI &amp; UX</span> <span class="NavMenu-link--arrow"></span></a>
+                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="Phylactery-core_dropdown">
+                                <div class="Offcanvas-scroller">
+                                    <ul class="NavMenu NavMenu--dropdown">
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/examples/Typography/"><span>Typography</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Button"><span>Buttons</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/FormItem"><span>FormItem</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Page"><span>Page</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Breadcrumb"><span>Breadcrumb</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/SiteHeader"><span>SiteHeader</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/SiteFooter"><span>SiteFooter</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/VideoPlayer"><span>VideoPlayer</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Modal"><span>Modal</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/TabbedContent"><span>TabbedContent</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/CollapseContent"><span>CollapseContent</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="NavMenu-link NavMenu--main_menu-link">
+                            <a data-toggle="offcanvas" data-target="#Phylactery-effects_dropdown" href="#"><span>Interactive Effects</span> <span class="NavMenu-link--arrow"></span></a>
+                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="Phylactery-effects_dropdown">
+                                <div class="Offcanvas-scroller">
+                                    <ul class="NavMenu NavMenu--dropdown">
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/AffixColumn"><span>AffixColumn</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/ScrollEffects"><span>ScrollEffects</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Depaginate"><span>Depaginate</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/PageTransition"><span>PageTransition</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/GoogleMap/"><span>Google Maps</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-heading"><h3>Historical</h3></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Animations"><span>WOW.js</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="NavMenu-link NavMenu--main_menu-link">
+                            <a data-toggle="offcanvas" data-target="#Phylactery-patterns_dropdown" href="#"><span>Layout Patterns</span> <span class="NavMenu-link--arrow"></span></a>
+                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="Phylactery-patterns_dropdown">
+                                <div class="Offcanvas-scroller">
+                                    <ul class="NavMenu NavMenu--dropdown">
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/examples/Grid"><span>Grid Styling</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/HeroHeader"><span>HeroHeader</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/ContentSection"><span>ContentSection</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/Triptych"><span>Triptych</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/StaffGrid"><span>StaffGrid</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/components/ObiStrip"><span>ObiStrip</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="NavMenu-link NavMenu--main_menu-link">
+                            <a data-toggle="offcanvas" data-target="#Phylactery-examples_dropdown" href="#"><span>Examples</span> <span class="NavMenu-link--arrow"></span></a>
+                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="Phylactery-examples_dropdown">
+                                <div class="Offcanvas-scroller">
+                                    <ul class="NavMenu NavMenu--dropdown">
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/examples/MarketingPage/"><span>Marketing Page</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/examples/About/"><span>About Page</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/layouts/Article/"><span>Blog Article</span></a></li>
+                                        <li class="NavMenu-link NavMenu--dropdown-link"><a href="/layouts/ContactPage/"><span>Contact Page</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+    <header class="HeroHeader HeroHeader--thin HeroHeader--dark_bg" style="background-image: url(../../components/HeroHeader/test_background.svg);">
+        <div class="HeroHeader-valign">
+            <div class="HeroHeader-container">
+                <h1 class="HeroHeader-title">SiteHeader component</h1>
+            </div>
+        </div>
+    </header>
+
+    <article class="Example-content">
+        <div class="Container Example-section">
+            <h2>Example site headers</h2>
+            <p>Logo on the left, single menu on the right</p>
+        </div>
+        
+        <div class="Example-specimen">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="SiteHeader-specimen">View Source</button>
+            <div class="Example-large_specimen_content is-Example-specimen--visible" id="SiteHeader-specimen" data-specimen>
+                <header class="SiteHeader">
+                    <div class="SiteHeader-container">
+                        <div class="SiteHeader-banner">
+                            <a class="SiteHeader-brand" href="/">
+                                <img class="SiteHeader-logo" src="/components/SiteHeader/logo--placeholder.svg" alt="Phylactery">
+                            </a>
+
+                            <button type="button" class="SiteHeader-toggle Button Button--menu_toggle" data-toggle="offcanvas" data-target="#SiteHeader-navigation_id0">
+                                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--first"></span>
+                                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--second"></span>
+                                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--third"></span>
+                                <span class="sr-only">Open/close menu</span>
+                            </button>
+                        </div>
+                        <div class="SiteHeader-content is-Offcanvas--closed" id="SiteHeader-navigation_id0">
+                            <div class="Offcanvas-scroller">
+                                <nav class="SiteHeader-navigation SiteHeader-navigation--first_menu">
+                                    <ul class="NavMenu NavMenu--main_menu">
+                                        <li class="NavMenu-link NavMenu--main_menu-link">
+                                            <a data-toggle="offcanvas" data-target="#SiteHeader-navigation_sub_exampleID"><span>Products</span> <span class="NavMenu-link--arrow"></span></a>
+                                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="SiteHeader-navigation_sub_exampleID">
+                                                <div class="Offcanvas-scroller">
+                                                    <ul class="NavMenu NavMenu--dropdown">
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Category</span></a>
+                                                        </li>
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Category</span></a>
+                                                        </li>
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Category</span></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="NavMenu-link NavMenu--main_menu-link NavMenu-link--active NavMenu--main_menu-link--active">
+                                            <a href=""><span>Mint Chocolates</span></a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <pre data-specimen-source="SiteHeader-specimen" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+        
+        <div class="Container Example-section">
+            <p>Ibid, with centered logo and second menu.</p>
+        </div>
+
+        <div class="Example-specimen">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="SiteHeader-specimen--2">View Source</button>
+            <div class="Example-large_specimen_content is-Example-specimen--visible" id="SiteHeader-specimen--2" data-specimen>
+                <header class="SiteHeader">
+                    <div class="SiteHeader-container">
+                        <div class="SiteHeader-banner">
+                            <a class="SiteHeader-brand SiteHeader-brand--centered" href="/">
+                                <img class="SiteHeader-logo" src="/components/SiteHeader/logo--placeholder.svg" alt="Phylactery">
+                            </a>
+
+                            <button type="button" class="SiteHeader-toggle Button Button--menu_toggle" data-toggle="offcanvas" data-target="#SiteHeader-navigation_ID2">
+                                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--first"></span>
+                                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--second"></span>
+                                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--third"></span>
+                                <span class="sr-only">Open/close menu</span>
+                            </button>
+                        </div>
+                        <div class="SiteHeader-content is-Offcanvas--closed" id="SiteHeader-navigation_ID2">
+                            <div class="Offcanvas-scroller">
+                                <nav class="SiteHeader-navigation SiteHeader-navigation--second_menu">
+                                    <ul class="NavMenu NavMenu--main_menu">
+                                        <li class="NavMenu-link NavMenu--main_menu-link">
+                                            <a data-toggle="offcanvas" data-target="#SiteHeader-navigation_sub_exampleID2"><span>Products</span> <span class="NavMenu-link--arrow"></span></a>
+                                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="SiteHeader-navigation_sub_exampleID2">
+                                                <div class="Offcanvas-scroller">
+                                                    <ul class="NavMenu NavMenu--dropdown">
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Category</span></a>
+                                                        </li>
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Category</span></a>
+                                                        </li>
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Category</span></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="NavMenu-link NavMenu--main_menu-link NavMenu-link--active NavMenu--main_menu-link--active">
+                                            <a href=""><span>Mint Chocolates</span></a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <nav class="SiteHeader-navigation SiteHeader-navigation--first_menu">
+                                    <ul class="NavMenu NavMenu--main_menu">
+                                        <li class="NavMenu-link NavMenu--main_menu-link">
+                                            <a data-toggle="offcanvas" data-target="#SiteHeader-navigation_sub_exampleID3"><span>Nyeh!</span> <span class="NavMenu-link--arrow"></span></a>
+                                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="SiteHeader-navigation_sub_exampleID3">
+                                                <div class="Offcanvas-scroller">
+                                                    <ul class="NavMenu NavMenu--dropdown">
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Heh!</span></a>
+                                                        </li>
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Heh!</span></a>
+                                                        </li>
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Heh!</span></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="NavMenu-link NavMenu--main_menu-link NavMenu-link--active NavMenu--main_menu-link--active">
+                                            <a href=""><span>Spaghetti</span></a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <pre data-specimen-source="SiteHeader-specimen--2" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+        
+        <div class="Container Example-section">
+            <p>Ibid, with notice bar and search in centered navigation wrapper</p>
+        </div>
+
+        <div class="Example-specimen">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="SiteHeader-specimen--3">View Source</button>
+            <div class="Example-large_specimen_content is-Example-specimen--visible" id="SiteHeader-specimen--3" data-specimen>
+                <header class="SiteHeader">
+                    <div class="SiteHeader-container">
+                        <div class="SiteHeader-banner SiteHeader-banner--with_notice_bar">
+                            <a class="SiteHeader-brand" href="/">
+                                <img class="SiteHeader-logo" src="/components/SiteHeader/logo--placeholder.svg" alt="Phylactery">
+                            </a>
+
+                            <nav class="SiteHeader-navigation SiteHeader-navigation--exposed">
+                                <form action="/search" method="get" class="SiteHeader-search SiteHeader-search--first_menu" role="search">
+                                    <div class="SiteHeader-form_item FormItem">
+                                        <input type="search" name="q" value="" placeholder="Search for something" aria-label="Search for something">
+                                    </div>
+                                    <div class="FormItem--actions SiteHeader-form_button_wrapper">
+                                        <button type="submit" class="FormItem-action FormItem-action--primary FormItem-action--search SiteHeader-form_button SiteHeader-search_button">
+                                            <span class="sr-only">Search</span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </nav>
+
+                            <button type="button" class="SiteHeader-toggle Button Button--menu_toggle" data-toggle="offcanvas" data-target="#SiteHeader-navigation_ID3">
+                                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--first"></span>
+                                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--second"></span>
+                                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--third"></span>
+                                <span class="sr-only">Open/close menu</span>
+                            </button>
+                        </div>
+                        <div class="SiteHeader-content SiteHeader-content--with_notice_bar is-Offcanvas--closed" id="SiteHeader-navigation_ID3">
+                            <div class="Offcanvas-scroller">
+                                <div class="SiteHeader-notice_bar">
+                                    <div class="SiteHeader-notice">
+                                        A CSS framework for building custom designed websites.
+                                    </div>
+                                </div>
+                                <nav class="SiteHeader-navigation SiteHeader-navigation--first_menu">
+                                    <ul class="NavMenu NavMenu--main_menu">
+                                        <li class="NavMenu-link NavMenu--main_menu-link">
+                                            <a data-toggle="offcanvas" data-target="#SiteHeader-navigation_sub_exampleID4"><span>Products</span> <span class="NavMenu-link--arrow"></span></a>
+                                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="SiteHeader-navigation_sub_exampleID4">
+                                                <div class="Offcanvas-scroller">
+                                                    <ul class="NavMenu NavMenu--dropdown">
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Category</span></a>
+                                                        </li>
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Category</span></a>
+                                                        </li>
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Category</span></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="NavMenu-link NavMenu--main_menu-link NavMenu-link--active NavMenu--main_menu-link--active">
+                                            <a href=""><span>Mint Chocolates</span></a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <pre data-specimen-source="SiteHeader-specimen--3" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+
+        <div class="Container Example-section">
+            <p>Ibid, with centered logo and notice bar</p>
+        </div>
+
+        <div class="Example-specimen">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="SiteHeader-specimen--4">View Source</button>
+            <div class="Example-large_specimen_content is-Example-specimen--visible" id="SiteHeader-specimen--4" data-specimen>
+                <header class="SiteHeader">
+                    <div class="SiteHeader-container">
+                        <div class="SiteHeader-banner SiteHeader-banner--with_notice_bar">
+                            <a class="SiteHeader-brand SiteHeader-brand--centered" href="/">
+                                <img class="SiteHeader-logo" src="/components/SiteHeader/logo--placeholder.svg" alt="Phylactery">
+                            </a>
+
+                            <form action="/search" method="get" class="SiteHeader-search SiteHeader-search--first_menu" role="search">
+                                <div class="SiteHeader-form_item FormItem">
+                                    <input type="search" name="q" value="" placeholder="Search for something" aria-label="Search for something">
+                                </div>
+                                <div class="FormItem--actions SiteHeader-form_button_wrapper">
+                                    <button type="submit" class="FormItem-action FormItem-action--primary FormItem-action--search SiteHeader-form_button SiteHeader-search_button">
+                                        <span class="sr-only">Search</span>
+                                    </button>
+                                </div>
+                            </form>
+
+                            <button type="button" class="SiteHeader-toggle Button Button--menu_toggle" data-toggle="offcanvas" data-target="#SiteHeader-navigation_ID4">
+                                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--first"></span>
+                                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--second"></span>
+                                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--third"></span>
+                                <span class="sr-only">Open/close menu</span>
+                            </button>
+                        </div>
+                        <div class="SiteHeader-content SiteHeader-content--with_notice_bar is-Offcanvas--closed" id="SiteHeader-navigation_ID4">
+                            <div class="Offcanvas-scroller">
+                                <div class="SiteHeader-notice_bar">
+                                    <div class="SiteHeader-notice">
+                                        A CSS framework for building custom designed websites.
+                                    </div>
+                                </div>
+                                <nav class="SiteHeader-navigation SiteHeader-navigation--second_menu">
+                                    <ul class="NavMenu NavMenu--main_menu">
+                                        <li class="NavMenu-link NavMenu--main_menu-link">
+                                            <a data-toggle="offcanvas" data-target="#SiteHeader-navigation_sub_exampleID5"><span>Products</span> <span class="NavMenu-link--arrow"></span></a>
+                                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="SiteHeader-navigation_sub_exampleID5">
+                                                <div class="Offcanvas-scroller">
+                                                    <ul class="NavMenu NavMenu--dropdown">
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Category</span></a>
+                                                        </li>
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Category</span></a>
+                                                        </li>
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Category</span></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="NavMenu-link NavMenu--main_menu-link NavMenu-link--active NavMenu--main_menu-link--active">
+                                            <a href=""><span>Mint Chocolates</span></a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <nav class="SiteHeader-navigation SiteHeader-navigation--first_menu">
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            
+            <pre data-specimen-source="SiteHeader-specimen--4" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+
+        <div class="Container Example-section">
+            <p>Ibid, with notice bar, cart and account menus</p>
+        </div>
+
+        <div class="Example-specimen">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="SiteHeader-specimen--5">View Source</button>
+            <div class="Example-large_specimen_content is-Example-specimen--visible" id="SiteHeader-specimen--5" data-specimen>
+                <header class="SiteHeader">
+                    <div class="SiteHeader-container">
+                        <div class="SiteHeader-banner SiteHeader-banner--with_notice_bar">
+                            <a class="SiteHeader-brand" href="/">
+                                <img class="SiteHeader-logo" src="/components/SiteHeader/logo--placeholder.svg" alt="Phylactery">
+                            </a>
+
+                            <form action="/search" method="get" class="SiteHeader-search SiteHeader-search--first_menu" role="search">
+                                <div class="SiteHeader-form_item FormItem">
+                                    <input type="search" name="q" value="" placeholder="Search for something" aria-label="Search for something">
+                                </div>
+                                <div class="FormItem--actions SiteHeader-form_button_wrapper">
+                                    <button type="submit" class="FormItem-action FormItem-action--primary FormItem-action--search SiteHeader-form_button SiteHeader-search_button">
+                                        <span class="sr-only">Search</span>
+                                    </button>
+                                </div>
+                            </form>
+
+                            <button type="button" class="SiteHeader-toggle Button Button--menu_toggle" data-toggle="offcanvas" data-target="#SiteHeader-navigation_ID5">
+                                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--first"></span>
+                                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--second"></span>
+                                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--third"></span>
+                                <span class="sr-only">Open/close menu</span>
+                            </button>
+                        </div>
+                        <div class="SiteHeader-content SiteHeader-content--with_notice_bar is-Offcanvas--closed" id="SiteHeader-navigation_ID5">
+                            <div class="Offcanvas-scroller">
+                                <div class="SiteHeader-notice_bar">
+                                    <div class="SiteHeader-notice">
+                                        A CSS framework for building custom designed websites.
+                                    </div>
+                                </div>
+                                <nav class="SiteHeader-navigation SiteHeader-navigation--first_menu">
+                                    <ul class="NavMenu NavMenu--main_menu">
+                                        <li class="NavMenu-link NavMenu--main_menu-link">
+                                            <a data-toggle="offcanvas" data-target="#SiteHeader-navigation_sub_exampleID6"><span>Products</span> <span class="NavMenu-link--arrow"></span></a>
+                                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="SiteHeader-navigation_sub_exampleID6">
+                                                <div class="Offcanvas-scroller">
+                                                    <ul class="NavMenu NavMenu--dropdown">
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Category</span></a>
+                                                        </li>
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Category</span></a>
+                                                        </li>
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Category</span></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="NavMenu-link NavMenu--main_menu-link NavMenu-link--active NavMenu--main_menu-link--active">
+                                            <a href=""><span>Mint Chocolates</span></a>
+                                        </li>
+                                    </ul>
+
+                                    <div class="SiteHeader-account">
+                                        <button type="button" data-toggle="offcanvas" data-target="#SiteHeader-accounts" class="SiteHeader-account_button" data-toggle-options="nohover">
+                                            <span class="sr-only">My Account</span>
+                                        </button>
+                                        <div class="SiteHeader-account_menu Offcanvas--auxiliary Offcanvas--auxiliary_lv1 is-Offcanvas--closed" id="SiteHeader-accounts">
+                                            <div class="Offcanvas-scroller">
+                                                <ul class="NavMenu NavMenu--dropdown">
+                                                    <li class="NavMenu-link NavMenu--dropdown-link NavMenu--dropdown-link--heading">
+                                                        <a href="/account"><span>Test Person</span></a>
+                                                    </li>
+                                                    <li class="NavMenu-link NavMenu--dropdown-link">
+                                                        <a><span>Log Out</span></a>
+                                                    </li>
+                                                    <li class="NavMenu-link NavMenu--dropdown-link">
+                                                        <a><span>Register</span></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="SiteHeader-cart">
+                                        <a href="/cart" class="SiteHeader-cart_button" aria-controls="CartDrawer" aria-expanded="false" data-toggle="offcanvas" data-target="#CartDrawer" data-toggle-options="nohover">
+                                            <span class="SiteHeader-cart_item_count" id="CartCount">5</span>
+                                            <span class="sr-only">Shopping cart</span>
+                                        </a>
+
+                                        <div id="CartDrawer" class="SiteHeader-cart_menu Offcanvas--auxiliary Offcanvas--auxiliary_lv1 is-Offcanvas--closed">
+                                            <div class="Offcanvas-scroller">
+                                                <div class="drawer__header">
+                                                    <div class="drawer__title h3">
+                                                        Shopping Cart
+                                                        <span class="SiteHeader-cart_dismiss" data-dismiss="offcanvas">Close</span>
+                                                    </div>
+
+                                                </div>
+                                                <div id="CartContainer"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            
+            <pre data-specimen-source="SiteHeader-specimen--5" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+
+        <div class="Container Example-section">
+            <p>Ecom, Center Aligned Logo w/ notice bar</p>
+        </div>
+
+        <div class="Example-specimen">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="SiteHeader-specimen--6">View Source</button>
+            <div class="Example-large_specimen_content is-Example-specimen--visible" id="SiteHeader-specimen--6" data-specimen>
+                <header class="SiteHeader">
+                    <div class="SiteHeader-container">
+                        <div class="SiteHeader-banner SiteHeader-banner--with_notice_bar">
+                            <a class="SiteHeader-brand SiteHeader-brand--centered" href="/">
+                                <img class="SiteHeader-logo" src="/components/SiteHeader/logo--placeholder.svg" alt="Phylactery">
+                            </a>
+
+                            <form action="/search" method="get" class="SiteHeader-search SiteHeader-search--second_menu" role="search">
+                                <div class="SiteHeader-form_item FormItem">
+                                    <input type="search" name="q" value="" placeholder="Search for something" aria-label="Search for something">
+                                </div>
+                                <div class="FormItem--actions SiteHeader-form_button_wrapper">
+                                    <button type="submit" class="FormItem-action FormItem-action--primary FormItem-action--search SiteHeader-form_button SiteHeader-search_button">
+                                        <span class="sr-only">Search</span>
+                                    </button>
+                                </div>
+                            </form>
+
+                            <button type="button" class="SiteHeader-toggle Button Button--menu_toggle" data-toggle="offcanvas" data-target="#SiteHeader-navigation_ID6">
+                                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--first"></span>
+                                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--second"></span>
+                                <span class="Button--menu_toggle-bar Button--menu_toggle-bar--third"></span>
+                                <span class="sr-only">Open/close menu</span>
+                            </button>
+                        </div>
+                        <div class="SiteHeader-content SiteHeader-content--with_notice_bar is-Offcanvas--closed" id="SiteHeader-navigation_ID6">
+                            <div class="Offcanvas-scroller">
+                                <div class="SiteHeader-notice_bar">
+                                    <div class="SiteHeader-notice">
+                                        A CSS framework for building custom designed websites.
+                                    </div>
+                                </div>
+                                <nav class="SiteHeader-navigation SiteHeader-navigation--first_menu">
+                                    <ul class="NavMenu NavMenu--main_menu">
+                                        <li class="NavMenu-link NavMenu--main_menu-link">
+                                            <a data-toggle="offcanvas" data-target="#SiteHeader-navigation_sub_exampleID7"><span>Products</span> <span class="NavMenu-link--arrow"></span></a>
+                                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="SiteHeader-navigation_sub_exampleID7">
+                                                <div class="Offcanvas-scroller">
+                                                    <ul class="NavMenu NavMenu--dropdown">
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Category</span></a>
+                                                        </li>
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Category</span></a>
+                                                        </li>
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Category</span></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="NavMenu-link NavMenu--main_menu-link NavMenu-link--active NavMenu--main_menu-link--active">
+                                            <a href=""><span>Mint Chocolates</span></a>
+                                        </li>
+                                    </ul>
+                                </nav>
+
+                                <nav class="SiteHeader-navigation SiteHeader-navigation--third_menu">
+                                    <ul class="NavMenu NavMenu--main_menu">
+                                        <li class="NavMenu-link NavMenu--main_menu-link">
+                                            <a data-toggle="offcanvas" data-target="#SiteHeader-navigation_sub_exampleID8"><span>Products</span> <span class="NavMenu-link--arrow"></span></a>
+                                            <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="SiteHeader-navigation_sub_exampleID8">
+                                                <div class="Offcanvas-scroller">
+                                                    <ul class="NavMenu NavMenu--dropdown">
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Category</span></a>
+                                                        </li>
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Category</span></a>
+                                                        </li>
+                                                        <li class="NavMenu-link NavMenu--dropdown-link">
+                                                            <a href=""><span>Category</span></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="NavMenu-link NavMenu--main_menu-link NavMenu-link--active NavMenu--main_menu-link--active">
+                                            <a href=""><span>Mint Chocolates</span></a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            
+            <pre data-specimen-source="SiteHeader-specimen--6" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+        
+        <div class="Container Example-section">
+            <h2>Contact Toast</h2>
+            <p>Click the "contact" link to launch the contact toast.</p>
+        </div>
+        
+        <div class="Example-specimen">
+            <button class="Example-specimen_toggle" type="button" data-specimen-toggle="SiteHeader-specimen">View Source</button>
+            <div class="is-Example-specimen--visible" id="SiteHeader-specimen" data-specimen>
+                <!-- This wrapper div is unnecessary. -->
+                <div class="Example-large_specimen_content">
+                    <header class="SiteHeader">
+                        <div class="SiteHeader-container">
+                            <div class="SiteHeader-banner">
+                                <a class="SiteHeader-brand" href="/">
+                                    <img class="SiteHeader-logo" src="/components/SiteHeader/logo--placeholder.svg" alt="Phylactery">
+                                </a>
+
+                                <nav class="SiteHeader-navigation SiteHeader-navigation--exposed">
+                                    <button type="button" data-toggle="offcanvas" data-target="#SiteHeader-contact_id_toastdemo" class="SiteHeader-exposed_button" data-toggle-options="nohover">
+                                        Contact Us
+                                    </button>
+                                </nav>
+
+                                <button type="button" class="SiteHeader-toggle Button Button--menu_toggle" data-toggle="offcanvas" data-target="#SiteHeader-navigation_id_toastdemo">
+                                    <span class="Button--menu_toggle-bar Button--menu_toggle-bar--first"></span>
+                                    <span class="Button--menu_toggle-bar Button--menu_toggle-bar--second"></span>
+                                    <span class="Button--menu_toggle-bar Button--menu_toggle-bar--third"></span>
+                                    <span class="sr-only">Open/close menu</span>
+                                </button>
+                            </div>
+                            <div class="SiteHeader-content is-Offcanvas--closed" id="SiteHeader-navigation_id_toastdemo">
+                                <div class="Offcanvas-scroller">
+                                    <nav class="SiteHeader-navigation SiteHeader-navigation--first_menu">
+                                        <ul class="NavMenu NavMenu--main_menu">
+                                            <li class="NavMenu-link NavMenu--main_menu-link">
+                                                <a data-toggle="offcanvas" data-target="#SiteHeader-navigation_sub_toastdemo"><span>Products</span> <span class="NavMenu-link--arrow"></span></a>
+                                                <div class="Offcanvas Offcanvas--lv2 SiteHeader-dropdown is-Offcanvas--closed" id="SiteHeader-navigation_sub_toastdemo">
+                                                    <div class="Offcanvas-scroller">
+                                                        <ul class="NavMenu NavMenu--dropdown">
+                                                            <li class="NavMenu-link NavMenu--dropdown-link">
+                                                                <a href=""><span>Category</span></a>
+                                                            </li>
+                                                            <li class="NavMenu-link NavMenu--dropdown-link">
+                                                                <a href=""><span>Category</span></a>
+                                                            </li>
+                                                            <li class="NavMenu-link NavMenu--dropdown-link">
+                                                                <a href=""><span>Category</span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="NavMenu-link NavMenu--main_menu-link NavMenu-link--active NavMenu--main_menu-link--active">
+                                                <a href=""><span>Mint Chocolates</span></a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+                
+                <aside class="SiteHeader-contact_toast is-Offcanvas--closed" id="SiteHeader-contact_id_toastdemo">
+                    <div class="Offcanvas-scroller">
+                        <div class="SiteHeader-contact_content">
+                            <section class="SiteHeader-contact_information" style="background-image: url('http://placehold.it/300x300');">
+                                <h2 class="SiteHeader-contact_title">Request a personalized ipsum</h2>
+                                <p>Fill out the accompanying form or speak directly with a sales person at <a href="#">555-555-0100</a>.</p>
+                                <p><strong>US</strong> <a href="#">sales@example.com</a><br>
+                                <strong>EU</strong> <a href="#">sales@example.com</a><br>
+                                <strong>CA</strong> <a href="#">soory@example.com</a></p>
+                            </section>
+                            <section class="SiteHeader-contact_form_wrapper">
+                                <form class="SiteHeader-contact_form">
+                                    <h2 class="SiteHeader-contact_form_title">Email our sales team</h2>
+                                    <div class="FormItem Example-one_up--no_gutter">
+                                        <label for="FormItem-input_1">Name</label>
+                                        <input id="FormItem-input_1">
+                                    </div>
+                                    <div class="FormItem Example-one_up--no_gutter">
+                                        <label for="FormItem-input_2">Phone number</label>
+                                        <input id="FormItem-input_2" type="phone">
+                                    </div>
+                                    <div class="FormItem Example-one_up--no_gutter">
+                                        <label for="FormItem-textarea_1">Your Message</label>
+                                        <textarea placeholder="Enter a message!"></textarea>
+                                    </div>
+                                    <div class="FormItem--actions">
+                                        <button type="submit" class="FormItem-action FormItem-action--primary">Contact Owner</button>
+                                    </div>
+                                </form>
+                            </section>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            <pre data-specimen-source="SiteHeader-specimen" class="Example-specimen_source is-Example-specimen_source--hidden"></pre>
+        </div>
+    </article>
+</main>

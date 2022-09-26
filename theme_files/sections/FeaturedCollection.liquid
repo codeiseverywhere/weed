@@ -1,0 +1,148 @@
+
+<div id="x-featured-collection" class="x-featured-collection">
+  <div class="x-featured-collection__inner">
+
+    <div class="x-fc__header-wrap">
+      <h4 class="x-fc__header">{{ section.settings.title }}</h4>
+      <p class="x-fc__text">{{ section.settings.text }}</p>
+    </div>
+
+    <div class="x-fc__content">
+      <div class="x-fc__content--column x-fc__content--column-cards">
+        {% for product in collections[section.settings.collection].products %}
+          <div class="x-fc__content-card">
+            <a href="{{ product.url }}" class="x-fc__content-card-link"
+              data-toggle="offcanvas"
+              data-target="#Collection-quick_view_modal"
+              data-toggle-options="nohover"
+              {% if product.template_suffix != "" %}
+                data-quickview="{{ product.url | within: collection }}?view={{product.template_suffix}}_quickview"
+              {% else %}
+                data-quickview="{{ product.url | within: collection }}?view=quickview"
+              {% endif %}>
+              <div class="x-fc-content-card__image-wrap">
+                <img src="{{ product.featured_image | img_url: 'master' }}" class="x-fc-content-card__image">
+                <div id="qv--{{ product.id }}" class="x-fc-content-card-quick-view">
+                Quick View
+                </div>
+              </div>
+
+              <div class="x-fc-content-card__details-wrap">
+                <h5 class="x-fc-details__product-name">{{ product.title }}</h5>
+
+                <p class="x-fc-details__product-desc">Guna need a Meta tag app</p>
+
+                {% form 'product', product, data-productid: product.id, id:form_id, class:'x-fc__form', data-cart-form: '' %}
+
+                        {% comment %}
+                          Select element hidden when JS initializes. Safeguard for JS-disabled.
+                        {% endcomment %}
+                        <select name="id" data-productid="{{ product.id }}" id="ProductSelect-{{ section.id }}" style="display: none;">
+                          {% for variant in product.variants %}
+                            <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} {% unless variant.available %} disabled="disabled" {% endunless %} value="{{ variant.id }}" data-sku="{{ variant.sku }}">{{ variant.title }} - {% if variant.available %}{{ variant.price | money_with_currency }}{% else %}{{ 'products.product.sold_out' | t }}{% endif %}</option>
+                          {% endfor %}
+                        </select>
+
+                        {% assign price = current_variant.price | money_without_trailing_zeros %}
+                        <p class="product__price{% if shop.taxes_included or shop.shipping_policy.body != blank %} product__price--has-policies{% endif %}" style="display: none;">
+                          <meta itemprop="priceCurrency" content="{{ cart.currency.iso_code }}">
+                          <meta itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
+                          {% if product.compare_at_price_max > product.price %}
+                            <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+                            <span class="product__price--reg">{{ current_variant.compare_at_price | money_without_trailing_zeros }}</span>
+                            <span class="product__price--sale">{{ 'products.general.now_price_html' | t: price: price }}</span>
+                          {% else %}
+                            <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+                            <span class="product__price--reg js-price">
+                              {{ price }}
+                            </span>
+                          {% endif %}
+
+                          {% include 'product-unit-price', variant: current_variant %}
+                        </p>
+
+                        {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
+                          <div class="product__policies rte" style="display: none">
+                            {%- if shop.taxes_included -%}
+                              {{ 'products.general.include_taxes' | t }}
+                            {%- endif -%}
+                            {%- if shop.shipping_policy.body != blank -%}
+                              {{ 'products.general.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                            {%- endif -%}
+                          </div>
+                        {%- endif -%}
+
+
+                        {% if product.available %}
+                          <button id="AddToCart-{{ section.id }}" type="submit" name="add" class="btn btn--add-to-cart x-fc__btn site-btn">
+                            <span class="x-fc__btn-text">Add to Bag</span>
+                            <p class="x-fc__btn-price"> - {{ product.price | money }}</p>
+                          </button>
+                        {% else %}
+                          <button type="button" class="btn btn--add-to-cart btn--disabled{% if section.settings.enable_payment_button %} btn--secondary-accent{% endif %}x-fc__btn site-btn" disabled="disabled">
+                            {{ 'products.product.sold_out' | t }}
+                          </button>
+                        {% endif %}
+                        
+                        {% if section.settings.enable_payment_button %}
+                          {% unless shop.metafields.subscriptions.subscription_active and product.metafields.subscriptions.shipping_interval_frequency %}
+                          {{ form | payment_button }}
+                          {% endunless %}
+                        {% endif %}
+
+                {% endform %}
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="x-fc__content--column x-fc__content--column--image-wrap">
+        <img src="{{ section.settings.image | img_url: 'master' }}" class="x-fc__content-image">
+        {% if section.settings.small-image != blank %}
+          <img src="{{ section.settings.small-image | img_url: 'master' }}" class="x-fc__content-image-small" >
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "X Featured Collection",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Collection Title"
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Collection Text"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Choose are collection"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Choose an image"
+      },
+      {
+        "type": "image_picker",
+        "id": "small-image",
+        "label": "Small Image",
+        "info": "*optional"
+      }
+    ],
+    "presets": [
+      {
+        "category": "Collection",
+        "name": "Featured Colleciton"
+      }
+    ]
+  }
+{% endschema %}

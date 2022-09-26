@@ -1,0 +1,110 @@
+{% comment %}
+
+  This page represents the /collections and /products pages.
+  It is an optional, but highly recommended, template for your theme.
+
+  More info:
+    - http://docs.shopify.com/manual/configuration/store-customization/taking-control-of-collections-listing
+
+{% endcomment %}
+
+{% include 'Breadcrumb' %}
+
+<div class="Page Page--collectionlist">
+    {% comment %}
+      Loop through each collection, except 'frontpage'
+    {% endcomment %}
+    <ul class="CollectionList">
+        {% for link in linklists[settings.header_nav_linklist].links %}
+            {% comment %}
+              Create a dropdown menu by naming a linklist the same as a link in the parent nav
+
+              More info on dropdowns:
+                - http://docs.shopify.com/manual/your-website/navigation/create-drop-down-menu
+            {% endcomment %}
+            {% capture child_list_handle %}subnav-{{link.title | handleize}}{% endcapture %}
+            <!-- {{child_list_handle}} -->
+            {% if linklists[child_list_handle].links != blank %}
+                <li class="CollectionList-section" aria-haspopup="true">
+                    <a class="CollectionList-link CollectionList-link--toplevel" href="{{ link.url }}">{{ link.title }}</a>
+                    <ul class="CollectionList-submenu">
+                        {% for childlink in linklists[child_list_handle].links %}
+                            {% capture category_list_handle %}subnav-{{link.title | handleize}}-cat-{{childlink.title | handleize}}{% endcapture %}
+
+                            {% if linklists[category_list_handle].links != blank %}
+                                <li class="MegaMenu-category MegaMenu-category--{{ childlink.title | handleize | replace: '-', '_' }}{% if linklists[category_list_handle].links.size > 16 %} MegaMenu-category--2up CollectionList-subsection--hasmanychildren{% endif %} CollectionList-subsection CollectionList-subsection--haschildren">
+                                    <a class="CollectionList-link" href="{{childlink.url}}">{{ childlink.title | escape }}</a>
+                                    {% if category_list_handle contains 'cat-colors' %}
+                                        {% comment %} Color boxes {% endcomment %}
+                                        <ul class="NavMenu NavMenu--megamenu NavMenu--megamenu_independent">
+                                            {% for categorylink in linklists[category_list_handle].links %}
+                                                <li class="NavMenu--colors-item NavMenu--colors-item--{{ categorylink.title | handleize | replace: '-', '_' }}{% if childlink.active %} NavMenu-item--active{% endif %}">
+                                                    <a class="CollectionList-link" href="{{ categorylink.url }}" tabindex="-1">{{ categorylink.title | escape }}</a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% elsif category_list_handle contains 'cat-shape' or category_list_handle contains 'by-shape' %}
+                                        {% comment %} Shape shapes {% endcomment %}
+                                        <ul class="NavMenu NavMenu--shapes">
+                                            {% for categorylink in linklists[category_list_handle].links %}
+                                                {% capture subcategory_list_handle %}subnav-{{link.title | handleize}}-cat-{{childlink.title | handleize}}-sub-{{categorylink.title | handleize}}{% endcapture %}
+                                                <li class="NavMenu--shapes-item NavMenu--shapes-item--{{ categorylink.title | handleize | replace: '-', '_' }}{% if childlink.active %} NavMenu-item--active{% endif %}">
+                                                    <a href="{{ categorylink.url }}" tabindex="-1"><span class="NavMenu--shapes-shape NavMenu--shapes-shape--{{ categorylink.title | handleize | replace: '-', '_' }} CollectionList-link"></span>{% if categorylink.title == "Octagon" %}<span class="NavMenu--shapes-shape NavMenu--shapes-shape--{{ categorylink.title | handleize | replace: '-', '_' }}_outline"></span>{% endif %}{{ categorylink.title | escape }}</a>
+                                                    {% if linklists[subcategory_list_handle].links != blank %}
+                                                        <div class="SiteHeader-offcanvas SiteHeader-megamenu SiteHeader-megamenu--lv4 Offcanvas MegaMenu MegaMenu--categorymenu is-Offcanvas--closed" id="megamenu-subsub-{{subcategory_list_handle}}">
+                                                            <div class="Offcanvas-scroller SiteHeader-scroller">
+                                                                <ul class="NavMenu NavMenu--megamenu NavMenu--megamenu_independent">
+                                                                    {% for subcategorylink in linklists[subcategory_list_handle].links %}
+                                                                        <li class="NavMenu--megamenu-item{% if subcategorylink.active %} NavMenu-item--active{% endif %}{% if linklists[subcategory_list_handle].links.size > 16 %} NavMenu--megamenu--longlist-item{% endif %}">
+                                                                            <a class="CollectionList-link" href="{{ subcategorylink.url }}" tabindex="-1">{{ subcategorylink.title | escape }}</a>
+                                                                        </li>
+                                                                    {% endfor %}
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    {% endif %}
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% else %}
+                                        <ul class="NavMenu NavMenu--megamenu NavMenu--megamenu_independent{% if linklists[category_list_handle].links.size > 16 %} NavMenu--megamenu--longlist{% endif %}">
+                                            {% for categorylink in linklists[category_list_handle].links %}
+                                                <li class="NavMenu--megamenu-item{% if categorylink.active %} NavMenu-item--active{% endif %}{% if linklists[category_list_handle].links.size > 16 %} NavMenu--megamenu--longlist-item{% endif %}">
+                                                    <a class="CollectionList-link" href="{{ categorylink.url }}" tabindex="-1">{{ categorylink.title | escape }}</a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </li>
+                            {% else %}
+                                <li class="CollectionList-subsection CollectionList-subsection--nochildren NavMenu--megamenu-item{% if childlink.active %} NavMenu-item--active{% endif %}">
+                                    <a class="CollectionList-link" href="{{ childlink.url }}" tabindex="-1">{{ childlink.title | escape }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% else %}
+                <li class="CollectionList-menu">
+                    <a class="CollectionList-link NavMenu-link NavMenu--navbar-link" href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+        {% if settings.header_mobilenav_linklist %}
+            {% for link in linklists[settings.header_mobilenav_linklist].links %}
+                <li class="CollectionList-collection">
+                    <a href="{{ link.url }}" class="NavMenu-link NavMenu--navbar-link CollectionList-link" tabindex="-1">{{ link.title }}</a>
+                </li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+</div>
+
+{% schema %}
+  {
+    "name": "List Collections",
+    "settings": [
+      
+    ]
+  }
+{% endschema %}
