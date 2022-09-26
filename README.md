@@ -1,3 +1,3 @@
-Phylactery by HUEMOR Designs
+Phylactery by NODE SOFTWARE AGENCY
 
-This is the base set of styling for all HUEMOR projects
+This is the base set of styling for all NODE projects
